@@ -105,13 +105,13 @@ public class Player1 : MonoBehaviour
                     Angle.y = transform.rotation.y;
                     Angle.z = ShotAngle;
 
-                    //画像の呼び出し
-                    GameObject Circle = Instantiate(Shot_X) as GameObject;
+
                     //角度
                     Shot_X.transform.rotation = Quaternion.Euler(Angle);
-                    //画像の表示
+                    //画像の場所呼び出し
                     Shot_X.transform.position = this.transform.position;
-
+                    //画像の表示
+                    GameObject Circle = Instantiate(Shot_X) as GameObject;
                 }
 
             }
