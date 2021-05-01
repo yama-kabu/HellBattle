@@ -57,7 +57,7 @@ public class Player2 : MonoBehaviour
     //ショット_Normal
     void Shot_Normal()
     {
-        //Zキーを押した際の判定
+        //RightShiftキーを押した際の判定
         if (Input.GetKey(KeyCode.RightShift))
         {
             //経過時間
@@ -95,8 +95,9 @@ public class Player2 : MonoBehaviour
             if (ShotTime_Way == 0)
             {
 
-                for (int i = 1; i <= 8; i++)
+                for (int i = 0; i <= 7; i++)
                 {
+                   
                     //弾丸の角度
                     float ShotAngle = i * 45;  //変更時は22.5
 
@@ -105,12 +106,12 @@ public class Player2 : MonoBehaviour
                     Angle.y = transform.rotation.y;
                     Angle.z = ShotAngle;
 
-                    //画像の呼び出し
-                    GameObject Circle = Instantiate(Shot_RightControl) as GameObject;
                     //角度
                     Shot_RightControl.transform.rotation = Quaternion.Euler(Angle);
-                    //画像の表示
+                    //画像の場所呼び出し
                     Shot_RightControl.transform.position = this.transform.position;
+                    //画像の表示
+                    GameObject Circle = Instantiate(Shot_RightControl) as GameObject;
 
                 }
 
