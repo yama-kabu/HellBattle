@@ -8,18 +8,20 @@ public class Player1 : MonoBehaviour
     private Rigidbody2D P1;
     //Ž©‹@‚ÌˆÚ“®‘¬“x‚ðŠi”[‚·‚é•Ï”i‰Šú’l‚Tj
     public float speed = 5;
-    //Player2Buleet ƒvƒŒƒnƒu
-    public GameObject Bullet_Z;
-    public GameObject Bullet_X;
-    //Z’eŠÛ”­ŽËŽžŠÔ
-    float ShotTime_Z = 0;
-    //X’eŠÛ”­ŽËŽžŠÔ
-    float ShotTime_X = 0;
+    //Player1ƒvƒŒƒnƒu1
+    public GameObject Shot_Z;
+    //       ƒvƒŒƒnƒu2
+    public GameObject Shot_X;
+    //Normal’e”­ŽËŽžŠÔ
+    float ShotTime_Normal = 0;
+    //Way’e”­ŽËŽžŠÔ
+    float ShotTime_Way = 0;
     //’eŠÛ‚ÌŒo‰ßŽžŠÔ
     public float ElapsedTime = 0;
     //’eŠÛ‘¬“x
     public float BulletSpeed = 0;
 
+    public Vector2 PlayerSpeed = new Vector2(0.005f, 0.005f);
 //--------------------------------------------------------------------------------------
 
     // ƒQ[ƒ€‚ÌƒXƒ^[ƒgŽž‚Ìˆ—
@@ -35,45 +37,38 @@ public class Player1 : MonoBehaviour
     // ŒJ‚è•Ô‚·ˆ—
     void Update()
     {
-        //¶‰E‚Ì“ü—Í‚ð‚˜‚É“n‚·
-        float x = Input.GetAxisRaw("Horizontal");
-        //ã‰º‚Ì“ü—Í‚ð‚™‚É“n‚·B
-        float y = Input.GetAxisRaw("Vertical");
-
-        //ˆÚ“®‚·‚éŒü‚«‚ð‹‚ß‚é
-        //‚˜‚Æ‚™‚Ì“ü—Í’l‚ð³‹K‰»‚µAdirection‚É“n‚·B
-        Vector2 direction = new Vector2(x, y).normalized;
-        //Rigidbody2DƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìvelocity‚É•ûŒü‚ÆˆÚ“®‘¬“x‚ðŠ|‚¯‚½’l‚ð“n‚·B
-        P1.velocity = direction * speed;
 
         //ZƒL[“ü—Í’eŠÛ‚ð”­ŽË
-        Shot_Z();
+        Shot_Normal();
         //XƒL[“ü—Í‚Å’eŠÛ”­ŽË
-        Shot_X();
-        //Z’eŠÛ”­ŽËŠÔŠuŒv‘ª
-        ShotTime_Z += Time.deltaTime;
-        //X’eŠÛ”­ŽËŠÔŠuŒv‘ª
-        ShotTime_X += Time.deltaTime;
+        Shot_Way();
+        //Normal’eŠÛ”­ŽËŠÔŠuŒv‘ª
+        ShotTime_Normal += Time.deltaTime;
+        //Way’eŠÛ”­ŽËŠÔŠuŒv‘ª
+        ShotTime_Way += Time.deltaTime;
+
+        // ˆÚ“®ˆ—
+        Move();
     }
 
 //--------------------------------------------------------------------------------------
 
-    //’eŠÛ‚Ì’†g
-    //ƒVƒ‡ƒbƒg_Z
-    void Shot_Z()
+    //’eŠÛ‚Ìˆ—
+    //ƒVƒ‡ƒbƒg_Normal
+    void Shot_Normal()
     {
         //ZƒL[‚ð‰Ÿ‚µ‚½Û‚Ì”»’è
         if (Input.GetKey(KeyCode.Z))
         {
             //Œo‰ßŽžŠÔ
-            if (ShotTime_Z >= ElapsedTime)
+            if (ShotTime_Normal >= ElapsedTime)
             {
-                ShotTime_Z = 0;
+                ShotTime_Normal = 0;
             }
             //‰æ‘œ•\Ž¦
-            if (ShotTime_Z == 0)
+            if (ShotTime_Normal == 0)
             {
-                GameObject Circle = Instantiate(Bullet_Z);
+                GameObject Circle = Instantiate(Shot_Z);
 
                 Circle.transform.position = this.transform.position;
 
@@ -83,21 +78,21 @@ public class Player1 : MonoBehaviour
 
 //--------------------------------------------------------------------------------------
 
-    //’eŠÛ‚Ì’†g
-    //ƒVƒ‡ƒbƒg_X
-    void Shot_X()
+    //’eŠÛ‚Ìˆ—
+    //ƒVƒ‡ƒbƒg_Way
+    void Shot_Way()
     {
         //XƒL[‚ð‰Ÿ‚µ‚½Û‚Ì”»’è
         if (Input.GetKey(KeyCode.X))
         {
             //Œo‰ßŽžŠÔ
-            if (ShotTime_X >= ElapsedTime)
+            if (ShotTime_Way >= ElapsedTime)
             {
-                ShotTime_X = 0;
+                ShotTime_Way = 0;
             }
 
             //‰æ‘œ•\Ž¦
-            if (ShotTime_X == 0)
+            if (ShotTime_Way == 0)
             {
 
                 for (int i = 1; i <= 8; i++)
@@ -111,15 +106,51 @@ public class Player1 : MonoBehaviour
                     Angle.z = ShotAngle;
 
                     //‰æ‘œ‚ÌŒÄ‚Ño‚µ
-                    GameObject Circle = Instantiate(Bullet_X) as GameObject;
+                    GameObject Circle = Instantiate(Shot_X) as GameObject;
                     //Šp“x
-                    Bullet_X.transform.rotation = Quaternion.Euler(Angle);
+                    Shot_X.transform.rotation = Quaternion.Euler(Angle);
                     //‰æ‘œ‚Ì•\Ž¦
-                    Bullet_X.transform.position = this.transform.position;
+                    Shot_X.transform.position = this.transform.position;
 
                 }
 
             }
         }
     }
+
+//--------------------------------------------------------------------------------------
+
+    // ˆÚ“®
+    void Move()
+    {
+        // Œ»ÝˆÊ’u‚ðPosition‚É‘ã“ü
+        Vector2 Position = transform.position;
+        // ¶ƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+        if (Input.GetKey("a"))
+        {
+            // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.x -= PlayerSpeed.x;
+        }
+        else if (Input.GetKey("d"))
+        { // ‰EƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+          // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.x += PlayerSpeed.x;
+        }
+        else if (Input.GetKey("w"))
+        { // ãƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+          // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.y += PlayerSpeed.y;
+        }
+        else if (Input.GetKey("s"))
+        { // ‰ºƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+          // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.y -= PlayerSpeed.y;
+        }
+        // Œ»Ý‚ÌˆÊ’u‚É‰ÁŽZŒ¸ŽZ‚ðs‚Á‚½Position‚ð‘ã“ü‚·‚é
+        transform.position = Position;
+    }
+
+//--------------------------------------------------------------------------------------
+
+
 }

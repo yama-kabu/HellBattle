@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4975023587848478150}
   - component: {fileID: 4975023587848478265}
   - component: {fileID: 4975023587848478264}
-  - component: {fileID: 6035846281322865277}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -105,20 +104,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6035846281322865277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4975023587848478151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c711fe507ced6e4780595437c3630a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  Bullet_Z: {fileID: 7040369304351146246, guid: 554694dbd98fa96459ad1257f91902ad, type: 3}
-  Bullet_X: {fileID: 7040369304351146246, guid: 736871bff4cb0944aa1acf5b59c60a2d, type: 3}
-  ElapsedTime: 1
-  BulletSpeed: 0

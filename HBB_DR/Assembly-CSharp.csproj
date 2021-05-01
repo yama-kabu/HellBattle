@@ -55,9 +55,9 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scenes\Shot_Z.cs" />
-    <Compile Include="Assets\Scenes\Shot_X.cs" />
+    <Compile Include="Assets\Scenes\Shot_Normal.cs" />
     <Compile Include="Assets\Scenes\Player1.cs" />
+    <Compile Include="Assets\Scenes\Shot_Way.cs" />
     <Compile Include="Assets\Scenes\Player2.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

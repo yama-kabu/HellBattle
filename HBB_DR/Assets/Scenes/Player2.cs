@@ -8,18 +8,20 @@ public class Player2 : MonoBehaviour
     private Rigidbody2D P2;
     //Ž©‹@‚ÌˆÚ“®‘¬“x‚ðŠi”[‚·‚é•Ï”i‰Šú’l‚Tj
     public float speed = 5;
-    //Player2Buleet ƒvƒŒƒnƒu
-    public GameObject Bullet_Z;
-    public GameObject Bullet_X;
-    //Z’eŠÛ”­ŽËŽžŠÔ
-    float ShotTime_Z = 0;
-    //X’eŠÛ”­ŽËŽžŠÔ
-    float ShotTime_X = 0;
+    //Player2ƒvƒŒƒnƒu1
+    public GameObject Shot_RightShift;
+    //       ƒvƒŒƒnƒu2
+    public GameObject Shot_RightControl;
+    //Normal’e”­ŽËŽžŠÔ
+    float ShotTime_Normal = 0;
+    //Way’e”­ŽËŽžŠÔ
+    float ShotTime_Way = 0;
     //’eŠÛ‚ÌŒo‰ßŽžŠÔ
     public float ElapsedTime = 0;
     //’eŠÛ‘¬“x
     public float BulletSpeed = 0;
 
+    public Vector2 PlayerSpeed = new Vector2(0.005f, 0.005f);
 //--------------------------------------------------------------------------------------
 
     // ƒQ[ƒ€‚ÌƒXƒ^[ƒgŽž‚Ìˆ—
@@ -30,50 +32,43 @@ public class Player2 : MonoBehaviour
 
     }
 
-//--------------------------------------------------------------------------------------
+ //--------------------------------------------------------------------------------------
 
     // ŒJ‚è•Ô‚·ˆ—
     void Update()
     {
-        //¶‰E‚Ì“ü—Í‚ð‚˜‚É“n‚·
-        float x = Input.GetAxisRaw("Horizontal");
-        //ã‰º‚Ì“ü—Í‚ð‚™‚É“n‚·B
-        float y = Input.GetAxisRaw("Vertical");
 
-        //ˆÚ“®‚·‚éŒü‚«‚ð‹‚ß‚é
-        //‚˜‚Æ‚™‚Ì“ü—Í’l‚ð³‹K‰»‚µAdirection‚É“n‚·B
-        Vector2 direction = new Vector2(x, y).normalized;
-        //Rigidbody2DƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìvelocity‚É•ûŒü‚ÆˆÚ“®‘¬“x‚ðŠ|‚¯‚½’l‚ð“n‚·B
-        P2.velocity = direction * speed;
+        //‰EshiftƒL[“ü—Í’eŠÛ‚ð”­ŽË
+        Shot_Normal();
+        //‰EctrlƒL[“ü—Í‚Å’eŠÛ”­ŽË
+        Shot_Way();
+        //Normal’eŠÛ”­ŽËŠÔŠuŒv‘ª
+        ShotTime_Normal += Time.deltaTime;
+        //Way’eŠÛ”­ŽËŠÔŠuŒv‘ª
+        ShotTime_Way += Time.deltaTime;
 
-        //ZƒL[“ü—Í’eŠÛ‚ð”­ŽË
-        Shot_Z();
-        //XƒL[“ü—Í‚Å’eŠÛ”­ŽË
-        Shot_X();
-        //Z’eŠÛ”­ŽËŠÔŠuŒv‘ª
-        ShotTime_Z += Time.deltaTime;
-        //X’eŠÛ”­ŽËŠÔŠuŒv‘ª
-        ShotTime_X += Time.deltaTime;
+        // ˆÚ“®ˆ—
+        Move();
     }
 
 //--------------------------------------------------------------------------------------
 
-    //’eŠÛ‚Ì’†g
-    //ƒVƒ‡ƒbƒg_Z
-    void Shot_Z()
+    //’eŠÛ‚Ìˆ—
+    //ƒVƒ‡ƒbƒg_Normal
+    void Shot_Normal()
     {
         //ZƒL[‚ð‰Ÿ‚µ‚½Û‚Ì”»’è
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             //Œo‰ßŽžŠÔ
-            if (ShotTime_Z >= ElapsedTime)
+            if (ShotTime_Normal >= ElapsedTime)
             {
-                ShotTime_Z = 0;
+                ShotTime_Normal = 0;
             }
             //‰æ‘œ•\Ž¦
-            if (ShotTime_Z == 0)
+            if (ShotTime_Normal == 0)
             {
-                GameObject Circle = Instantiate(Bullet_Z);
+                GameObject Circle = Instantiate(Shot_RightShift);
 
                 Circle.transform.position = this.transform.position;
 
@@ -83,21 +78,21 @@ public class Player2 : MonoBehaviour
 
 //--------------------------------------------------------------------------------------
 
-    //’eŠÛ‚Ì’†g
-    //ƒVƒ‡ƒbƒg_X
-    void Shot_X()
+    //’eŠÛ‚Ìˆ—
+    //ƒVƒ‡ƒbƒg_Way
+    void Shot_Way()
     {
         //XƒL[‚ð‰Ÿ‚µ‚½Û‚Ì”»’è
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.RightControl))
         {
             //Œo‰ßŽžŠÔ
-            if (ShotTime_X >= ElapsedTime)
+            if (ShotTime_Way >= ElapsedTime)
             {
-                ShotTime_X = 0;
+                ShotTime_Way = 0;
             }
 
             //‰æ‘œ•\Ž¦
-            if (ShotTime_X == 0)
+            if (ShotTime_Way == 0)
             {
 
                 for (int i = 1; i <= 8; i++)
@@ -111,14 +106,51 @@ public class Player2 : MonoBehaviour
                     Angle.z = ShotAngle;
 
                     //‰æ‘œ‚ÌŒÄ‚Ño‚µ
-                    GameObject Circle = Instantiate(Bullet_X) as GameObject;
+                    GameObject Circle = Instantiate(Shot_RightControl) as GameObject;
                     //Šp“x
-                    Bullet_X.transform.rotation = Quaternion.Euler(Angle);
+                    Shot_RightControl.transform.rotation = Quaternion.Euler(Angle);
                     //‰æ‘œ‚Ì•\Ž¦
-                    Bullet_X.transform.position = this.transform.position;
+                    Shot_RightControl.transform.position = this.transform.position;
 
                 }
+
             }
         }
     }
+
+//--------------------------------------------------------------------------------------
+
+    // ˆÚ“®
+    void Move()
+    {
+        // Œ»ÝˆÊ’u‚ðPosition‚É‘ã“ü
+        Vector2 Position = transform.position;
+        // ¶ƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+        if (Input.GetKey("left"))
+        {
+            // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.x -= PlayerSpeed.x;
+        }
+        else if (Input.GetKey("right"))
+        { // ‰EƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+          // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.x += PlayerSpeed.x;
+        }
+        else if (Input.GetKey("up"))
+        { // ãƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+          // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.y += PlayerSpeed.y;
+        }
+        else if (Input.GetKey("down"))
+        { // ‰ºƒL[‚ð‰Ÿ‚µ‘±‚¯‚Ä‚¢‚½‚ç
+          // ‘ã“ü‚µ‚½Position‚É‘Î‚µ‚Ä‰ÁŽZŒ¸ŽZ‚ðs‚¤
+            Position.y -= PlayerSpeed.y;
+        }
+        // Œ»Ý‚ÌˆÊ’u‚É‰ÁŽZŒ¸ŽZ‚ðs‚Á‚½Position‚ð‘ã“ü‚·‚é
+        transform.position = Position;
+    }
+
+//--------------------------------------------------------------------------------------
+
+
 }
