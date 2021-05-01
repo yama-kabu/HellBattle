@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D P2;
     //自機の移動速度を格納する変数（初期値５）
     public float speed = 5;
     //Player2Buleet プレハブ
-    public GameObject Circle1;
-    public GameObject Circle2;
-    //時間間隔
-    float Times = 0;
-
-    public float Timed = 0;
-
-    public float balletSpeed = 0;
+    public GameObject Bullet_Z;
+    public GameObject Bullet_X;
+    //Z弾丸発射時間
+    float ShotTime_Z = 0;
+    //X弾丸発射時間
+    float ShotTime_X = 0;
+    //弾丸の経過時間
+    public float ElapsedTime = 0;
+    //弾丸速度
+    public float BulletSpeed = 0;
 
 //--------------------------------------------------------------------------------------
 
@@ -44,31 +46,34 @@ public class Player1 : MonoBehaviour
         //Rigidbody2Dコンポーネントのvelocityに方向と移動速度を掛けた値を渡す。
         P2.velocity = direction * speed;
 
-        //Zキー入力で玉を発射
-     
-        Shot();
-
-        Shot2();
-
-        Times += Time.deltaTime;
+        //Zキー入力弾丸を発射
+        Shot_Z();
+        //Xキー入力で弾丸発射
+        Shot_X();
+        //Z弾丸発射間隔計測
+        ShotTime_Z += Time.deltaTime;
+        //X弾丸発射間隔計測
+        ShotTime_X += Time.deltaTime;
     }
 
 //--------------------------------------------------------------------------------------
 
-    //玉の中身
-    //ショット１
-    void Shot()
+    //弾丸の中身
+    //ショット_Z
+    void Shot_Z()
     {
+        //Zキーを押した際の判定
         if (Input.GetKey(KeyCode.Z))
         {
-            if (Times >= Timed)
+            //経過時間
+            if (ShotTime_Z >= ElapsedTime)
             {
-                Times = 0;
+                ShotTime_Z = 0;
             }
-
-            if (Times == 0)
+            //画像表示
+            if (ShotTime_Z == 0)
             {
-                GameObject Circle = Instantiate(Circle1);
+                GameObject Circle = Instantiate(Bullet_Z);
 
                 Circle.transform.position = this.transform.position;
 
@@ -76,43 +81,44 @@ public class Player1 : MonoBehaviour
         }
     }
 
-    void Shot2()
+//--------------------------------------------------------------------------------------
+
+    //弾丸の中身
+    //ショット_X
+    void Shot_X()
     {
+        //Xキーを押した際の判定
         if (Input.GetKey(KeyCode.X))
         {
-            if (Times >= Timed)
+            //経過時間
+            if (ShotTime_X >= ElapsedTime)
             {
-                Times = 0;
+                ShotTime_X = 0;
             }
 
-            if (Times == 0)
+            //画像表示
+            if (ShotTime_X == 0)
             {
+
                 for (int i = 1; i <= 8; i++)
                 {
-                    //玉の角度
-                    float Ag = i * 45;  //変更時は22.5
+                    //弾丸の角度
+                    float ShotAngle = i * 45;  //変更時は22.5
 
-                    Vector3 Angle01 = transform.eulerAngles;
-                    Angle01.x = transform.rotation.x;
-                    Angle01.y = transform.rotation.y;
-                    Angle01.z = Ag;
+                    Vector3 Angle = transform.eulerAngles;
+                    Angle.x = transform.rotation.x;
+                    Angle.y = transform.rotation.y;
+                    Angle.z = ShotAngle;
 
+                    //画像の呼び出し
+                    GameObject Circle = Instantiate(Bullet_X) as GameObject;
+                    //角度
+                    Bullet_X.transform.rotation = Quaternion.Euler(Angle);
+                    //画像の表示
+                    Bullet_X.transform.position = this.transform.position;
 
-                    GameObject Circle = Instantiate(Circle2)as GameObject;
-
-                    Circle2.transform.rotation = Quaternion.Euler(Angle01);
-
-                    Circle2.transform.position = this.transform.position;
-
-                    
                 }
-
             }
         }
     }
-    
-
-
-
-
 }
