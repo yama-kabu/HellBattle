@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 8e456a414d7c59d4fb8472e3107cc2f6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - HitZone1: {fileID: 4634232939911925230, guid: 30f64ec06836f474d99f891155fc6667, type: 3}
+  - HitZone2: {fileID: 4634232939911925230, guid: ef0db7ef8df578d46897b97da6ac29ce, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 315816774375343906}
   - component: {fileID: -194091792705503548}
   m_Layer: 0
-  m_Name: Bullet_Z
-  m_TagString: Untagged
+  m_Name: Bullet_Normal
+  m_TagString: Ballet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7040369304351146246}
   m_LocalRotation: {x: 0, y: 0, z: -0.00000008742278, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -137,3 +137,4 @@ MonoBehaviour:
   BulletSpeed: 0.01
   HitZone1: {fileID: 4634232939911925230, guid: 30f64ec06836f474d99f891155fc6667, type: 3}
   HitZone2: {fileID: 4634232939911925230, guid: ef0db7ef8df578d46897b97da6ac29ce, type: 3}
+  Shot_Power: 2

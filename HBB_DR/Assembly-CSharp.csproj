@@ -55,10 +55,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scenes\Shot_Normal.cs" />
-    <Compile Include="Assets\Scenes\Player1.cs" />
-    <Compile Include="Assets\Scenes\Shot_Way.cs" />
-    <Compile Include="Assets\Scenes\Player2.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Player2\Body2.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Shot_Normal.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Player3\Player3.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Player1\Player1.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Shot_Way.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Player3\Body3.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Player2\Player2.cs" />
+    <Compile Include="Assets\Scenes\CharacterScript\Player1\Body1.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
