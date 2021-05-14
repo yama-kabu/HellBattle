@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Shot_Normal : MonoBehaviour
 {
-    public float Bullet01;
+    //íeÇÃë¨ìx
+    public float Shot_Speed = 0;
 
     public GameObject Stage;
-    
+
     void Start()
     {
         //ìñÇΩÇËîªíËÅ@ï«
@@ -19,15 +20,19 @@ public class Shot_Normal : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(0, Bullet01, 0);
-        
+        transform.Translate(0, Shot_Speed, 0);
+
     }
-    void OnTriggerExit2D(Collider2D BD) 
+    void OnTriggerExit2D(Collider2D BD)
     {
+
+
+
         if (BD.gameObject.tag == "BuckStage")
         {
             Destroy(this.gameObject);
         }
 
     }
+
 }

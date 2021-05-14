@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Shot_Way : MonoBehaviour
 {
-    public float Bullet02;
+    //’e‚Ì‘¬“x
+    public float Shot_Speed = 0;
 
     public GameObject Stage;
     
@@ -19,7 +20,7 @@ public class Shot_Way : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(0, Bullet02, 0);   
+        transform.Translate(0, Shot_Speed, 0);   
 
     }
     void OnTriggerExit2D(Collider2D BD) 

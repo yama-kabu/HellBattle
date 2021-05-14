@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerManager_L : MonoBehaviour
 {
+    private Rigidbody2D Reflect;
+
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Player_L;
     //自機の移動速度を格納する変数（初期値５）
@@ -14,6 +16,8 @@ public class PlayerManager_L : MonoBehaviour
     public GameObject Shot02;
     public GameObject Shot03;
     public GameObject Shot04;
+    public GameObject Shot05;
+
 
     int count = 0;
 
@@ -23,26 +27,27 @@ public class PlayerManager_L : MonoBehaviour
     float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
     float Shot3_Cooltime_Count;//Shot3用のクールタイムカウンター
     float Shot4_Cooltime_Count;//Shot4用のクールタイムカウンター
-
+    float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
     float Velocity_0, theta;
 
 
 
-    //ショット３のクールタイムと自動発射にかんするやつ
-    //float Shot3_Count_Time = 3;
+    //ショット３の類
+    //クールタイム調整用
     float Shot_Count_Time_Save = 3;
-    bool Spiral_Duration = false;
-    float Spiral_Duration_time;
-    bool Spiral_Cooltime_check = false;
+    //発射しているか否か判定
+    public bool Spiral_Duration = false;
+    //何秒発射されたか
+    float Spiral_Duration_time ;
+    //クールタイム中か否か判定
+    public bool Spiral_Cooltime_check = false;
 
-    //ショット1の速度
-    public float Shot01_Speed = 0;
-    //ショット2の速度
-    public float Shot02_Speed = 0;
+    //スパイラルの一度の操作で続ける時間
+    public int Spiral_Time;
+
     //ショット3の速度
     public float Shot03_Speed = 0;
-    //ショット4の速度
-    public float Shot04_Speed = 0;
+
 
 
     //プレイヤー速度
@@ -68,6 +73,7 @@ public class PlayerManager_L : MonoBehaviour
         Shot2();
         Shot3();
         Shot4();
+        Shot5();
     }
 
 //--------------------------------------------------------------------------------------
@@ -131,13 +137,13 @@ public class PlayerManager_L : MonoBehaviour
     void Shot3()
     {
 
-            if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.C))
+        {
+            if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
-                if (Spiral_Cooltime_check == false && Spiral_Duration == false)
-                {
-                    Spiral_Duration = true;
-                }
+                Spiral_Duration = true;
             }
+        }
         if (Spiral_Cooltime_check == false && Spiral_Duration == true)
         {
             count++;
@@ -146,6 +152,7 @@ public class PlayerManager_L : MonoBehaviour
                 //↓ここの数字を変えると一度に出す弾の数を変えられる
                 for (int i = 0; i < 1; i++)
                 {
+                    
                     Vector2 Vec = new Vector2(0.0f, 1.0f);
                     Vec = Quaternion.Euler(0, 0, 5f * count) * Vec;
                     Vec.Normalize();                                    //上の(0,0,Xf)と下の(360/X)のXは合わせるように
@@ -176,10 +183,10 @@ public class PlayerManager_L : MonoBehaviour
             {
                 Spiral_Duration = false;
                 Spiral_Cooltime_check = true;
-                Spiral_Duration_time = 3;
+                Spiral_Duration_time = Spiral_Time;
             }
         }
-        if (Spiral_Cooltime_check == true && Spiral_Cooltime_check == true)
+        if (Spiral_Cooltime_check == true && Spiral_Duration == false)
         {
             Shot_Count_Time_Save -= Time.deltaTime;
             if (Shot_Count_Time_Save <= 0)
@@ -207,14 +214,42 @@ public class PlayerManager_L : MonoBehaviour
 
             if (Shot4_Cooltime_Count == 0)
             {
+
                 GameObject Shot = Instantiate(Shot04);
+                Shot.transform.position = this.transform.position;
+            }
+        }
+    }
+
+
+    //--------------------------------------------------------------------------------------
+
+    void Shot5()
+    {
+        Shot5_Cooltime_Count += Time.deltaTime;
+        if (Input.GetKey(KeyCode.B))
+        {
+            if (Shot5_Cooltime_Count >= Shot_Cooltime)
+            {
+                Shot5_Cooltime_Count = 0;
+            }
+
+            if (Shot5_Cooltime_Count == 0)
+            {
+                GameObject Shot = Instantiate(Shot05);
 
                 Shot.transform.position = this.transform.position;
             }
         }
     }
 
-//--------------------------------------------------------------------------------------
+
+
+
+
+
+    //--------------------------------------------------------------------------------------
+
     //移動
     void Move()
     {
@@ -279,7 +314,7 @@ public class PlayerManager_L : MonoBehaviour
         transform.position = Position;
     }
     
-
+//--------------------------------------------------------------------------------------
 
 
 

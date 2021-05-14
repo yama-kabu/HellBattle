@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Shot_Spiral : MonoBehaviour
 {
-    public float Bullet03;
+    //’e‚Ì‘¬“x
+    public float Shot_Speed = 0;
 
     public GameObject Stage;
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class Shot_Spiral : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, Bullet03, 0);
+        transform.Translate(0, Shot_Speed, 0);
     }
     void OnTriggerExit2D(Collider2D BD)
     {
