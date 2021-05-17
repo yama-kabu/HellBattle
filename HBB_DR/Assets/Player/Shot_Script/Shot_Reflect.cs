@@ -25,19 +25,18 @@ public class Shot_Reflect: MonoBehaviour
 
     void Start()
     {
+        //角度の算出
         float Angle = GetAngle(Player.transform.position, Target.transform.position);
         Debug.Log(Angle);
-
-
-
-
 
         //当たり判定　壁
         //BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
 
         this.Reflect = this.GetComponent<Rigidbody2D>();
         //Reflect.AddForce(new Vector2(300,500));
-          Reflect.AddForce(new Vector2(Angle,Angle));
+        
+        //発射するプログラム　
+          Reflect.AddForce(new Vector2(Angle,500));
     }
 
     void FixedUpdate()
@@ -50,6 +49,7 @@ public class Shot_Reflect: MonoBehaviour
 
         if (cnt <= 4)
         {
+            //反射する角度の計算
             Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, Reflect.contacts[0].normal);
             this.Reflect.velocity = refrectVec;
             if (cnt == 3)
@@ -64,7 +64,7 @@ public class Shot_Reflect: MonoBehaviour
 
 
 
-
+    //自機と敵の自機との角度計算
     float GetAngle(Vector2 Player,Vector2 Target)
     {
         Vector2 Distance = Target - Player;

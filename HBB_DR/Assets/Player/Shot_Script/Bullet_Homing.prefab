@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6824cf02c7f39b2408915fa731913b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shot_Speed: 10
+  Shot_Speed: 5
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  EnemyTrans: {fileID: 1347039681356199032, guid: 091eef0fec0fc4d4bb12775ace6e45db, type: 3}
-  limitSpeed: 5
+  limitSpeed: 3

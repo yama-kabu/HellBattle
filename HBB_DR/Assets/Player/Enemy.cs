@@ -24,69 +24,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+
     }
 
-    void Move()
-    {
-        // 現在位置をPositionに代入
-        Vector2 Position = transform.position;
-        //斜め移動
-        if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.UpArrow))
-        {
-            //左上を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.DownArrow))
-        {
-            //左下を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-            Position.y -= PlayerSpeed.y;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.UpArrow))
-        {
-            //左上を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.DownArrow))
-        {
-            //左下を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-            Position.y -= PlayerSpeed.y;
-        }
 
-        //上下左右移動
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            // 左キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            // 右キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            // 上キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            // 下キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.y -= PlayerSpeed.y;
-        }
-        // 現在の位置に加算減算を行ったPositionを代入する
-        transform.position = Position;
-    }
 }

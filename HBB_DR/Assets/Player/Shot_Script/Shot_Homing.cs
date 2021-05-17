@@ -11,12 +11,12 @@ public class Shot_Homing : MonoBehaviour
     public GameObject Stage;
 
     //追いかける対象のTransform
-    [SerializeField] private Transform EnemyTrans;
+    GameObject enemy;
     //弾の制限速度
     [SerializeField] private float limitSpeed;
 
     //弾のTransform
-    private Transform BulletTrans;                 
+    private Transform BulletTrans;
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Homing;
 
@@ -30,17 +30,20 @@ public class Shot_Homing : MonoBehaviour
         BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
         Homing = GetComponent<Rigidbody2D>();
         BulletTrans = GetComponent<Transform>();
+
+        enemy = GameObject.Find("Temporary_Enemy");
+
     }
 
     // Update is called once per frame
-   /*
+
     void Update()
     {
 
-        transform.Translate(0, Shot_Speed, 0);
+
 
     }
-   */
+
     void OnTriggerExit2D(Collider2D BD)
     {
 
@@ -53,8 +56,15 @@ public class Shot_Homing : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Homing_Time += Time.deltaTime;
+        if (Homing_Time == 10)
+        {
+            Destroy(this.gameObject);
+        }
+
+
         //弾から追いかける対象への方向を計算
-        Vector3 vector3 = EnemyTrans.position - BulletTrans.position;
+        Vector3 vector3 = enemy.transform.position - BulletTrans.position;
         //方向の長さを1に正規化、任意の力をAddForceで加える
         Homing.AddForce(vector3.normalized * Shot_Speed);
         //X方向の速度を制限
@@ -62,9 +72,6 @@ public class Shot_Homing : MonoBehaviour
         //Y方向の速度を制限
         float speedYTemp = Mathf.Clamp(Homing.velocity.y, -limitSpeed, limitSpeed);
         //実際に制限した値を代入
-        Homing.velocity = new Vector3(speedXTemp, speedYTemp);　　　　　　　　　　　
+        Homing.velocity = new Vector3(speedXTemp, speedYTemp);
     }
-
-
-
 }

@@ -34,11 +34,11 @@ public class PlayerManager_L : MonoBehaviour
 
     //ショット３の類
     //クールタイム調整用
-    float Shot_Count_Time_Save = 3;
+    public float Shot_Count_Time_Save = 3;
+    //何秒発射されたか
+    public float Spiral_Duration_time = 3;
     //発射しているか否か判定
     public bool Spiral_Duration = false;
-    //何秒発射されたか
-    float Spiral_Duration_time ;
     //クールタイム中か否か判定
     public bool Spiral_Cooltime_check = false;
 
@@ -68,7 +68,6 @@ public class PlayerManager_L : MonoBehaviour
     // 繰り返す処理
     void Update()
     {
-        Move();
         Shot1();
         Shot2();
         Shot3();
@@ -186,7 +185,7 @@ public class PlayerManager_L : MonoBehaviour
                 Spiral_Duration_time = Spiral_Time;
             }
         }
-        if (Spiral_Cooltime_check == true && Spiral_Duration == false)
+       else if (Spiral_Cooltime_check == true && Spiral_Duration == false)
         {
             Shot_Count_Time_Save -= Time.deltaTime;
             if (Shot_Count_Time_Save <= 0)
@@ -248,72 +247,10 @@ public class PlayerManager_L : MonoBehaviour
 
 
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
-    //移動
-    void Move()
-    {
-        // 現在位置をPositionに代入
-        Vector2 Position = transform.position;
-        //斜め移動
-        if(Input.GetKey("a") & Input.GetKey("w"))
-        {
-            //左上を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-            Position.y += PlayerSpeed.y;
-        }
-        else if(Input.GetKey("a") & Input.GetKey("s"))
-        {
-            //左下を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-            Position.y -= PlayerSpeed.y;
-        }
-        else if (Input.GetKey("d") & Input.GetKey("w"))
-        {
-            //左上を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey("d") & Input.GetKey("s"))
-        {
-            //左下を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-            Position.y -= PlayerSpeed.y;
-        }
 
-        //上下左右移動
-        else if (Input.GetKey("a"))
-        {
-            // 左キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-        }
-        else if (Input.GetKey("d"))
-        { 
-            // 右キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-        }
-        else if (Input.GetKey("w"))
-        { 
-            // 上キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey("s"))
-        { 
-            // 下キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.y -= PlayerSpeed.y;
-        }
-        // 現在の位置に加算減算を行ったPositionを代入する
-        transform.position = Position;
-    }
-    
+
 //--------------------------------------------------------------------------------------
 
 
