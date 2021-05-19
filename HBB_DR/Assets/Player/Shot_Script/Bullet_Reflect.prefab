@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7574906880193734584}
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
-  - component: {fileID: 6024017372550935409}
+  - component: {fileID: 4844711424056456589}
   m_Layer: 0
   m_Name: Bullet_Reflect
   m_TagString: Untagged
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6024017372550935409
+--- !u!114 &4844711424056456589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,5 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a95e4c7a6c9e546906ef2b347b6cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shot_Speed: 8
   Player: {fileID: 7044826878103422148, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
   Target: {fileID: 1347039681356199031, guid: 091eef0fec0fc4d4bb12775ace6e45db, type: 3}

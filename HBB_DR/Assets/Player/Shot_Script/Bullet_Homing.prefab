@@ -137,3 +137,4 @@ MonoBehaviour:
   Shot_Speed: 5
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
   limitSpeed: 3
+  Homing_Time: 10

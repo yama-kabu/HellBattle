@@ -171,8 +171,6 @@ public class PlayerManager_L : MonoBehaviour
                     var f = Instantiate(Shot03, transform.position, e);
                     f.GetComponent<Rigidbody2D>().velocity = Vec;
                 }
-
-
             }
         }
         if (Spiral_Duration == true && Spiral_Cooltime_check == false)
@@ -223,6 +221,7 @@ public class PlayerManager_L : MonoBehaviour
 
     //--------------------------------------------------------------------------------------
 
+    //Reflect
     void Shot5()
     {
         Shot5_Cooltime_Count += Time.deltaTime;
@@ -235,9 +234,20 @@ public class PlayerManager_L : MonoBehaviour
 
             if (Shot5_Cooltime_Count == 0)
             {
-                GameObject Shot = Instantiate(Shot05);
+                
+                GameObject Reflect1 = Instantiate(Shot05);//-45“xŽè‘O‚É”ò‚ñ‚Å‚­
+                Reflect1.transform.position = this.transform.position;
 
-                Shot.transform.position = this.transform.position;
+
+                //GameObject Reflect2 = Instantiate(Shot05);//‚Ü‚Á‚·‚®“G‚É”ò‚ñ‚Å‚­
+                //Reflect2.transform.position = this.transform.position;
+
+
+                //GameObject Reflect3 = Instantiate(Shot05);//+45“x‰œ‚É”ò‚ñ‚Å‚­
+                //Reflect3.transform.position = this.transform.position;
+
+
+
             }
         }
     }
