@@ -239,11 +239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
       propertyPath: homing_Cooltime
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
       propertyPath: Shot4_Cooltime_Count
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
       propertyPath: Spiral_Cooltime_check

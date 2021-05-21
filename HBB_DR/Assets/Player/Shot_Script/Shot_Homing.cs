@@ -23,7 +23,7 @@ public class Shot_Homing : MonoBehaviour
     private Rigidbody2D Homing;
 
     //’Ç‚¢‘±‚¯‚éŽžŠÔ
-    public float Homing_Time = 0;
+    public float Homing_Time = 10;
 
     // Start is called before the first frame update
     void Start()
