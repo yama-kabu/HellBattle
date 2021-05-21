@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneChange : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,14 @@ public class TitleSceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A))
+       TitleChange();
+    }
+
+    public void TitleChange()
+    {
+        if (Input.GetKey(KeyCode.A))
         {
-            SceneManager.LoadScene("CharacterSelectScene1", LoadSceneMode.Single);
+            SceneManager.LoadScene("CharacterSelectScene1");
         }
     }
 }
