@@ -6,7 +6,9 @@ MonoImporter:
   defaultReferences:
   - Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
   - Shot02: {fileID: 7040369304351146246, guid: 8885eddb30021d7409de642fe173c938, type: 3}
-  - Shot03: {instanceID: 0}
+  - Shot03: {fileID: 7040369304351146246, guid: 24497a121462cb544b232b31bf9ec464, type: 3}
+  - Shot04: {fileID: 7040369304351146246, guid: 24c5803a9e6a6f643900120a57b3944d, type: 3}
+  - Shot05: {fileID: 7040369304351146246, guid: 6d5f624cb1238064ea8018a9c9284122, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerManager_L : MonoBehaviour
 {
+    private Rigidbody2D Reflect;
+
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Player_L;
     //自機の移動速度を格納する変数（初期値５）
@@ -14,35 +16,39 @@ public class PlayerManager_L : MonoBehaviour
     public GameObject Shot02;
     public GameObject Shot03;
     public GameObject Shot04;
+    public GameObject Shot05;
+
 
     int count = 0;
 
     //射撃のクールタイム
     public float Shot_Cooltime;//全体のクールタイムを決める
-    float Shot1_Cooltime_Count;//Shot1用のクールタイムカウンター
+    public float homing_Cooltime;
+    //float Shot1_Cooltime_Count;//Shot1用のクールタイムカウンター
     float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
     float Shot3_Cooltime_Count;//Shot3用のクールタイムカウンター
-    float Shot4_Cooltime_Count;//Shot4用のクールタイムカウンター
+    public float Shot4_Cooltime_Count;//Shot4用のクールタイムカウンター
+    float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
+    
 
-    float Velocity_0, theta;
 
 
-
-    //ショット３のクールタイムと自動発射にかんするやつ
-    //float Shot3_Count_Time = 3;
+    //ショット３の類
+    //クールタイム調整用
     float Shot_Count_Time_Save = 3;
+    //何秒発射されたか
+    float Spiral_Duration_time = 3;
+    //発射しているか否か判定
     bool Spiral_Duration = false;
-    float Spiral_Duration_time;
+    //クールタイム中か否か判定
     bool Spiral_Cooltime_check = false;
 
-    //ショット1の速度
-    public float Shot01_Speed = 0;
-    //ショット2の速度
-    public float Shot02_Speed = 0;
+    //スパイラルの一度の操作で続ける時間
+    public int Spiral_Time;
+
     //ショット3の速度
     public float Shot03_Speed = 0;
-    //ショット4の速度
-    public float Shot04_Speed = 0;
+
 
 
     //プレイヤー速度
@@ -63,15 +69,15 @@ public class PlayerManager_L : MonoBehaviour
     // 繰り返す処理
     void Update()
     {
-        Move();
-        Shot1();
+        //Shot1();
         Shot2();
         Shot3();
         Shot4();
+        Shot5();
     }
 
 //--------------------------------------------------------------------------------------
-
+/*
     //Normal
     void Shot1()
     {
@@ -91,14 +97,14 @@ public class PlayerManager_L : MonoBehaviour
             }
         }
     }
-
+*/
 //--------------------------------------------------------------------------------------
 
     //8Way
     void Shot2()
     {
         Shot2_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.Z))
         {
             if (Shot2_Cooltime_Count >= Shot_Cooltime)
             {
@@ -131,13 +137,13 @@ public class PlayerManager_L : MonoBehaviour
     void Shot3()
     {
 
-            if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.X))
+        {
+            if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
-                if (Spiral_Cooltime_check == false && Spiral_Duration == false)
-                {
-                    Spiral_Duration = true;
-                }
+                Spiral_Duration = true;
             }
+        }
         if (Spiral_Cooltime_check == false && Spiral_Duration == true)
         {
             count++;
@@ -146,6 +152,7 @@ public class PlayerManager_L : MonoBehaviour
                 //↓ここの数字を変えると一度に出す弾の数を変えられる
                 for (int i = 0; i < 1; i++)
                 {
+                    
                     Vector2 Vec = new Vector2(0.0f, 1.0f);
                     Vec = Quaternion.Euler(0, 0, 5f * count) * Vec;
                     Vec.Normalize();                                    //上の(0,0,Xf)と下の(360/X)のXは合わせるように
@@ -165,8 +172,6 @@ public class PlayerManager_L : MonoBehaviour
                     var f = Instantiate(Shot03, transform.position, e);
                     f.GetComponent<Rigidbody2D>().velocity = Vec;
                 }
-
-
             }
         }
         if (Spiral_Duration == true && Spiral_Cooltime_check == false)
@@ -176,10 +181,10 @@ public class PlayerManager_L : MonoBehaviour
             {
                 Spiral_Duration = false;
                 Spiral_Cooltime_check = true;
-                Spiral_Duration_time = 3;
+                Spiral_Duration_time = Spiral_Time;
             }
         }
-        if (Spiral_Cooltime_check == true && Spiral_Cooltime_check == true)
+       else if (Spiral_Cooltime_check == true && Spiral_Duration == false)
         {
             Shot_Count_Time_Save -= Time.deltaTime;
             if (Shot_Count_Time_Save <= 0)
@@ -194,13 +199,13 @@ public class PlayerManager_L : MonoBehaviour
 
     }
 //--------------------------------------------------------------------------------------
-
+//homing
     void Shot4()
     {
         Shot4_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKey(KeyCode.C))
         {
-            if (Shot4_Cooltime_Count >= Shot_Cooltime)
+            if (Shot4_Cooltime_Count >= homing_Cooltime)
             {
                 Shot4_Cooltime_Count = 0;
             }
@@ -214,72 +219,50 @@ public class PlayerManager_L : MonoBehaviour
         }
     }
 
-//--------------------------------------------------------------------------------------
-    //移動
-    void Move()
+
+    //--------------------------------------------------------------------------------------
+
+    //Reflect
+    void Shot5()
     {
-        // 現在位置をPositionに代入
-        Vector2 Position = transform.position;
-        //斜め移動
-        if(Input.GetKey("a") & Input.GetKey("w"))
+        Shot5_Cooltime_Count += Time.deltaTime;
+        if (Input.GetKey(KeyCode.V))
         {
-            //左上を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-            Position.y += PlayerSpeed.y;
-        }
-        else if(Input.GetKey("a") & Input.GetKey("s"))
-        {
-            //左下を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
-            Position.y -= PlayerSpeed.y;
-        }
-        else if (Input.GetKey("d") & Input.GetKey("w"))
-        {
-            //左上を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey("d") & Input.GetKey("s"))
-        {
-            //左下を押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-            Position.y -= PlayerSpeed.y;
-        }
+            if (Shot5_Cooltime_Count >= Shot_Cooltime)
+            {
+                Shot5_Cooltime_Count = 0;
+            }
 
-        //上下左右移動
-        else if (Input.GetKey("a"))
-        {
-            // 左キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x -= PlayerSpeed.x;
+            if (Shot5_Cooltime_Count == 0)
+            {
+                
+                //GameObject Reflect1 = Instantiate(Shot05);//-45度手前に飛んでく
+                //Reflect1.transform.position = this.transform.position;
+
+
+                GameObject Reflect2 = Instantiate(Shot05);//まっすぐ敵に飛んでく
+                Reflect2.transform.position = this.transform.position;
+
+
+                //GameObject Reflect3 = Instantiate(Shot05);//+45度奥に飛んでく
+                //Reflect3.transform.position = this.transform.position;
+
+
+
+            }
         }
-        else if (Input.GetKey("d"))
-        { 
-            // 右キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.x += PlayerSpeed.x;
-        }
-        else if (Input.GetKey("w"))
-        { 
-            // 上キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.y += PlayerSpeed.y;
-        }
-        else if (Input.GetKey("s"))
-        { 
-            // 下キーを押し続けていたら
-            // 代入したPositionに対して加算減算を行う
-            Position.y -= PlayerSpeed.y;
-        }
-        // 現在の位置に加算減算を行ったPositionを代入する
-        transform.position = Position;
     }
-    
 
+
+
+
+
+
+//--------------------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------------------
 
 
 

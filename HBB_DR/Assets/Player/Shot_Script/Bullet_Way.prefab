@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 315816774375343906}
   - component: {fileID: 8383479698049303030}
   m_Layer: 0
-  m_Name: Bullet2
+  m_Name: Bullet_Way
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260b630fb23672a4b9f1c14c84464afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet02: 0.01
-  Stage: {fileID: 4634232939911925230, guid: e5c1a78f36e726b409c3438e33246e08, type: 3}
+  Shot_Speed: 0.01
+  Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
