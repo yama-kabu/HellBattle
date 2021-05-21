@@ -214,12 +214,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
-      propertyPath: Shot05
+      propertyPath: Shot01
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
+    - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
+      propertyPath: Shot02
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 8885eddb30021d7409de642fe173c938, type: 3}
+    - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
+      propertyPath: Shot03
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 24497a121462cb544b232b31bf9ec464, type: 3}
+    - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
+      propertyPath: Shot04
       value: 
       objectReference: {fileID: 7040369304351146246, guid: 6d5f624cb1238064ea8018a9c9284122, type: 3}
     - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
+      propertyPath: Shot05
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 24c5803a9e6a6f643900120a57b3944d, type: 3}
+    - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
       propertyPath: Spiral_Duration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
+      propertyPath: homing_Cooltime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
+      propertyPath: Shot4_Cooltime_Count
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4381327981905033700, guid: 17905915863f28146b9e92ca9ad2e879, type: 3}
       propertyPath: Spiral_Cooltime_check

@@ -8,6 +8,8 @@ public class Shot_Homing : MonoBehaviour
     //’e‚Ì‘¬“x
     public float Shot_Speed = 0;
 
+    //”ò‚ÑŽU‚é—p‚Ì’e
+    public GameObject Shot01;
     public GameObject Stage;
 
     //’Ç‚¢‚©‚¯‚é‘ÎÛ‚ÌTransform
@@ -37,24 +39,39 @@ public class Shot_Homing : MonoBehaviour
     }
 
     // Update is called once per frame
-
     void Update()
     {
 
-        Homing_Time += Time.deltaTime;
-        if (Homing_Time >= 10)
+        Homing_Time -= Time.deltaTime;
+        if (Homing_Time <= 0)
         {
+            Homing.velocity = new Vector3(0f, 0f);
             Destroy(this.gameObject);
-        }
 
+            for (int i = 1; i <= 3; i++)
+            {
+                float Shot_Angle = i * 120;//•ÏXŽž‚Í22.5(‘S•ûŒü‚Å‚Í‚È‚­‘O‚¾‚¯‚Ìê‡)
+
+                Vector3 Angle = transform.eulerAngles;
+                Angle.x = transform.rotation.x;
+                Angle.y = transform.rotation.y;
+                Angle.z = Shot_Angle;
+
+                GameObject Shot2 = Instantiate(Shot01) as GameObject;
+                Shot2.transform.rotation = Quaternion.Euler(Angle);
+                Shot2.transform.position = this.transform.position;
+            }
+        }
     }
 
-    void OnTriggerExit2D(Collider2D BD)
+    void OnTriggerEnter2D(Collider2D BD)
     {
 
         if (BD.gameObject.tag == "Enemy")
         {
+
             Destroy(this.gameObject);
+
         }
 
     }

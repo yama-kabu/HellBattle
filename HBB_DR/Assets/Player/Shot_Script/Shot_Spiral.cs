@@ -27,6 +27,16 @@ public class Shot_Spiral : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    void OnTriggerEnter2D(Collider2D BD)
+    {
+
+        if (BD.gameObject.tag == "Enemy")
+        {
+
+            Destroy(this.gameObject);
+        }
 
     }
+
 }

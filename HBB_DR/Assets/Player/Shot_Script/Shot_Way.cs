@@ -30,4 +30,14 @@ public class Shot_Way : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D BD)
+    {
+
+        if (BD.gameObject.tag == "Enemy")
+        {
+
+            Destroy(this.gameObject);
+        }
+
+    }
 }

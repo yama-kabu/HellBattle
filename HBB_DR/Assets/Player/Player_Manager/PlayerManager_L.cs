@@ -23,24 +23,25 @@ public class PlayerManager_L : MonoBehaviour
 
     //射撃のクールタイム
     public float Shot_Cooltime;//全体のクールタイムを決める
-    float Shot1_Cooltime_Count;//Shot1用のクールタイムカウンター
+    public float homing_Cooltime;
+    //float Shot1_Cooltime_Count;//Shot1用のクールタイムカウンター
     float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
     float Shot3_Cooltime_Count;//Shot3用のクールタイムカウンター
-    float Shot4_Cooltime_Count;//Shot4用のクールタイムカウンター
+    public float Shot4_Cooltime_Count;//Shot4用のクールタイムカウンター
     float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
-    float Velocity_0, theta;
+    
 
 
 
     //ショット３の類
     //クールタイム調整用
-    public float Shot_Count_Time_Save = 3;
+    float Shot_Count_Time_Save = 3;
     //何秒発射されたか
-    public float Spiral_Duration_time = 3;
+    float Spiral_Duration_time = 3;
     //発射しているか否か判定
-    public bool Spiral_Duration = false;
+    bool Spiral_Duration = false;
     //クールタイム中か否か判定
-    public bool Spiral_Cooltime_check = false;
+    bool Spiral_Cooltime_check = false;
 
     //スパイラルの一度の操作で続ける時間
     public int Spiral_Time;
@@ -68,7 +69,7 @@ public class PlayerManager_L : MonoBehaviour
     // 繰り返す処理
     void Update()
     {
-        Shot1();
+        //Shot1();
         Shot2();
         Shot3();
         Shot4();
@@ -76,7 +77,7 @@ public class PlayerManager_L : MonoBehaviour
     }
 
 //--------------------------------------------------------------------------------------
-
+/*
     //Normal
     void Shot1()
     {
@@ -96,14 +97,14 @@ public class PlayerManager_L : MonoBehaviour
             }
         }
     }
-
+*/
 //--------------------------------------------------------------------------------------
 
     //8Way
     void Shot2()
     {
         Shot2_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.Z))
         {
             if (Shot2_Cooltime_Count >= Shot_Cooltime)
             {
@@ -136,7 +137,7 @@ public class PlayerManager_L : MonoBehaviour
     void Shot3()
     {
 
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.X))
         {
             if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
@@ -198,21 +199,21 @@ public class PlayerManager_L : MonoBehaviour
 
     }
 //--------------------------------------------------------------------------------------
-
+//homing
     void Shot4()
     {
         Shot4_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKey(KeyCode.C))
         {
-            if (Shot4_Cooltime_Count >= Shot_Cooltime)
+            if (Shot4_Cooltime_Count >= homing_Cooltime)
             {
                 Shot4_Cooltime_Count = 0;
             }
 
             if (Shot4_Cooltime_Count == 0)
             {
-
                 GameObject Shot = Instantiate(Shot04);
+
                 Shot.transform.position = this.transform.position;
             }
         }
@@ -225,7 +226,7 @@ public class PlayerManager_L : MonoBehaviour
     void Shot5()
     {
         Shot5_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKey(KeyCode.V))
         {
             if (Shot5_Cooltime_Count >= Shot_Cooltime)
             {
@@ -235,12 +236,12 @@ public class PlayerManager_L : MonoBehaviour
             if (Shot5_Cooltime_Count == 0)
             {
                 
-                GameObject Reflect1 = Instantiate(Shot05);//-45度手前に飛んでく
-                Reflect1.transform.position = this.transform.position;
+                //GameObject Reflect1 = Instantiate(Shot05);//-45度手前に飛んでく
+                //Reflect1.transform.position = this.transform.position;
 
 
-                //GameObject Reflect2 = Instantiate(Shot05);//まっすぐ敵に飛んでく
-                //Reflect2.transform.position = this.transform.position;
+                GameObject Reflect2 = Instantiate(Shot05);//まっすぐ敵に飛んでく
+                Reflect2.transform.position = this.transform.position;
 
 
                 //GameObject Reflect3 = Instantiate(Shot05);//+45度奥に飛んでく

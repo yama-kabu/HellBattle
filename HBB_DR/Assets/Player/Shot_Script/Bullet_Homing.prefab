@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7574906880193734584}
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
-  - component: {fileID: -5044745554585945420}
+  - component: {fileID: -7746932509687098619}
   m_Layer: 0
   m_Name: Bullet_Homing
   m_TagString: Untagged
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5044745554585945420
+--- !u!114 &-7746932509687098619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6824cf02c7f39b2408915fa731913b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shot_Speed: 5
+  Shot_Speed: 10
+  Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  limitSpeed: 3
-  Homing_Time: 10
+  limitSpeed: 1
+  Homing_Time: 2

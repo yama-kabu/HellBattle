@@ -34,5 +34,15 @@ public class Shot_Normal : MonoBehaviour
         }
 
     }
+    void OnTriggerEnter2D(Collider2D BD)
+    {
+
+        if (BD.gameObject.tag == "Enemy")
+        {
+
+            Destroy(this.gameObject);
+        }
+
+    }
 
 }

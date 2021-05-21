@@ -58,11 +58,13 @@
     <Compile Include="Assets\UI\Script\Move1.cs" />
     <Compile Include="Assets\UI\Script\PlayerHPbar.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Reflect1.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Shot_Reflect3.cs" />
     <Compile Include="Assets\UI\Script\Move3.cs" />
     <Compile Include="Assets\UI\Script\SceneMove.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Way.cs" />
     <Compile Include="Assets\Player\Player_Manager\PlayerManager_L.cs" />
     <Compile Include="Assets\UI\Script\Move2.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Shot_Reflect2.cs" />
     <Compile Include="Assets\UI\Script\TitleSceneChange.cs" />
     <Compile Include="Assets\UI\Script\EnemyHPbar.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Spiral.cs" />
@@ -73,8 +75,6 @@
     <Compile Include="Assets\Player\Shot_Script\Shot_Normal.cs" />
     <Compile Include="Assets\Player\Enemy.cs" />
     <Compile Include="Assets\Player\Player_Manager\PlayerManager_R.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Shot_Reflect2.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Shot_Reflect3.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

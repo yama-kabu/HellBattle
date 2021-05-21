@@ -63,4 +63,15 @@ public class Shot_Reflect1: MonoBehaviour
             cnt++;
         }
     }
+    void OnTriggerEnter2D(Collider2D BD)
+    {
+
+        if (BD.gameObject.tag == "Enemy")
+        {
+
+            Destroy(this.gameObject);
+        }
+
+    }
 }
+
