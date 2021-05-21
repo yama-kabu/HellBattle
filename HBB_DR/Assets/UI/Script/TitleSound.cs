@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneMove : MonoBehaviour
+public class TitleSound : MonoBehaviour
 {
-    
+    AudioSource audioSource;
+    public AudioClip clickSE;
     private void Awake()
     {
         DontDestroyOnLoad(this);//アタッチしたやつを消えないようにする
@@ -14,20 +15,17 @@ public class SceneMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Z))
+        if(SceneManager.GetActiveScene().name == "TitleScene")
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            SceneManager.LoadScene("GameScene");
-            
+            audioSource.PlayOneShot(clickSE);
         }
-        if(Input.GetKey(KeyCode.X))
-        {
-            SceneManager.LoadScene("TitleScene");
-        }
+        
     }
 }
