@@ -25,6 +25,8 @@ public class Shot_Homing : MonoBehaviour
     //í«Ç¢ë±ÇØÇÈéûä‘
     public float Homing_Time = 10;
 
+//--------------------------------------------------------------------------------------
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +36,11 @@ public class Shot_Homing : MonoBehaviour
         BulletTrans = GetComponent<Transform>();
 
         //                    í«Ç¢Ç©ÇØÇÈëŒè€ÇÇ±Ç±Ç≈åàÇﬂÇÈ
-        enemy = GameObject.Find("Temporary_Enemy");
+        enemy = GameObject.Find("Temporary_Enemy_KARI");
 
     }
+
+//--------------------------------------------------------------------------------------
 
     // Update is called once per frame
     void Update()
@@ -64,17 +68,20 @@ public class Shot_Homing : MonoBehaviour
         }
     }
 
+    //--------------------------------------------------------------------------------------
+
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Enemy")
+        if (BD.gameObject.tag == "Target")
         {
 
             Destroy(this.gameObject);
-
         }
 
     }
+
+    //--------------------------------------------------------------------------------------
 
     private void FixedUpdate()
     {
@@ -90,4 +97,7 @@ public class Shot_Homing : MonoBehaviour
         //é¿ç€Ç…êßå¿ÇµÇΩílÇë„ì¸
         Homing.velocity = new Vector3(speedXTemp, speedYTemp);
     }
+
+//--------------------------------------------------------------------------------------
+
 }
