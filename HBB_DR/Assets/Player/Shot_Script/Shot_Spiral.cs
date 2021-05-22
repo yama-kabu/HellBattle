@@ -9,6 +9,9 @@ public class Shot_Spiral : MonoBehaviour
     public float Shot_Speed = 0;
 
     public GameObject Stage;
+
+//--------------------------------------------------------------------------------------
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +19,16 @@ public class Shot_Spiral : MonoBehaviour
         BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
     }
 
+//--------------------------------------------------------------------------------------
+
     // Update is called once per frame
     void Update()
     {
         transform.Translate(0, Shot_Speed, 0);
     }
+
+//--------------------------------------------------------------------------------------
+
     void OnTriggerExit2D(Collider2D BD)
     {
         if (BD.gameObject.tag == "BuckStage")
@@ -28,15 +36,20 @@ public class Shot_Spiral : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    //--------------------------------------------------------------------------------------
+
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Enemy")
+        if (BD.gameObject.tag == "Target")
         {
 
             Destroy(this.gameObject);
         }
 
     }
+
+    //--------------------------------------------------------------------------------------
 
 }

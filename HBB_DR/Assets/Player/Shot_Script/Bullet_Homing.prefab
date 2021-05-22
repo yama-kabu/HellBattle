@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
   - component: {fileID: -7746932509687098619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet_Homing
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,5 +137,5 @@ MonoBehaviour:
   Shot_Speed: 10
   Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  limitSpeed: 1
+  limitSpeed: 2
   Homing_Time: 10

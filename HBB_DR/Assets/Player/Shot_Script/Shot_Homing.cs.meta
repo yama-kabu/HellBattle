@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - Shot01: {fileID: 7040369304351146246, guid: 6d5f624cb1238064ea8018a9c9284122, type: 3}
   - Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  - EnemyTrans: {fileID: 1347039681356199032, guid: 091eef0fec0fc4d4bb12775ace6e45db, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

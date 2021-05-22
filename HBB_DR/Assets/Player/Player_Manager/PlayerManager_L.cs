@@ -9,14 +9,15 @@ public class PlayerManager_L : MonoBehaviour
 
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Player_L;
-    //自機の移動速度を格納する変数（初期値５）
-    public float Speed = 5;
+
     //Player_Shot プレハブ
     public GameObject Shot01;
     public GameObject Shot02;
     public GameObject Shot03;
     public GameObject Shot04;
-    public GameObject Shot05;
+    public GameObject Shot05_1;
+    public GameObject Shot05_2;
+    public GameObject Shot05_3;
 
 
     int count = 0;
@@ -49,10 +50,6 @@ public class PlayerManager_L : MonoBehaviour
     //ショット3の速度
     public float Shot03_Speed = 0;
 
-
-
-    //プレイヤー速度
-    public Vector2 PlayerSpeed = new Vector2(0.005f, 0.005f);
 
 //--------------------------------------------------------------------------------------
 
@@ -147,7 +144,8 @@ public class PlayerManager_L : MonoBehaviour
         if (Spiral_Cooltime_check == false && Spiral_Duration == true)
         {
             count++;
-            if (count % 50 == 0)
+                      //↓５０の倍数で上げていくと出る球の量が変わる
+            if (count % 100 == 0)
             {
                 //↓ここの数字を変えると一度に出す弾の数を変えられる
                 for (int i = 0; i < 1; i++)
@@ -220,7 +218,7 @@ public class PlayerManager_L : MonoBehaviour
     }
 
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     //Reflect
     void Shot5()
@@ -235,18 +233,18 @@ public class PlayerManager_L : MonoBehaviour
 
             if (Shot5_Cooltime_Count == 0)
             {
+
+
+                GameObject Reflect1 = Instantiate(Shot05_1);//まっすぐ敵に飛んでく
+                Reflect1.transform.position = this.transform.position;
                 
-                //GameObject Reflect1 = Instantiate(Shot05);//-45度手前に飛んでく
-                //Reflect1.transform.position = this.transform.position;
 
-
-                GameObject Reflect2 = Instantiate(Shot05);//まっすぐ敵に飛んでく
+                GameObject Reflect2 = Instantiate(Shot05_2);//-45度手前に飛んでく
                 Reflect2.transform.position = this.transform.position;
 
 
-                //GameObject Reflect3 = Instantiate(Shot05);//+45度奥に飛んでく
-                //Reflect3.transform.position = this.transform.position;
-
+                GameObject Reflect3 = Instantiate(Shot05_3);//+45度奥に飛んでく
+                Reflect3.transform.position = this.transform.position;
 
 
             }

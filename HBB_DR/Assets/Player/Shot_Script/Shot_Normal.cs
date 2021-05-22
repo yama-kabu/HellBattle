@@ -10,11 +10,15 @@ public class Shot_Normal : MonoBehaviour
 
     public GameObject Stage;
 
+//--------------------------------------------------------------------------------------
+
     void Start()
     {
         //ìñÇΩÇËîªíËÅ@ï«
         BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
     }
+
+//--------------------------------------------------------------------------------------
 
     // Update is called once per frame
     void Update()
@@ -23,6 +27,9 @@ public class Shot_Normal : MonoBehaviour
         transform.Translate(0, Shot_Speed, 0);
 
     }
+
+//--------------------------------------------------------------------------------------
+
     void OnTriggerExit2D(Collider2D BD)
     {
 
@@ -34,15 +41,20 @@ public class Shot_Normal : MonoBehaviour
         }
 
     }
+
+    //--------------------------------------------------------------------------------------
+
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Enemy")
+        if (BD.gameObject.tag == "Target")
         {
 
             Destroy(this.gameObject);
         }
 
     }
+
+    //--------------------------------------------------------------------------------------
 
 }
