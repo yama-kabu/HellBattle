@@ -134,9 +134,9 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal_R
-    descriptiveName: Stic R left
-    descriptiveNegativeName: Stic R right
+    m_Name: Horizontal_R1
+    descriptiveName: stic R left
+    descriptiveNegativeName: stic R right
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
@@ -148,11 +148,11 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
-    m_Name: Vertical_R
-    descriptiveName: Stick R up
-    descriptiveNegativeName: Stic R down
+    m_Name: Vertical_R1
+    descriptiveName: stick R up
+    descriptiveNegativeName: stic R down
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
@@ -164,4 +164,100 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Horizontal_L1
+    descriptiveName: stic L left
+    descriptiveNegativeName: stic L right
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Vertical_L1
+    descriptiveName: stick L up
+    descriptiveNegativeName: stic L down
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Horizontal_R2
+    descriptiveName: stic R left
+    descriptiveNegativeName: stic R right
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: Vertical_R2
+    descriptiveName: stick R up
+    descriptiveNegativeName: stic R down
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: Horizontal_L2
+    descriptiveName: stic L left
+    descriptiveNegativeName: stic L right
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Vertical_L2
+    descriptiveName: stick L up
+    descriptiveNegativeName: stic L down
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 3
