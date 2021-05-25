@@ -8,7 +8,7 @@ public class PlayerMove_L2 : MonoBehaviour
     [SerializeField]
     private float speed = 3;
     [SerializeField]
-    private float maxY = 3.74f, minY = -3.74f, maxX = -2.74f, minX = -7.27f;
+    private float maxY = 3.77f, minY = -3.77f, maxX = 7.26f, minX = 2.74f;
     private Rigidbody2D rd;
 
     //--------------------------------------------------------------------------------------

@@ -8,6 +8,10 @@ TagManager:
   - BackStage
   - Bullet
   - Target
+  - Player_L1
+  - Player_L2
+  - Player_R1
+  - Player_R2
   layers:
   - Default
   - TransparentFX
