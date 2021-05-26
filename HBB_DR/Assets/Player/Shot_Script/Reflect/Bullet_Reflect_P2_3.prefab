@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7574906880193734584}
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
-  - component: {fileID: 3900957491917678506}
+  - component: {fileID: 7564097326132603908}
   m_Layer: 8
   m_Name: Bullet_Reflect_P2_3
-  m_TagString: Bullet
+  m_TagString: Bullet_3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3900957491917678506
+--- !u!114 &7564097326132603908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +131,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7040369304351146246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4d44b88d947b543ba1c3ea5c02e5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f2f4bb3cdbfa5f4da7c0ff2b0223c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Shot_Speed: 3
-  Player: {fileID: 6963881700659815750, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
-  Target: {fileID: 4691824577916239921, guid: c78253297ff72c54284071a81701147a, type: 3}
+  Player: {fileID: 0}
+  Target: {fileID: 0}

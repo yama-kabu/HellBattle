@@ -6,12 +6,14 @@ TagManager:
   tags:
   - BuckStage
   - BackStage
-  - Bullet
   - Target
   - Player_L1
   - Player_L2
   - Player_R1
   - Player_R2
+  - Bullet_1
+  - Bullet_2
+  - Bullet_3
   layers:
   - Default
   - TransparentFX

@@ -43,7 +43,7 @@ public class Shot_Way : MonoBehaviour
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Target")
+        if (BD.gameObject.tag == "Player_R1" || BD.gameObject.tag == "Player_R2")
         {
 
             Destroy(this.gameObject);

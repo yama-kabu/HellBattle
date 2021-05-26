@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7574906880193734584}
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
-  - component: {fileID: -7408005144463838896}
+  - component: {fileID: 312627915868603915}
   m_Layer: 8
   m_Name: Bullet_Homing_P2
-  m_TagString: Bullet
+  m_TagString: Bullet_2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7408005144463838896
+--- !u!114 &312627915868603915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,11 +131,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7040369304351146246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805830a9e2ff44648a237968fd8dc196, type: 3}
+  m_Script: {fileID: 11500000, guid: 6824cf02c7f39b2408915fa731913b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shot_Speed: 3
+  Shot_Speed: 5
   Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  limitSpeed: 5
+  limitSpeed: 1
   Homing_Time: 10
