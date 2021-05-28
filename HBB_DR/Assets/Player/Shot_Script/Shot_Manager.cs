@@ -32,33 +32,33 @@ public class Shot_Manager : MonoBehaviour
     float Shot2_Cooltime_Count;//Shot3用のクールタイムカウンター
     float Shot3_Cooltime_Count;//Shot4用のクールタイムカウンター
     float Shot4_Cooltime_Count;//Shot5用のクールタイムカウンター
-    float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
+    //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
 
     int Spiral_count = 0;
-    int Barrage_count = 0;
+    //int Barrage_count = 0;
 
     //ショット３の類
     //クールタイム調整用
     float Shot_Count_Time_Save = 3;
     //何秒発射されたか
     float Spiral_Duration_time = 3;
-    float Barrage_Duration_time = 3;
+    //float Barrage_Duration_time = 3;
     //発射しているか否か判定
     bool Spiral_Duration = false;
-    bool Barrage_Duration = false;
+    //bool Barrage_Duration = false;
 
     //クールタイム中か否か判定
     bool Spiral_Cooltime_check = false;
-    bool Barrage_Cooltime_check = false;
+    //bool Barrage_Cooltime_check = false;
 
     //スパイラルの一度の操作で続ける時間
     public int Spiral_Time;
     //バラージの井地尾の操作で続ける時間
-    public int Barrage_Time;
+    //public int Barrage_Time;
 
     //ショット2の速度
     public float Shot02_Speed = 0;
-    public float Shot05_Speed = 0;
+    //public float Shot05_Speed = 0;
 //--------------------------------------------------------------------------------------
 
     void Start()
