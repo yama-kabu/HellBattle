@@ -10,11 +10,6 @@ public class Player_Manager_L : MonoBehaviour
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Player_L;
 
-
-
-
-
-
 //--------------------------------------------------------------------------------------
 
     // ゲームのスタート時の処理
@@ -30,10 +25,12 @@ public class Player_Manager_L : MonoBehaviour
     void Update()
     {
         Shot_Manager s_Manager = GetComponent<Shot_Manager>();
-        s_Manager.Shot2();
-        s_Manager.Shot3();
-        s_Manager.Shot4();
-        s_Manager.Shot5();
+        s_Manager.Shot1();//Way
+        s_Manager.Shot2();//spiral
+        s_Manager.Shot3();//Homing
+        s_Manager.Shot4();//Reflect
+        //s_Manager.Shot5();//Barrage
+        ////////////////////↓Shot6からお願いします
     }
 
 //--------------------------------------------------------------------------------------

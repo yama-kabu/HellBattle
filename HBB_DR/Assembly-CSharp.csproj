@@ -61,19 +61,16 @@
     <Compile Include="Assets\Player\Shot_Script\Reflect\Shot_ReflectP1.cs" />
     <Compile Include="Assets\UI\Script\Move3.cs" />
     <Compile Include="Assets\UI\Script\SceneMove.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Shot_Way.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Shot_test.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Shot_Judgment.cs" />
+    <Compile Include="Assets\Player\Player_Manager\Player_Move.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Manager_L.cs" />
     <Compile Include="Assets\UI\Script\Move2.cs" />
     <Compile Include="Assets\UI\Script\TitleSceneChange.cs" />
     <Compile Include="Assets\UI\Script\EnemyHPbar.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Shot_Spiral.cs" />
     <Compile Include="Assets\Event\EventManager.cs" />
     <Compile Include="Assets\Player\Shot_Script\Homing\Shot_Homing.cs" />
-    <Compile Include="Assets\Player\Player_Manager\Shot_Manager.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Shot_Normal.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Shot_Manager.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Manager_R.cs" />
-    <Compile Include="Assets\Player\Player_Manager\Player_Move.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

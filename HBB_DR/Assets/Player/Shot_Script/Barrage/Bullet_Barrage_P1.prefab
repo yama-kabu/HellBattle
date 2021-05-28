@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7574906880193734584}
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
-  - component: {fileID: 312627915868603915}
+  - component: {fileID: -194091792705503548}
   m_Layer: 8
-  m_Name: Bullet_Homing_P2
-  m_TagString: Bullet_2
+  m_Name: Bullet_Barrage
+  m_TagString: Bullet_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 0.3537736, g: 0.9290418, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.514151, b: 0.8742509, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &312627915868603915
+--- !u!114 &-194091792705503548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,11 +131,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7040369304351146246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6824cf02c7f39b2408915fa731913b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 260b630fb23672a4b9f1c14c84464afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shot_Speed: 10
-  Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
+  Shot_Speed: 0.01
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  limitSpeed: 2
-  Homing_Time: 10
