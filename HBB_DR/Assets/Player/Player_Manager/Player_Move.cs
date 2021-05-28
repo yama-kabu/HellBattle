@@ -14,7 +14,7 @@ public class Player_Move : MonoBehaviour
 
     private Rigidbody2D rd;
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +24,12 @@ public class Player_Move : MonoBehaviour
         if (this.gameObject.CompareTag("Player_L1") ||  this.gameObject.CompareTag("Player_R2"))
         {
             //L1
-            maxY = 3.74f; minY = -3.74f; maxX = -2.74f; minX = -7.27f;
+            maxY = 3.77f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
         }
         else if (this.gameObject.CompareTag("Player_L2") || this.gameObject.CompareTag("Player_R1"))
         {
             //L2
-            maxY = 3.77f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
+            maxY = 3.74f; minY = -3.74f; maxX = -2.74f; minX = -7.27f;
         }
 
     }
@@ -57,6 +57,8 @@ public class Player_Move : MonoBehaviour
             MovePlayer_R2();
         }
     }
+
+//--------------------------------------------------------------------------------------
 
     void MovePlayer_L1()
     {
@@ -117,6 +119,8 @@ public class Player_Move : MonoBehaviour
         }
     }
 
+//--------------------------------------------------------------------------------------
+
     void MovePlayer_L2()
     {
         //もし上矢印キーが押されたら
@@ -176,7 +180,7 @@ public class Player_Move : MonoBehaviour
         }
     }
 
-
+//--------------------------------------------------------------------------------------
 
     void MovePlayer_R1()
     {
@@ -236,6 +240,9 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos;
         }
     }
+
+//--------------------------------------------------------------------------------------
+
     void MovePlayer_R2()
     {
         //もし上矢印キーが押されたら
@@ -295,9 +302,6 @@ public class Player_Move : MonoBehaviour
         }
     }
 
-
-
-}
-
 //--------------------------------------------------------------------------------------
+}
 

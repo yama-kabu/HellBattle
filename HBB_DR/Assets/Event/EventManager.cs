@@ -67,7 +67,7 @@ public class EventManager : MonoBehaviour
         {
             if (SESwitch == false)
             {
-                Aud.PlayOneShot(StartSE);
+                //Aud.PlayOneShot(StartSE);
                 SESwitch = true;
             }
         }
