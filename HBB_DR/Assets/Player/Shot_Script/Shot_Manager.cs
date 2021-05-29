@@ -91,7 +91,7 @@ public class Shot_Manager : MonoBehaviour
     public void Shot1()
     {
         Shot1_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Z) || Input.GetButtonDown("Button_A1"))
         {
             if (Shot1_Cooltime_Count >= Shot_Cooltime)
             {
@@ -124,7 +124,7 @@ public class Shot_Manager : MonoBehaviour
     public void Shot2()
     {
 
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B1"))
         {
             if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
@@ -191,7 +191,7 @@ public class Shot_Manager : MonoBehaviour
     public void Shot3()
     {
         Shot3_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.C) || Input.GetButtonDown("Button_X1"))
         {
             if (Shot3_Cooltime_Count >= homing_Cooltime)
             {
@@ -214,7 +214,7 @@ public class Shot_Manager : MonoBehaviour
     public void Shot4()
     {
         Shot4_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y1"))
         {
 
             if (Shot4_Cooltime_Count >= Shot_Cooltime)
