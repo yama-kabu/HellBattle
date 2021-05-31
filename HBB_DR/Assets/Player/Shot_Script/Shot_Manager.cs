@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shot_Manager : MonoBehaviour
 {
+
     //Player_Shot プレハブ
     //public GameObject Shot01;
     public GameObject Shot01;
@@ -14,6 +15,7 @@ public class Shot_Manager : MonoBehaviour
     public GameObject Shot04_2;
     public GameObject Shot04_3;
     public GameObject Shot05;
+    public GameObject Shot06;
 
 //--------------------------------------------------------------------------------------
 
@@ -25,14 +27,16 @@ public class Shot_Manager : MonoBehaviour
 //--------------------------------------------------------------------------------------
 
     //射撃のクールタイム
-    public float Shot_Cooltime;//全体のクールタイムを決める
-    public float homing_Cooltime;
+    public float Shot_Cooltime = 3;//全体のクールタイムを決める
+    public float homing_Cooltime = 10;
+    public float Random_homing_Cooltime = 1;
 
-    float Shot1_Cooltime_Count;//Shot2用のクールタイムカウンター
-    //float Shot2_Cooltime_Count;//Shot3用のクールタイムカウンター
-    float Shot3_Cooltime_Count;//Shot4用のクールタイムカウンター
-    float Shot4_Cooltime_Count;//Shot5用のクールタイムカウンター
+    float Shot1_Cooltime_Count = 100;//Shot1用のクールタイムカウンター
+    //float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
+    public float Shot3_Cooltime_Count = 100;//Shot3用のクールタイムカウンター
+    float Shot4_Cooltime_Count = 100;//Shot4用のクールタイムカウンター
     //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
+    float Shot6_Cooltime_Count = 100;//Shot6用のクールタイムカウンター
 
     int Spiral_count = 0;
     int Barrage_count = 0;
@@ -43,6 +47,7 @@ public class Shot_Manager : MonoBehaviour
     //何秒発射されたか
     float Spiral_Duration_time = 3;
     float Barrage_Duration_time = 3;
+
     //発射しているか否か判定
     bool Spiral_Duration = false;
     bool Barrage_Duration = false;
@@ -51,6 +56,7 @@ public class Shot_Manager : MonoBehaviour
     bool Spiral_Cooltime_check = false;
     bool Barrage_Cooltime_check = false;
 
+
     //スパイラルの一度の操作で続ける時間
     public int Spiral_Time;
     //バラージの井地尾の操作で続ける時間
@@ -58,7 +64,8 @@ public class Shot_Manager : MonoBehaviour
 
     //ショット2の速度
     public float Shot02_Speed = 0.1f;
-    public float Shot05_Speed = 0;
+    public float Shot05_Speed = 0.1f;
+
 //--------------------------------------------------------------------------------------
 
     void Start()
@@ -73,7 +80,9 @@ public class Shot_Manager : MonoBehaviour
         {
             Player = GameObject.Find("Player_L2");
             Target = GameObject.Find("Player_R1");
-        }   
+        }
+
+
     }
 
 //--------------------------------------------------------------------------------------
@@ -81,15 +90,14 @@ public class Shot_Manager : MonoBehaviour
 
     public void Shot1()
     {
-        Shot1_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Z))
+        if (Shot1_Cooltime_Count < Shot_Cooltime)
         {
-            if (Shot1_Cooltime_Count >= Shot_Cooltime)
-            {
-                Shot1_Cooltime_Count = 0;
-            }
+            Shot1_Cooltime_Count += Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.Z) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
+        {
 
-            if (Shot1_Cooltime_Count == 0)
+            if (Shot1_Cooltime_Count > Shot_Cooltime)
             {
                 for (int i = 1; i <= 8; i++)
                 {
@@ -101,11 +109,14 @@ public class Shot_Manager : MonoBehaviour
                     Angle.y = transform.rotation.y;
                     Angle.z = Shot_Angle;
 
-                    GameObject Shot2 = Instantiate(Shot01) as GameObject;
-                    Shot2.transform.rotation = Quaternion.Euler(Angle);
-                    Shot2.transform.position = this.transform.position;
+                    GameObject Shot1 = Instantiate(Shot01) as GameObject;
+                    Shot1.transform.rotation = Quaternion.Euler(Angle);
+                    Shot1.transform.position = this.transform.position;
                 }
+                //クールタイム初期化
+                Shot1_Cooltime_Count = 0;
             }
+           
         }
     }
 
@@ -115,7 +126,7 @@ public class Shot_Manager : MonoBehaviour
     public void Shot2()
     {
 
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B1") || Input.GetButtonDown("Button_B2"))
         {
             if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
@@ -181,23 +192,24 @@ public class Shot_Manager : MonoBehaviour
 
     public void Shot3()
     {
-        Shot3_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.C))
+        if (Shot3_Cooltime_Count < homing_Cooltime)
         {
-            if (Shot3_Cooltime_Count >= homing_Cooltime)
-            {
-                Shot3_Cooltime_Count = 0;
-            }
-
-            if (Shot3_Cooltime_Count == 0)
+            Shot3_Cooltime_Count += Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.C) || Input.GetButtonDown("Button_X1") || Input.GetButtonDown("Button_X2"))
+        {
+            if ((Shot3_Cooltime_Count > homing_Cooltime))
             {
                 GameObject Shot = Instantiate(Shot03);
 
                 Shot.transform.position = this.transform.position;
+
+                //クールタイム初期化
+                Shot3_Cooltime_Count = 0;
             }
+            
         }
     }
-
 
 //--------------------------------------------------------------------------------------
     //Reflect
@@ -205,7 +217,7 @@ public class Shot_Manager : MonoBehaviour
     public void Shot4()
     {
         Shot4_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y1") || Input.GetButtonDown("Button_Y2"))
         {
 
             if (Shot4_Cooltime_Count >= Shot_Cooltime)
@@ -247,21 +259,21 @@ public class Shot_Manager : MonoBehaviour
         if (Barrage_Cooltime_check == false && Barrage_Duration == true)
         {
             Barrage_count++;
-                              //↓飛んでいく弾の量を調整可 
+            //ここの数字をいじると、飛んでいく弾の量を調整することができる
             if (Barrage_count % 80 == 0)
             {
-                //相手と自分の角度を計算
+
                 Vector3 Distance = Target.transform.position - Player.transform.position;
 
 
                 Vector2 vec = new Vector2(0.0f, 1.0f);
                 vec = Quaternion.Euler(0, 0, Random.Range(-40f, 40f)) * vec;
                 vec *= Shot05_Speed;
-                //var a = Quaternion.Euler(0, 0, -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
-                var a = Quaternion.Euler(Random.Range(-40f, 40f), Random.Range(-40f, 40f), -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
-                var b = Instantiate(Shot05, transform.position, a);
-                b.GetComponent<Rigidbody2D>().velocity = vec;
-                
+                //var q = Quaternion.Euler(0, 0, -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
+                var q = Quaternion.Euler(Random.Range(-40f, 40f), Random.Range(-40f, 40f), -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
+                var t = Instantiate(Shot05, transform.position, q);
+                t.GetComponent<Rigidbody2D>().velocity = vec;
+
             }
         }
 
@@ -287,7 +299,25 @@ public class Shot_Manager : MonoBehaviour
         }
     }
 
-//--------------------------------------------------------------------------------------
+ //--------------------------------------------------------------------------------------
+    //Random_Homing
 
+    public void Shot6()
+    {
+        if (Shot6_Cooltime_Count < Random_homing_Cooltime)
+        {
+            Shot6_Cooltime_Count += Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.N))
+        {
+            if (Shot6_Cooltime_Count > Random_homing_Cooltime)
+            {
+                GameObject Shot = Instantiate(Shot06);
 
+                Shot.transform.position = this.transform.position;
+                Shot6_Cooltime_Count = 0;
+            }
+        }
+
+    }
 }

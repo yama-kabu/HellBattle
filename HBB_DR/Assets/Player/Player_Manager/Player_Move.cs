@@ -36,8 +36,6 @@ public class Player_Move : MonoBehaviour
 
 //--------------------------------------------------------------------------------------
 
-    //左のキャラクター専用
-    // Update is called once per frame
     void Update()
     {
         if(this.gameObject.CompareTag("Player_L1"))
@@ -77,7 +75,8 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos; //現在の位置情報に反映させる
 
         }
-        else if (Input.GetAxisRaw("Vertical_L1") < 0)　//もし下矢印キーが押されたら
+        //もし下矢印キーが押されたら
+        else if (Input.GetAxisRaw("Vertical_L1") < 0)　
         {
             Vector3 playerPos = transform.position;
             playerPos.y -= speed * Time.deltaTime;
@@ -303,5 +302,9 @@ public class Player_Move : MonoBehaviour
     }
 
 //--------------------------------------------------------------------------------------
+
+
 }
+
+
 
