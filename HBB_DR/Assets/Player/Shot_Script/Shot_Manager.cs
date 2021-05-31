@@ -313,8 +313,9 @@ public class Shot_Manager : MonoBehaviour
             if (Shot6_Cooltime_Count > Random_homing_Cooltime)
             {
                 GameObject Shot = Instantiate(Shot06);
-
+                GameObject Shot2 = Instantiate(Shot06);
                 Shot.transform.position = this.transform.position;
+                Shot2.transform.position = this.transform.position;
                 Shot6_Cooltime_Count = 0;
             }
         }

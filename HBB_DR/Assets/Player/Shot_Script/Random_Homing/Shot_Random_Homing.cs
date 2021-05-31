@@ -45,7 +45,6 @@ public class Shot_Random_Homing : MonoBehaviour
     public float Homing_stop_time = 0;
     //•Ç‚Ö‚Ìƒqƒbƒg”»’è
     bool isHit_check = false;
-    bool omake = false;
 //--------------------------------------------------------------------------------------
 
     void Start()
