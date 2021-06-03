@@ -94,7 +94,7 @@ public class Shot_Manager : MonoBehaviour
         {
             Shot1_Cooltime_Count += Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.Z) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
+        if (Input.GetKey(KeyCode.Z))
         {
 
             if (Shot1_Cooltime_Count > Shot_Cooltime)
@@ -249,7 +249,7 @@ public class Shot_Manager : MonoBehaviour
 
     public void Shot5()
     {
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
         {
             if (Barrage_Cooltime_check == false && Barrage_Duration == false)
             {
@@ -262,9 +262,7 @@ public class Shot_Manager : MonoBehaviour
             //‚±‚±‚Ì”š‚ğ‚¢‚¶‚é‚ÆA”ò‚ñ‚Å‚¢‚­’e‚Ì—Ê‚ğ’²®‚·‚é‚±‚Æ‚ª‚Å‚«‚é
             if (Barrage_count % 80 == 0)
             {
-
                 Vector3 Distance = Target.transform.position - Player.transform.position;
-
 
                 Vector2 vec = new Vector2(0.0f, 1.0f);
                 vec = Quaternion.Euler(0, 0, Random.Range(-40f, 40f)) * vec;

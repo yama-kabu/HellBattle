@@ -29,7 +29,7 @@ public class Player_Manager_L : MonoBehaviour
         s_Manager.Shot3();//Homing
         s_Manager.Shot4();//Reflect
         s_Manager.Shot5();//Barrage
-        s_Manager.Shot6();//Random_Homing
+        //s_Manager.Shot6();//Random_Homing
         ////////////////////«Shot7‚©‚ç‚¨Šè‚¢‚µ‚Ü‚·
     }
 
