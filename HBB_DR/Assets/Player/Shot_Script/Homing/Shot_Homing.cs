@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shot_Homing : MonoBehaviour
 {
+
     //íeÇÃë¨ìx
     public float Shot_Speed = 0;
 
@@ -25,13 +26,13 @@ public class Shot_Homing : MonoBehaviour
     //í«Ç¢ë±ÇØÇÈéûä‘
     public float Homing_Time = 10;
 
+
 //--------------------------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()
     {
-        //ìñÇΩÇËîªíËÅ@ï«
-        BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
+
         Homing = GetComponent<Rigidbody2D>();
         BulletTrans = GetComponent<Transform>();
 
@@ -103,6 +104,5 @@ public class Shot_Homing : MonoBehaviour
     }
 
 //--------------------------------------------------------------------------------------
-
 
 }

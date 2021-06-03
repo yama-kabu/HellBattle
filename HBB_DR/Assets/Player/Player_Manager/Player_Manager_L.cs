@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class Player_Manager_L : MonoBehaviour
 {
-    private Rigidbody2D Reflect;
-
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Player_L;
 
+    private Rigidbody2D Reflect;
 //--------------------------------------------------------------------------------------
 
     // ゲームのスタート時の処理
@@ -29,8 +28,9 @@ public class Player_Manager_L : MonoBehaviour
         s_Manager.Shot2();//spiral
         s_Manager.Shot3();//Homing
         s_Manager.Shot4();//Reflect
-        //s_Manager.Shot5();//Barrage
-        ////////////////////↓Shot6からお願いします
+        s_Manager.Shot5();//Barrage
+        //s_Manager.Shot6();//Random_Homing
+        ////////////////////↓Shot7からお願いします
     }
 
 //--------------------------------------------------------------------------------------

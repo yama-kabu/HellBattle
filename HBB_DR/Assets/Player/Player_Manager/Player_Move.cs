@@ -14,7 +14,7 @@ public class Player_Move : MonoBehaviour
 
     private Rigidbody2D rd;
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()
@@ -24,20 +24,18 @@ public class Player_Move : MonoBehaviour
         if (this.gameObject.CompareTag("Player_L1") ||  this.gameObject.CompareTag("Player_R2"))
         {
             //L1
-            maxY = 3.74f; minY = -3.74f; maxX = -2.74f; minX = -7.27f;
+            maxY = 3.77f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
         }
         else if (this.gameObject.CompareTag("Player_L2") || this.gameObject.CompareTag("Player_R1"))
         {
             //L2
-            maxY = 3.77f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
+            maxY = 3.74f; minY = -3.74f; maxX = -2.74f; minX = -7.27f;
         }
 
     }
 
 //--------------------------------------------------------------------------------------
 
-    //左のキャラクター専用
-    // Update is called once per frame
     void Update()
     {
         if(this.gameObject.CompareTag("Player_L1"))
@@ -58,6 +56,8 @@ public class Player_Move : MonoBehaviour
         }
     }
 
+//--------------------------------------------------------------------------------------
+
     void MovePlayer_L1()
     {
         //もし上矢印キーが押されたら
@@ -75,7 +75,8 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos; //現在の位置情報に反映させる
 
         }
-        else if (Input.GetAxisRaw("Vertical_L1") < 0)　//もし下矢印キーが押されたら
+        //もし下矢印キーが押されたら
+        else if (Input.GetAxisRaw("Vertical_L1") < 0)　
         {
             Vector3 playerPos = transform.position;
             playerPos.y -= speed * Time.deltaTime;
@@ -116,6 +117,8 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos;
         }
     }
+
+//--------------------------------------------------------------------------------------
 
     void MovePlayer_L2()
     {
@@ -176,7 +179,7 @@ public class Player_Move : MonoBehaviour
         }
     }
 
-
+//--------------------------------------------------------------------------------------
 
     void MovePlayer_R1()
     {
@@ -236,6 +239,9 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos;
         }
     }
+
+//--------------------------------------------------------------------------------------
+
     void MovePlayer_R2()
     {
         //もし上矢印キーが押されたら
@@ -295,9 +301,10 @@ public class Player_Move : MonoBehaviour
         }
     }
 
+//--------------------------------------------------------------------------------------
 
 
 }
 
-//--------------------------------------------------------------------------------------
+
 
