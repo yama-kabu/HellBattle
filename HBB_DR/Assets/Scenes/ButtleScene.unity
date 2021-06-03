@@ -483,6 +483,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
+--- !u!1 &1752284890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3810495447724744053, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
+  m_PrefabInstance: {fileID: 1752284889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1752284891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752284890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d127dbc0d264cc84f8c4538c78262640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shot01: {fileID: 7040369304351146246, guid: 8885eddb30021d7409de642fe173c938, type: 3}
+  Shot02: {fileID: 7040369304351146246, guid: 24497a121462cb544b232b31bf9ec464, type: 3}
+  Shot03: {fileID: 7040369304351146246, guid: fa470007faa57244d9e507549a7508b2, type: 3}
+  Shot04_1: {fileID: 7040369304351146246, guid: 5996d2d02cbdfd049abd59deb14012c4, type: 3}
+  Shot04_2: {fileID: 7040369304351146246, guid: 1fb52bad6d51eb34d87c687c44d357d6, type: 3}
+  Shot04_3: {fileID: 7040369304351146246, guid: 10743d76701a395489f74f16ca92808d, type: 3}
+  Shot05: {fileID: 7040369304351146246, guid: 20c7babab8ea8534ba9bd826ea017f53, type: 3}
+  Shot06: {fileID: 0}
+  Shot_Cooltime: 3
+  homing_Cooltime: 10
+  Random_homing_Cooltime: 1
+  Shot3_Cooltime_Count: 100
+  Spiral_Time: 5
+  Barrage_Time: 3
+  Shot02_Speed: 0.1
+  Shot05_Speed: 0.1
+--- !u!114 &1752284893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752284890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8938f647e7ced5f42a6a5cc6e0fe6a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1990373410
 PrefabInstance:
   m_ObjectHideFlags: 0
