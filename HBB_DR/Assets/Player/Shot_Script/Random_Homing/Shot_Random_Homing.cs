@@ -42,7 +42,7 @@ public class Shot_Random_Homing : MonoBehaviour
     //ホーミングスピード
     float Homing_Speed = 80;
     //ホーミングのむきを変える時間
-    public float Homing_stop_time = 0;
+    float Homing_stop_time =0;
     //壁へのヒット判定
     bool isHit_check = false;
 //--------------------------------------------------------------------------------------
@@ -68,11 +68,11 @@ public class Shot_Random_Homing : MonoBehaviour
         //追いかける対象をここで決める
         if (this.gameObject.CompareTag("Bullet_1"))
         {
-            enemy = GameObject.Find("Player_R2");
+            enemy = GameObject.Find("Hit_Body_P2");
         }
         else if (this.gameObject.CompareTag("Bullet_2"))
         {
-            enemy = GameObject.Find("Player_R1");
+            enemy = GameObject.Find("Hit_Body_P1");
         }
 
         //ホーミングの処理　0.7秒ごとに実行
@@ -154,11 +154,10 @@ public class Shot_Random_Homing : MonoBehaviour
     {
         if (isHoming_check)
         {
-            if (BD.gameObject.tag == "Player_R1" || BD.gameObject.tag == "Player_R2")
+            if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
             {
 
                 Destroy(this.gameObject);
-
             }
         }
     }

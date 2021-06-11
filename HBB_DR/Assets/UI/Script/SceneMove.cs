@@ -22,7 +22,7 @@ public class SceneMove : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Z))
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("ButtleScene");
             
         }
         if(Input.GetKey(KeyCode.X))

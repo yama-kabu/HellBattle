@@ -30,7 +30,7 @@ public class Shot_ReflectP2: MonoBehaviour
 
 
         Player = GameObject.Find("Player_L2");
-        Target = GameObject.Find("Player_R1");
+        Target = GameObject.Find("Hit_Body_P1");
 
         //‚˜‚Æ‚™‚ðŒvŽZ
         Vector3 Distance = Target.transform.position - Player.transform.position; 
@@ -102,7 +102,7 @@ public class Shot_ReflectP2: MonoBehaviour
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Player_R1" || BD.gameObject.tag == "Player_R2")
+        if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
         {
 
             Destroy(this.gameObject);

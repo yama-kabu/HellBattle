@@ -9,13 +9,21 @@ public class Shot_Judgment : MonoBehaviour
     public float Shot_Speed = 0;
 
     public GameObject Stage;
-    
+
+
+//--------------------------------------------------------------------------------------
+    //ダメージ計算系統
+
+    //基本ダメージ
+    public float Damage;
+
 //--------------------------------------------------------------------------------------
 
     void Start()
     {
         //当たり判定　壁
         BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
+
     }
 
 //--------------------------------------------------------------------------------------
@@ -34,6 +42,7 @@ public class Shot_Judgment : MonoBehaviour
     {
         if (BD.gameObject.tag == "BuckStage")
         {
+
             Destroy(this.gameObject);
         }
     }
@@ -43,12 +52,11 @@ public class Shot_Judgment : MonoBehaviour
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Player_R1" || BD.gameObject.tag == "Player_R2")
+        if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
         {
 
             Destroy(this.gameObject);
         }
-
     }
 
 //--------------------------------------------------------------------------------------

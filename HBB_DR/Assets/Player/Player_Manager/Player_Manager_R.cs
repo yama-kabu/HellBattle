@@ -8,8 +8,8 @@ public class Player_Manager_R : MonoBehaviour
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Player_R;
  
-    public int Player_MAXHP = 10;
-    public int Player_HP = 10;
+    public float m_Player_MAXHP = 0;
+    public float m_Player_HP = 0;
 
 
 //--------------------------------------------------------------------------------------
@@ -19,6 +19,11 @@ public class Player_Manager_R : MonoBehaviour
     {
         //Rigidbody2D　コンポーネントを取得して変数　Player_R　に格納
         Player_R = GetComponent<Rigidbody2D>();
+
+
+        m_Player_MAXHP = 100;
+        m_Player_HP = 100;
+
     }
 
 //--------------------------------------------------------------------------------------
@@ -26,7 +31,11 @@ public class Player_Manager_R : MonoBehaviour
     // 繰り返す処理
     void Update()
     {
-     
+        //Debug.Log("残りの体力は" + m_Player_HP + "です");
+        if (m_Player_HP < 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 //--------------------------------------------------------------------------------------

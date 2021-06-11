@@ -28,8 +28,9 @@ public class Shot_ReflectP1: MonoBehaviour
     {
         Shot_Speed *= 10;
 
-            Player = GameObject.Find("Player_L1");
-            Target = GameObject.Find("Player_R2");
+
+        Player = GameObject.Find("Player_L1");
+        Target = GameObject.Find("Hit_Body_P2");
 
         //‚˜‚Æ‚™‚ðŒvŽZ
         Vector3 Distance = Target.transform.position - Player.transform.position; 
@@ -100,7 +101,7 @@ public class Shot_ReflectP1: MonoBehaviour
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Player_R1" || BD.gameObject.tag == "Player_R2")
+        if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
         {
 
             Destroy(this.gameObject);

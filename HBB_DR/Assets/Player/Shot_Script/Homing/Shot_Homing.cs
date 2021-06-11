@@ -40,11 +40,11 @@ public class Shot_Homing : MonoBehaviour
         //í«Ç¢Ç©ÇØÇÈëŒè€ÇÇ±Ç±Ç≈åàÇﬂÇÈ
         if (this.gameObject.CompareTag("Bullet_1"))
         {
-            enemy = GameObject.Find("Player_R2");
+            enemy = GameObject.Find("Hit_Body_P2");
         }
         else if(this.gameObject.CompareTag("Bullet_2"))
         {
-            enemy = GameObject.Find("Player_R1");
+            enemy = GameObject.Find("Hit_Body_P1");
         }
     }
 
@@ -80,7 +80,7 @@ public class Shot_Homing : MonoBehaviour
     void OnTriggerEnter2D(Collider2D BD)
     {
 
-        if (BD.gameObject.tag == "Player_R1" || BD.gameObject.tag == "Player_R2")
+        if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
         {
 
             Destroy(this.gameObject);

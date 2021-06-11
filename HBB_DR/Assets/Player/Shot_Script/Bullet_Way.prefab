@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7040369304351146246}
   m_LocalRotation: {x: 0, y: 0, z: -0.00000008742278, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -136,3 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shot_Speed: 0.01
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+  Damage: 5
+  p1: {fileID: 8977232889794890224, guid: c78253297ff72c54284071a81701147a, type: 3}
+  p2: {fileID: 722098805753176437, guid: a904fc0e88dcc7841bb0e958521ab636, type: 3}
