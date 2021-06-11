@@ -17,31 +17,31 @@ public class Shot_Manager2 : MonoBehaviour
     public GameObject Shot05;
     public GameObject Shot06;
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     //スタートをplayer位置に
     private GameObject Player;
     //ターゲットを敵の位置に
     private GameObject Target;
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     //射撃のクールタイム
-    public float Shot_Cooltime = 3;//全体のクールタイムを決める
+    float Shot_Cooltime = 3;//全体のクールタイムを決める
     float homing_Cooltime = 10;//ホーミングのクールタイム数
-    public float Random_homing_Cooltime = 15;//ランダムホーミングのクールタイム数
+    float Random_homing_Cooltime = 15;//ランダムホーミングのクールタイム数
 
     float Shot1_Cooltime_Count = 100;//Shot1用のクールタイムカウンター
-    //float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
-    public float Shot3_Cooltime_Count = 100;//Shot3用のクールタイムカウンター
+                                     //float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
+    float Shot3_Cooltime_Count = 100;//Shot3用のクールタイムカウンター
     float Shot4_Cooltime_Count = 100;//Shot4用のクールタイムカウンター
-    //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
-    public float Shot6_Cooltime_Count = 100;//Shot6用のクールタイムカウンター
+                                     //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
+    float Shot6_Cooltime_Count = 100;//Shot6用のクールタイムカウンター
 
     int Spiral_count = 0;
     int Barrage_count = 0;
 
-    //ショット３の類
+    //ショット2の類
     //クールタイム調整用
     float Shot_Count_Time_Save = 3;
     //何秒発射されたか
@@ -58,15 +58,16 @@ public class Shot_Manager2 : MonoBehaviour
 
 
     //スパイラルの一度の操作で続ける時間
-    int Spiral_Time;
-    //バラージの井地尾の操作で続ける時間
-    int Barrage_Time;
+    int Spiral_Time = 3;
+    //バラージの一度の操作で続ける時間
+    int Barrage_Time = 3;
 
     //ショット2の速度
-    public float Shot02_Speed = 10;
-    public float Shot05_Speed = 10;
+    public float Shot02_Speed = 10f;
+    //ショット5の速度
+    public float Shot05_Speed = 10f;
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     void Start()
     {
@@ -85,8 +86,8 @@ public class Shot_Manager2 : MonoBehaviour
 
     }
 
-    //--------------------------------------------------------------------------------------
-    //8Way
+//--------------------------------------------------------------------------------------
+//8Way
 
     public void Shot1()
     {
@@ -120,8 +121,8 @@ public class Shot_Manager2 : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------
-    //Spiral
+//--------------------------------------------------------------------------------------
+//Spiral
 
     public void Shot2()
     {
@@ -187,8 +188,8 @@ public class Shot_Manager2 : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------
-    //homing
+//--------------------------------------------------------------------------------------
+//homing
 
     public void Shot3()
     {
@@ -211,8 +212,8 @@ public class Shot_Manager2 : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------
-    //Reflect
+//--------------------------------------------------------------------------------------
+//Reflect
 
     public void Shot4()
     {
@@ -244,8 +245,8 @@ public class Shot_Manager2 : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------
-    //Barrage
+//--------------------------------------------------------------------------------------
+//Barrage
 
     public void Shot5()
     {
@@ -300,8 +301,8 @@ public class Shot_Manager2 : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------
-    //Random_Homing
+//--------------------------------------------------------------------------------------
+//Random_Homing
 
     public void Shot6()
     {
@@ -314,9 +315,7 @@ public class Shot_Manager2 : MonoBehaviour
             }
             if (Shot6_Cooltime_Count == 0)
             {
-                Debug.Log("通ったよ");
                 GameObject Shot = Instantiate(Shot06);
-                Shot.transform.position = this.transform.position;
                 Shot.transform.position = this.transform.position;
 
             }

@@ -9,9 +9,7 @@ public class Player_Manager_L2 : MonoBehaviour
     private Rigidbody2D Player_L;
 
     private Rigidbody2D Reflect;
-    
-    //攻撃力の倍率
-    public float m_Player_Attack_Magnification_P2 = 1.0f;
+
 //--------------------------------------------------------------------------------------
 
     // ゲームのスタート時の処理
