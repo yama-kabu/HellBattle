@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Shot_Homing : MonoBehaviour
 {
-
+    public float damage;
     //弾の速度
     public float Shot_Speed = 0;
 
@@ -82,7 +82,12 @@ public class Shot_Homing : MonoBehaviour
 
         if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
         {
-
+            //Player_Manager_Rの中をさがす
+            if (BD.gameObject.GetComponent<Player_Manager_R>())
+            {
+                //ダメージ変数に弾が持っているダメージを代入
+                BD.gameObject.GetComponent<Player_Manager_R>().Damage(damage);
+            }
             Destroy(this.gameObject);
         }
     }

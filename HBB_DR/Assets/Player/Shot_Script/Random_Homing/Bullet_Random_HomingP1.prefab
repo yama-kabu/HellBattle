@@ -134,6 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5979516c23f5974096b167c0dda3194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
   Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
-  Homing_stop_time: 0

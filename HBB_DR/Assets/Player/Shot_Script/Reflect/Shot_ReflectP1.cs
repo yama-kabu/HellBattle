@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shot_ReflectP1: MonoBehaviour
 {
+    public float damage;
     private Vector2 lastVelocity;
 
     //Rigidbody2D コンポーネントを格納する変数
@@ -103,7 +104,12 @@ public class Shot_ReflectP1: MonoBehaviour
 
         if (BD.gameObject.tag == "Hit_Body_P1" || BD.gameObject.tag == "Hit_Body_P2")
         {
-
+            //Player_Manager_Rの中をさがす
+            if (BD.gameObject.GetComponent<Player_Manager_R>())
+            {
+                //ダメージ変数に弾が持っているダメージを代入
+                BD.gameObject.GetComponent<Player_Manager_R>().Damage(damage);
+            }
             Destroy(this.gameObject);
         }
 
