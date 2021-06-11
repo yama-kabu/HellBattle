@@ -29,6 +29,7 @@ public class Player_Manager_R : MonoBehaviour
     {
         //現在の体力からダメージを引く
         m_Player_HP -= damage;
+        Debug.Log(damage + "ダメージを受けて残り" + m_Player_HP + "です");
         //体力が０以下の場合
         if (m_Player_HP < 0)
         {
