@@ -23,23 +23,23 @@ public class Player_Move : MonoBehaviour
         if (this.gameObject.CompareTag("Player_L1"))
         {
             //L1
-            maxY = -2.6f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
+            maxY = -446f; minY = -725f; maxX = 1335f; minX = 460f;
         }
         else if (this.gameObject.CompareTag("Player_R2"))
         {
             //R2
-            maxY = 3.77f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
+            maxY = 725f; minY = -730f; maxX = 1335f; minX = 460f;
         }
 
         else if (this.gameObject.CompareTag("Player_L2"))
         {
             //L2
-            maxY = 3.74f; minY = 2.6f; maxX = -2.74f; minX = -7.27f;
+            maxY = 725f; minY = 446f; maxX = -460f; minX = -1335f;
         }
         else if (this.gameObject.CompareTag("Player_R1"))
         {
             //R1
-            maxY = 3.74f; minY = -3.74f; maxX = -2.74f; minX = -7.27f;
+            maxY = 725f; minY = -730f; maxX = -460f; minX = -1335f;
         }
 
 

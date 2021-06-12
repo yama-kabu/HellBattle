@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7040369304351146246}
   m_LocalRotation: {x: 0, y: 0, z: -0.00000008742278, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,6 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  Shot_Speed: 3
-  Player: {fileID: 0}
-  Target: {fileID: 0}
+  Shot_Speed: 1000
+  Player: {fileID: 7787432706217934176, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
+  Target: {fileID: 1875701683725330646, guid: c78253297ff72c54284071a81701147a, type: 3}

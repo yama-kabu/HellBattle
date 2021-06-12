@@ -28,7 +28,7 @@ public class Shot_Judgment : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(0, Shot_Speed, 0);   
+        transform.Translate(0, Shot_Speed * 0.01f, 0);   
 
     }
 

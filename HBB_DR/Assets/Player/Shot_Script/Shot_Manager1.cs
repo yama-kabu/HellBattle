@@ -63,10 +63,13 @@ public class Shot_Manager1 : MonoBehaviour
     int Barrage_Time = 3;
 
     //ƒVƒ‡ƒbƒg2‚Ì‘¬“x
-    public float Shot02_Speed = 10f;
+    //‚P‚O‚O‚O‚É‚·‚é‚Æ–Ê”’‚­‚È‚é
+    float Shot02_mawaru_Speed = 1f;
     //ƒVƒ‡ƒbƒg5‚Ì‘¬“x
-    public float Shot05_Speed = 10f;
+    float Shot05_Speed = 1f;
 
+    public float Spiral_kaiten;
+    public float Barrage_ryou;
 //--------------------------------------------------------------------------------------
 
     void Start()
@@ -137,18 +140,18 @@ public class Shot_Manager1 : MonoBehaviour
         if (Spiral_Cooltime_check == false && Spiral_Duration == true)
         {
             Spiral_count++;
-            //«‚T‚O‚Ì”{”‚Åã‚°‚Ä‚¢‚­‚Æo‚é‹…‚Ì—Ê‚ª•Ï‚í‚é  ƒrƒ‹ƒh‚Í‚U‚Ì”{”‚É‚·‚é‚×‚µ
-            if (Spiral_count % 100 == 0)
+            //«‚T‚O‚Ì”{”‚Åã‚°‚Ä‚¢‚­‚Æo‚é‹…‚Ì—Ê‚ª•Ï‚í‚é
+            if (Spiral_count % Spiral_kaiten == 0)
             {
                 //«‚±‚±‚Ì”š‚ğ•Ï‚¦‚é‚Æˆê“x‚Éo‚·’e‚Ì”‚ğ•Ï‚¦‚ç‚ê‚é
                 for (int i = 0; i < 1; i++)
                 {
 
-                    Vector2 Vec = new Vector2(0.0f, 1.0f);
-                    Vec = Quaternion.Euler(0, 0, 5f * Spiral_count) * Vec;
+                    Vector2 Vec = new Vector2(0.0f, 10f);
+                    Vec = Quaternion.Euler(0, 0, 50f * Spiral_count) * Vec;
                     Vec.Normalize();                                    //ã‚Ì(0,0,Xf)‚Æ‰º‚Ì(360/X)‚ÌX‚Í‡‚í‚¹‚é‚æ‚¤‚É
                     Vec = Quaternion.Euler(0, 0, (360 / 5) * i) * Vec;
-                    Vec *= Shot02_Speed;
+                    Vec *= Shot02_mawaru_Speed;
 
                     //ˆê‚Â–Ú
                     var a = Quaternion.Euler(0, 0, -Mathf.Atan2(Vec.x, Vec.y) * Mathf.Rad2Deg);
@@ -262,17 +265,17 @@ public class Shot_Manager1 : MonoBehaviour
         {
             Barrage_count++;
             //‚±‚±‚Ì”š‚ğ‚¢‚¶‚é‚ÆA”ò‚ñ‚Å‚¢‚­’e‚Ì—Ê‚ğ’²®‚·‚é‚±‚Æ‚ª‚Å‚«‚é
-            if (Barrage_count % 80 == 0)
+            if (Barrage_count % Barrage_ryou == 0)
             {
 
                 Vector3 Distance = Target.transform.position - Player.transform.position;
 
 
                 Vector2 vec = new Vector2(0.0f, 1.0f);
-                vec = Quaternion.Euler(0, 0, Random.Range(-40f, 40f)) * vec;
+                vec = Quaternion.Euler(0, 0, Random.Range(-35f, 35f)) * vec;
                 vec *= Shot05_Speed;
                 //var q = Quaternion.Euler(0, 0, -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
-                var q = Quaternion.Euler(Random.Range(-40f, 40f), Random.Range(-40f, 40f), -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
+                var q = Quaternion.Euler(0, 0, -Mathf.Atan2(Distance.x +Random.Range(-400f, 400f), Distance.y + Random.Range(-40f, 40f)) * Mathf.Rad2Deg);
                 var t = Instantiate(Shot05, transform.position, q);
                 t.GetComponent<Rigidbody2D>().velocity = vec;
 

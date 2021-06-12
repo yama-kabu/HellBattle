@@ -11,12 +11,12 @@ public class Shot_ReflectP1: MonoBehaviour
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Reflect;
 
-    //public GameObject Stage;
 
     //跳ね返る回数初期化
     int cnt = 0;
-
-    public float Shot_Speed = 3;
+    //速度を均一にする
+    float tyousei = 0.01f;
+    public float Shot_Speed = 1000;
 
     //スタートをplayer位置に
     public GameObject Player;
@@ -41,19 +41,19 @@ public class Shot_ReflectP1: MonoBehaviour
         if (this.gameObject.CompareTag("Bullet_1"))
         {
             //発射するプログラム　
-            Reflect.AddForce(new Vector2(Distance.x * Shot_Speed, Distance.y * Shot_Speed));
+            Reflect.AddForce(new Vector2(Distance.x * (Shot_Speed * tyousei), Distance.y * (Shot_Speed * tyousei)));
         }
         else if (this.gameObject.CompareTag("Bullet_2"))
         {
             if (180 > Distance.x && Distance.x > 45 || 315 > Distance.x && Distance.x > 225)
             {
                 //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * Shot_Speed), (Distance.y * Shot_Speed) + 45));
+                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)), (Distance.y * (Shot_Speed * tyousei)) + 35000));
             }
             else
             {
                 //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * Shot_Speed) + 45, (Distance.y * Shot_Speed)));
+                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)) + 35000, (Distance.y * (Shot_Speed * tyousei))));
             }
         }
         else if (this.gameObject.CompareTag("Bullet_3"))
@@ -61,12 +61,12 @@ public class Shot_ReflectP1: MonoBehaviour
             if ((180 > Distance.x) && (Distance.x > 45) || (315 > Distance.x) && (Distance.x > 225))
             {
                 //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * Shot_Speed), (Distance.y * Shot_Speed) - 45));
+                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)), (Distance.y * (Shot_Speed * tyousei)) - 35000));
             }
             else
             {
                 //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * Shot_Speed) - 45, (Distance.y * Shot_Speed)));
+                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)) - 35000, (Distance.y * (Shot_Speed * tyousei))));
             }
         }
     }

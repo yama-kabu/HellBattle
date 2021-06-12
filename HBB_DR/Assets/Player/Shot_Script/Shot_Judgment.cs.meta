@@ -4,9 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Stage: {fileID: 3767531790062545903, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
-  - p1: {fileID: 8977232889794890224, guid: c78253297ff72c54284071a81701147a, type: 3}
-  - p2: {fileID: 722098805753176437, guid: a904fc0e88dcc7841bb0e958521ab636, type: 3}
+  - Stage: {fileID: 121255945917700792, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

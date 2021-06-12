@@ -32,10 +32,10 @@ public class Shot_Manager2 : MonoBehaviour
     float Random_homing_Cooltime = 15;//ランダムホーミングのクールタイム数
 
     float Shot1_Cooltime_Count = 100;//Shot1用のクールタイムカウンター
-                                     //float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
+    //float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
     float Shot3_Cooltime_Count = 100;//Shot3用のクールタイムカウンター
     float Shot4_Cooltime_Count = 100;//Shot4用のクールタイムカウンター
-                                     //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
+    //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
     float Shot6_Cooltime_Count = 100;//Shot6用のクールタイムカウンター
 
     int Spiral_count = 0;
@@ -63,10 +63,13 @@ public class Shot_Manager2 : MonoBehaviour
     int Barrage_Time = 3;
 
     //ショット2の速度
-    public float Shot02_Speed = 10f;
+    //１０００にすると面白くなる
+    float Shot02_mawaru_Speed = 1f;
     //ショット5の速度
-    public float Shot05_Speed = 10f;
+    float Shot05_Speed = 1f;
 
+    public float Spiral_kaiten;
+    public float Barrage_ryou;
 //--------------------------------------------------------------------------------------
 
     void Start()
@@ -127,7 +130,7 @@ public class Shot_Manager2 : MonoBehaviour
     public void Shot2()
     {
 
-        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B1"))
+        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B2"))
         {
             if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
@@ -137,18 +140,18 @@ public class Shot_Manager2 : MonoBehaviour
         if (Spiral_Cooltime_check == false && Spiral_Duration == true)
         {
             Spiral_count++;
-            //↓５０の倍数で上げていくと出る球の量が変わる  ビルド時は６の倍数にするべし
-            if (Spiral_count % 100 == 0)
+            //↓５０の倍数で上げていくと出る球の量が変わる
+            if (Spiral_count % Spiral_kaiten == 0)
             {
                 //↓ここの数字を変えると一度に出す弾の数を変えられる
                 for (int i = 0; i < 1; i++)
                 {
 
-                    Vector2 Vec = new Vector2(0.0f, 1.0f);
-                    Vec = Quaternion.Euler(0, 0, 5f * Spiral_count) * Vec;
+                    Vector2 Vec = new Vector2(0.0f, 10f);
+                    Vec = Quaternion.Euler(0, 0, 50f * Spiral_count) * Vec;
                     Vec.Normalize();                                    //上の(0,0,Xf)と下の(360/X)のXは合わせるように
                     Vec = Quaternion.Euler(0, 0, (360 / 5) * i) * Vec;
-                    Vec *= Shot02_Speed;
+                    Vec *= Shot02_mawaru_Speed;
 
                     //一つ目
                     var a = Quaternion.Euler(0, 0, -Mathf.Atan2(Vec.x, Vec.y) * Mathf.Rad2Deg);
@@ -197,7 +200,7 @@ public class Shot_Manager2 : MonoBehaviour
         {
             Shot3_Cooltime_Count += Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.C) || Input.GetButtonDown("Button_X1"))
+        if (Input.GetKey(KeyCode.C) || Input.GetButtonDown("Button_X2"))
         {
             if ((Shot3_Cooltime_Count > homing_Cooltime))
             {
@@ -218,7 +221,7 @@ public class Shot_Manager2 : MonoBehaviour
     public void Shot4()
     {
         Shot4_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y1"))
+        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y2"))
         {
 
             if (Shot4_Cooltime_Count >= Shot_Cooltime)
@@ -250,7 +253,7 @@ public class Shot_Manager2 : MonoBehaviour
 
     public void Shot5()
     {
-        if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_A1"))
+        if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_A2"))
         {
             if (Barrage_Cooltime_check == false && Barrage_Duration == false)
             {
@@ -262,17 +265,17 @@ public class Shot_Manager2 : MonoBehaviour
         {
             Barrage_count++;
             //ここの数字をいじると、飛んでいく弾の量を調整することができる
-            if (Barrage_count % 80 == 0)
+            if (Barrage_count % Barrage_ryou == 0)
             {
 
                 Vector3 Distance = Target.transform.position - Player.transform.position;
 
 
                 Vector2 vec = new Vector2(0.0f, 1.0f);
-                vec = Quaternion.Euler(0, 0, Random.Range(-40f, 40f)) * vec;
+                vec = Quaternion.Euler(0, 0, Random.Range(-35f, 35f)) * vec;
                 vec *= Shot05_Speed;
                 //var q = Quaternion.Euler(0, 0, -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
-                var q = Quaternion.Euler(Random.Range(-40f, 40f), Random.Range(-40f, 40f), -Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg);
+                var q = Quaternion.Euler(0, 0, -Mathf.Atan2(Distance.x + Random.Range(-400f, 400f), Distance.y + Random.Range(-40f, 40f)) * Mathf.Rad2Deg);
                 var t = Instantiate(Shot05, transform.position, q);
                 t.GetComponent<Rigidbody2D>().velocity = vec;
 

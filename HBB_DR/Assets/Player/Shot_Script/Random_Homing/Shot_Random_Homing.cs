@@ -41,11 +41,13 @@ public class Shot_Random_Homing : MonoBehaviour
     //ホーミングを開始したかcheck
     bool isHoming_check = false;
     //ホーミングスピード
-    float Homing_Speed = 80;
+    public float Homing_Speed = 80;
     //ホーミングのむきを変える時間
     float Homing_stop_time =0;
     //壁へのヒット判定
     bool isHit_check = false;
+
+    public int ForcePawer;
 //--------------------------------------------------------------------------------------
 
     void Start()
@@ -58,7 +60,7 @@ public class Shot_Random_Homing : MonoBehaviour
         //リジッドボディを参照
         Reflect = this.GetComponent<Rigidbody2D>();
         //ランダムに移動するための力を加える
-        Reflect.AddForce(new Vector2(Random.Range(-500f, 500f), Random.Range(-500f, 500f)));
+        Reflect.AddForce(new Vector2(Random.Range(-ForcePawer, ForcePawer) * 100f, Random.Range(-ForcePawer, ForcePawer) * 100f));
         //ランダム変数を追加
         rnd = Random.value * 360;
         //弾の向きをランダム変数で得た値に変更する
@@ -92,7 +94,7 @@ public class Shot_Random_Homing : MonoBehaviour
             if (Random_change < 0)
             {
                 Reflect.velocity = Vector2.zero;
-                Reflect.AddForce(new Vector2(Random.Range(-500f, 500f), Random.Range(-500f, 500f)));
+                Reflect.AddForce(new Vector2(Random.Range(-ForcePawer, ForcePawer) * 100f, Random.Range(-ForcePawer, ForcePawer) * 100f));
                 Random_change = 0.3f;
 
 //--------------------------------------------------------------------------------------
