@@ -19,6 +19,10 @@ public class Player_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 240; //FPS‚ğ240‚Éİ’è 
+
+
+
         rd = GetComponent<Rigidbody2D>();
         if (this.gameObject.CompareTag("Player_L1"))
         {

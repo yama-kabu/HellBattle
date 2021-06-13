@@ -33,7 +33,7 @@ public class Shot_Random_Homing : MonoBehaviour
     bool isStop_check = false;
 
 //--------------------------------------------------------------------------------------
- 
+
     //ホーミング時間
     float Homing_time = 5;
 
@@ -48,6 +48,7 @@ public class Shot_Random_Homing : MonoBehaviour
     bool isHit_check = false;
 
     public int ForcePawer;
+    public int HomingPawer;
 //--------------------------------------------------------------------------------------
 
     void Start()
@@ -213,7 +214,7 @@ public class Shot_Random_Homing : MonoBehaviour
                 //弾から追いかける対象への方向を計算
                 Vector3 Distance = enemy.transform.position - BulletTrans.position;
                 //方向の長さを1に正規化、任意の力をAddForceで加える
-                Reflect.AddForce(Distance.normalized * Homing_Speed * 2);
+                Reflect.AddForce(Distance.normalized * Homing_Speed * HomingPawer);
             }
         }
     }

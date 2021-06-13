@@ -139,3 +139,4 @@ MonoBehaviour:
   Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
   Homing_Speed: 1000
   ForcePawer: 1000
+  HomingPawer: 50
