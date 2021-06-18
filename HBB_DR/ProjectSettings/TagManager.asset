@@ -8,6 +8,15 @@ TagManager:
   - BackStage
   - Bullet
   - Target
+  - Player_L2
+  - Bullet_2
+  - Bullet_1
+  - Bullet_3
+  - Player_L1
+  - Player_R1
+  - Hit_Body_P1
+  - Player_R2
+  - Hit_Body_P2
   layers:
   - Default
   - TransparentFX
@@ -15,8 +24,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Hit_Body
+  - Player
   - Bullet
   - 
   - 
@@ -44,4 +53,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1716512827
+    locked: 0
+  - name: Hit_body
+    uniqueID: 1262752535
     locked: 0

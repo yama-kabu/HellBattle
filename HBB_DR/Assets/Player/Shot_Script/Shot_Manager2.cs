@@ -318,9 +318,11 @@ public class Shot_Manager2 : MonoBehaviour
             }
             if (Shot6_Cooltime_Count == 0)
             {
-                GameObject Shot = Instantiate(Shot06);
-                Shot.transform.position = this.transform.position;
-
+                for (int i = 0; i < 2; i++)
+                {
+                    GameObject Shot = Instantiate(Shot06);
+                    Shot.transform.position = this.transform.position;
+                }
             }
         }
     }
