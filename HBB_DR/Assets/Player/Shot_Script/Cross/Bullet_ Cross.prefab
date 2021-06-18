@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7279161052591304478}
   - component: {fileID: 315816774375343906}
   - component: {fileID: -194091792705503548}
-  - component: {fileID: -2170470259754033696}
   m_Layer: 8
   m_Name: Bullet_ Cross
   m_TagString: Bullet
@@ -136,18 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  Shot_Speed: 500
+  Shot_Speed: 1000
   Stage: {fileID: 121255945917700792, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
---- !u!114 &-2170470259754033696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7040369304351146246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75117b9b1bdd886469ac7fc5063fe1fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houkou: 0

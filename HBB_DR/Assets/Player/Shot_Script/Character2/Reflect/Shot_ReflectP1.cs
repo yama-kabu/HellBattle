@@ -97,7 +97,14 @@ public class Shot_ReflectP1 : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
-
+        if (BD.gameObject.tag == "Barrier")
+        {
+            Destroy(this.gameObject);
+        }
+        if (BD.gameObject.tag == "Absorption")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 //--------------------------------------------------------------------------------------

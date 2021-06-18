@@ -17,6 +17,8 @@ TagManager:
   - Hit_Body_P1
   - Player_R2
   - Hit_Body_P2
+  - Barrier
+  - Absorption
   layers:
   - Default
   - TransparentFX

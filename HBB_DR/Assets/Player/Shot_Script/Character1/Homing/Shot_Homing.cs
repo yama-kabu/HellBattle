@@ -90,6 +90,14 @@ public class Shot_Homing : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
+        if (BD.gameObject.tag == "Barrier")
+        {
+            Destroy(this.gameObject);
+        }
+        if (BD.gameObject.tag == "Absorption")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 //--------------------------------------------------------------------------------------

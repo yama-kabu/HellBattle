@@ -37,10 +37,10 @@ public class Player_Manager_L : MonoBehaviour
             {
                 //キャラクターが使える４つの弾
                 //１つ目　操作キー：Z　｜　操作ボタン：A
-
+                
                 //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager1.Shot3();//Homing
-                                   //３つ目　操作キー：C　｜　操作ボタン：X
+                //３つ目　操作キー：C　｜　操作ボタン：X
 
                 //４つ目　操作キー：V　｜　操作ボタン：Y
 
@@ -54,9 +54,9 @@ public class Player_Manager_L : MonoBehaviour
                 //キャラクターが使える４つの弾
                 //１つ目　操作キー：Z　｜　操作ボタン：A
                 s_Manager1.Shot2();//spiral
-                                   //２つ目　操作キー：X　｜　操作ボタン：B
+                //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager1.Shot4();//Reflect
-                                   //３つ目　操作キー：C　｜　操作ボタン：X
+                //３つ目　操作キー：C　｜　操作ボタン：X
 
                 //４つ目　操作キー：V　｜　操作ボタン：Y
 
@@ -74,7 +74,7 @@ public class Player_Manager_L : MonoBehaviour
 
                 //３つ目　操作キー：C　｜　操作ボタン：X
                 s_Manager1.Shot5();//Barrage
-                                   //４つ目　操作キー：V　｜　操作ボタン：Y
+                //４つ目　操作キー：V　｜　操作ボタン：Y
                 s_Manager1.Shot6();//Random_Homing
 
 
@@ -92,7 +92,7 @@ public class Player_Manager_L : MonoBehaviour
 
                 //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager2.Shot3();//Homing
-                                   //３つ目　操作キー：C　｜　操作ボタン：X
+                //３つ目　操作キー：C　｜　操作ボタン：X
 
                 //４つ目　操作キー：V　｜　操作ボタン：Y
 
@@ -106,9 +106,9 @@ public class Player_Manager_L : MonoBehaviour
                 //キャラクターが使える４つの弾
                 //１つ目　操作キー：Z　｜　操作ボタン：A
                 s_Manager2.Shot2();//spiral
-                                   //２つ目　操作キー：X　｜　操作ボタン：B
+                //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager2.Shot4();//Reflect
-                                   //３つ目　操作キー：C　｜　操作ボタン：X
+                //３つ目　操作キー：C　｜　操作ボタン：X
 
                 //４つ目　操作キー：V　｜　操作ボタン：Y
 
@@ -126,23 +126,21 @@ public class Player_Manager_L : MonoBehaviour
 
                 //３つ目　操作キー：C　｜　操作ボタン：X
                 s_Manager2.Shot5();//Barrage
-                                   //４つ目　操作キー：V　｜　操作ボタン：Y
+                //４つ目　操作キー：V　｜　操作ボタン：Y
                 s_Manager2.Shot6();//Random_Homing
 
                 //必殺技
 
             }
         }
-        
 //--------------------------------------------------------------------------------------
 
         //保留
         //s_Manager1.Shot1();//Way
-
         //s_Manager1.Shot7();//Cross
 
     }
 
-//--------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
 }

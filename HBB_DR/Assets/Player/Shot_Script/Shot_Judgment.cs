@@ -43,7 +43,7 @@ public class Shot_Judgment : MonoBehaviour
         }
     }
 
-//--------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
     void OnTriggerEnter2D(Collider2D BD)
     {
@@ -56,10 +56,19 @@ public class Shot_Judgment : MonoBehaviour
                 //ダメージ変数に弾が持っているダメージを代入
                 BD.gameObject.GetComponent<Player_Manager_R>().Damage(damage);
             }
-                Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
-    }
 
+        if (BD.gameObject.tag == "Barrier")
+        {
+            Destroy(this.gameObject);
+        }
+        if (BD.gameObject.tag == "Absorption")
+        {
+            Destroy(this.gameObject);
+        }
+        
+    }
 //--------------------------------------------------------------------------------------
 
 }

@@ -66,9 +66,9 @@
     <Compile Include="Assets\UI\Script\SceneMove.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Judgment.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Move.cs" />
+    <Compile Include="Assets\Player\Setting.cs" />
     <Compile Include="Assets\UI\Script\FadeIn.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Manager_L.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Cross\Shot_Cross.cs" />
     <Compile Include="Assets\UI\Script\Move2.cs" />
     <Compile Include="Assets\UI\Script\Sound1.cs" />
     <Compile Include="Assets\UI\Script\TitleSceneChange.cs" />
@@ -78,7 +78,7 @@
     <Compile Include="Assets\Player\Shot_Script\Character1\Homing\Shot_Homing.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Manager1.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Manager_R.cs" />
-    <Compile Include="Assets\Player\Setting.cs" />
+    <Compile Include="Assets\Player\Player_Manager\Player_Event.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
