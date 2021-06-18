@@ -99,8 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1: {fileID: 0}
   Player2: {fileID: 0}
-  StageL: {fileID: 3042148255725717847, guid: 4cec61b8c9e5dee46a1d07373a79742d, type: 3}
-  StageR: {fileID: 8746807402028353910, guid: cbd43aeadc8498b47a029caeabaa7101, type: 3}
   HeelPoint: 10
   FallSpeed: 3
 --- !u!50 &-4491192127149632754
