@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class EventManager : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class EventManager : MonoBehaviour
     float Time2, Time3, Time5;
     public bool HPSwitch = false;
     bool SESwitch, Barrier = false;
+    float EventTime;
 
     //イベントまでのカウントダウン
     float EventCount;
@@ -40,7 +43,13 @@ public class EventManager : MonoBehaviour
     //アイテム格納
     public GameObject LifeItem;
 
-    float EventTime;
+    //アナウンス文字
+    public GameObject EventText;
+    public string Event1tex;
+    public string Event2tex;
+    public string Event3tex;
+    public string Event4tex;
+    public string Event5tex;
 
     void Start()
     {
@@ -50,17 +59,22 @@ public class EventManager : MonoBehaviour
 
     void Update()
     {
+        Textchange();
         //イベント発生までの時間の振れ幅を決める
+        //どのイベントを行うか決める
         if (EventSwitch == false)
         {
-            EventCount = Random.Range(TimeA, TimeB);
+            EventCount = UnityEngine.Random.Range(TimeA, TimeB);
             //イベントの個数を把握し、その中からランダムな数を取り出す
-            Rand = Random.Range(1, EventNumber + 1);
+            Rand = UnityEngine.Random.Range(1, EventNumber + 1);
             EventSwitch = true;
             SESwitch = false;
         }
 
-        EventCount -= Time.deltaTime;
+        EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
+
+        //【デバッグ用】押したキーの番号のイベントに変更
+        Eventchange();
 
         //カウントが終っている間はイベントを行う
         if (EventCount <= 0)
@@ -76,7 +90,7 @@ public class EventManager : MonoBehaviour
     //各イベントの処理
     void Event1()//ライフ回復イベント
     {
-        //Instantiate(LifeItem);//回復アイテム生成(完成するまでコメントアウト)
+        Instantiate(LifeItem);//回復アイテム生成(完成するまでコメントアウト)
 
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
         EventSwitch = false;
@@ -129,7 +143,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            Rand = Random.Range(1, EventNumber + 1);
+            Rand = UnityEngine.Random.Range(1, EventNumber + 1);
         }
     }
 
@@ -141,6 +155,71 @@ public class EventManager : MonoBehaviour
         {
             HPSwitch = false;
             EventSwitch = false;
+        }
+    }
+
+    void Textchange()
+    {
+        Text Etext = EventText.GetComponent<Text>();
+
+        if (EventCount <= 0)
+        {
+            switch (Rand)
+            {
+                case 1:
+                    Etext.text = Event1tex;
+                    break;
+                case 2:
+                    Etext.text = Event2tex;
+                    break;
+                case 3:
+                    Etext.text = Event3tex;
+                    break;
+                case 4:
+                    Etext.text = Event4tex;
+                    break;
+                case 5:
+                    Etext.text = Event5tex;
+                    break;
+            }
+        }
+        else
+        {
+            Etext = null;
+        }
+    }
+
+    //【デバッグ用】押したキーの番号のイベントに変更
+    void Eventchange()
+    {
+        if (Input.anyKeyDown)
+        {
+            foreach (KeyCode code in Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKeyDown(code))
+                {
+                    switch(code)
+                    {
+                        case KeyCode.Alpha1:
+                            Rand = 1;
+                            break;
+                        case KeyCode.Alpha2:
+                            Rand = 2;
+                            break;
+                        case KeyCode.Alpha3:
+                            Rand = 3;
+                            break;
+                        case KeyCode.Alpha4:
+                            Rand = 4;
+                            break;
+                        case KeyCode.Alpha5:
+                            Rand = 5;
+                            break;
+                    }
+                    Debug.Log(Rand);
+                    break;
+                }
+            }
         }
     }
 }
