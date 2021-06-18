@@ -16,8 +16,10 @@ public class Shot_Manager1 : MonoBehaviour
     public GameObject Shot04_3;
     public GameObject Shot05;
     public GameObject Shot06;
+    public GameObject Shot07;
 
-//--------------------------------------------------------------------------------------
+    public Shot_Cross SC;
+    //--------------------------------------------------------------------------------------
 
     //スタートをplayer位置に
     private GameObject Player;
@@ -40,6 +42,7 @@ public class Shot_Manager1 : MonoBehaviour
 
     int Spiral_count = 0;
     int Barrage_count = 0;
+    int Cross_count = 0;
 
     //ショット2の類
     //クールタイム調整用
@@ -47,20 +50,24 @@ public class Shot_Manager1 : MonoBehaviour
     //何秒発射されたか
     float Spiral_Duration_time = 3;
     float Barrage_Duration_time = 3;
+    float Cross_Duration_time = 3;
 
     //発射しているか否か判定
     bool Spiral_Duration = false;
     bool Barrage_Duration = false;
-
+    bool Cross_Duration = false;
     //クールタイム中か否か判定
     bool Spiral_Cooltime_check = false;
     bool Barrage_Cooltime_check = false;
+    bool Cross_Cooltime_check = false;
 
 
     //スパイラルの一度の操作で続ける時間
     int Spiral_Time = 3;
     //バラージの一度の操作で続ける時間
     int Barrage_Time = 3;
+    //クロスの一度の操作で続ける時間
+    int Cross_Time = 3;
 
     //ショット2の速度
     //１０００にすると面白くなる
@@ -70,6 +77,7 @@ public class Shot_Manager1 : MonoBehaviour
 
     public float Spiral_kaiten;
     public float Barrage_ryou;
+    public float Cross_ryou;
 //--------------------------------------------------------------------------------------
 
     void Start()
@@ -130,7 +138,7 @@ public class Shot_Manager1 : MonoBehaviour
     public void Shot2()
     {
 
-        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B1"))
+        if (Input.GetKey(KeyCode.Z) || Input.GetButtonDown("Button_A1"))
         {
             if (Spiral_Cooltime_check == false && Spiral_Duration == false)
             {
@@ -200,7 +208,7 @@ public class Shot_Manager1 : MonoBehaviour
         {
             Shot3_Cooltime_Count += Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.C) || Input.GetButtonDown("Button_X1"))
+        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B1"))
         {
             if ((Shot3_Cooltime_Count > homing_Cooltime))
             {
@@ -221,7 +229,7 @@ public class Shot_Manager1 : MonoBehaviour
     public void Shot4()
     {
         Shot4_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y1"))
+        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_B1"))
         {
 
             if (Shot4_Cooltime_Count >= Shot_Cooltime)
@@ -253,7 +261,7 @@ public class Shot_Manager1 : MonoBehaviour
 
     public void Shot5()
     {
-        if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_A1"))
+        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_A1"))
         {
             if (Barrage_Cooltime_check == false && Barrage_Duration == false)
             {
@@ -310,7 +318,7 @@ public class Shot_Manager1 : MonoBehaviour
     public void Shot6()
     {
         Shot6_Cooltime_Count += Time.deltaTime;
-        if (Input.GetKey(KeyCode.N))
+        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y1"))
         {
             if (Shot6_Cooltime_Count > Random_homing_Cooltime)
             {
@@ -326,4 +334,85 @@ public class Shot_Manager1 : MonoBehaviour
             }
         }
     }
+
+ //--------------------------------------------------------------------------------------
+    //Cross
+    /*
+    public void Shot7()
+    {
+        if (Input.GetKey(KeyCode.M) || Input.GetButtonDown("Button_B1"))
+        {
+            if (Cross_Cooltime_check == false && Cross_Duration == false)
+            {
+                Cross_Duration = true;
+            }
+        }
+        if (Cross_Cooltime_check == false && Cross_Duration == true)
+        {
+            //↓５０の倍数で上げていくと出る球の量が変わる
+            if (Cross_count % Cross_ryou == 0)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+
+                    // 左
+                    {
+                        //玉の角度
+                        float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
+
+                        Vector3 Angle = transform.eulerAngles;
+                        Angle.x = transform.rotation.x;
+                        Angle.y = transform.rotation.y;
+                        Angle.z = Shot_Angle;
+
+                        GameObject Shot7 = Instantiate(Shot07) as GameObject;
+                        Shot7.transform.rotation = Quaternion.Euler(Angle);
+                        Shot7.transform.position = this.transform.position;
+                        SC.houkou = true;
+                    }
+                    // 右
+                    {
+                        //玉の角度
+                        float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
+
+                        Vector3 Angle = transform.eulerAngles;
+                        Angle.x = transform.rotation.x;
+                        Angle.y = transform.rotation.y;
+                        Angle.z = Shot_Angle;
+
+                        GameObject Shot7 = Instantiate(Shot07) as GameObject;
+                        Shot7.transform.rotation = Quaternion.Euler(Angle);
+                        Shot7.transform.position = this.transform.position;
+                        SC.houkou = false;
+                    }
+                }
+            }
+            Cross_count++;
+        }
+
+        if (Cross_Duration == true && Cross_Cooltime_check == false)
+        {
+            Cross_Duration_time -= Time.deltaTime;
+            if (Cross_Duration_time <= 0)
+            {
+                Cross_Duration = false;
+                Cross_Cooltime_check = true;
+                Cross_Duration_time = Cross_Time;
+            }
+        }
+        else if (Cross_Cooltime_check == true && Cross_Duration == false)
+        {
+            Shot_Count_Time_Save -= Time.deltaTime;
+            if (Shot_Count_Time_Save <= 0)
+            {
+                Cross_Cooltime_check = false;
+                Shot_Count_Time_Save = 3;
+            }
+        }
+    }
+
+    */
+
+ //--------------------------------------------------------------------------------------
+    //名前
 }

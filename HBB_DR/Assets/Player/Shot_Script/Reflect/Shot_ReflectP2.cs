@@ -45,29 +45,15 @@ public class Shot_ReflectP2: MonoBehaviour
         }
         else if (this.gameObject.CompareTag("Bullet_2"))
         {
-            if (180 > Distance.x && Distance.x > 45 || 315 > Distance.x && Distance.x > 225)
-            {
-                //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)), (Distance.y * (Shot_Speed * tyousei)) + 35000));
-            }
-            else
-            {
-                //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)) + 35000, (Distance.y * (Shot_Speed * tyousei))));
-            }
+
+            //発射するプログラム　
+            Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei) + 35000), (Distance.y * (Shot_Speed * tyousei))));
+
         }
         else if (this.gameObject.CompareTag("Bullet_3"))
         {
-            if ((180 > Distance.x) && (Distance.x > 45) || (315 > Distance.x) && (Distance.x > 225))
-            {
-                //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)), (Distance.y * (Shot_Speed * tyousei)) - 35000));
-            }
-            else
-            {
-                //発射するプログラム　
-                Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei)) - 35000, (Distance.y * (Shot_Speed * tyousei))));
-            }
+            //発射するプログラム　
+            Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei) - 35000), (Distance.y * (Shot_Speed * tyousei))));
         }
     }
 
