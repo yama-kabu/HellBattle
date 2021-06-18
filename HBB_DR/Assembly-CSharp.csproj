@@ -55,11 +55,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Player\Shot_Script\Random_Homing\Shot_Random_Homing.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Character3\Random_Homing\Shot_Random_Homing.cs" />
     <Compile Include="Assets\UI\Script\Move1.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Reflect\Shot_ReflectP2.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Character2\Reflect\Shot_ReflectP2.cs" />
     <Compile Include="Assets\UI\Script\PlayerHPbar.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Reflect\Shot_ReflectP1.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Character2\Reflect\Shot_ReflectP1.cs" />
     <Compile Include="Assets\UI\Script\TitleSound.cs" />
     <Compile Include="Assets\UI\Script\PanelSwitch.cs" />
     <Compile Include="Assets\UI\Script\Move3.cs" />
@@ -67,7 +67,7 @@
     <Compile Include="Assets\Player\Shot_Script\Shot_Judgment.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Move.cs" />
     <Compile Include="Assets\UI\Script\FadeIn.cs" />
-    <Compile Include="Assets\Player\Player_Manager\Player_Manager_L1.cs" />
+    <Compile Include="Assets\Player\Player_Manager\Player_Manager_L.cs" />
     <Compile Include="Assets\Player\Shot_Script\Cross\Shot_Cross.cs" />
     <Compile Include="Assets\UI\Script\Move2.cs" />
     <Compile Include="Assets\UI\Script\Sound1.cs" />
@@ -75,10 +75,10 @@
     <Compile Include="Assets\Player\Shot_Script\Shot_Manager2.cs" />
     <Compile Include="Assets\UI\Script\EnemyHPbar.cs" />
     <Compile Include="Assets\Event\EventManager.cs" />
-    <Compile Include="Assets\Player\Shot_Script\Homing\Shot_Homing.cs" />
+    <Compile Include="Assets\Player\Shot_Script\Character1\Homing\Shot_Homing.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Manager1.cs" />
-    <Compile Include="Assets\Player\Player_Manager\Player_Manager_L2.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Manager_R.cs" />
+    <Compile Include="Assets\Player\Setting.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

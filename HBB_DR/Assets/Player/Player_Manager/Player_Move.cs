@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+    public  int Character_Speed; //参照したキャラクタースピードの確認
+    GameObject Player_L1;//移動用キャラの格納用
+    GameObject Player_L2;//移動用キャラの格納用
+    Player_Manager_L PL;
+
     //スピード
     [SerializeField]
-    private float speed = 3;
+    private float speed;
 
     [SerializeField]
     public float maxY, maxX, minY, minX;
@@ -19,10 +24,7 @@ public class Player_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 240; //FPSを240に設定 
-
-
-
+        //行動範囲設定
         rd = GetComponent<Rigidbody2D>();
         if (this.gameObject.CompareTag("Player_L1"))
         {
@@ -47,6 +49,35 @@ public class Player_Move : MonoBehaviour
         }
 
 
+        //選択されたキャラクターを見るよ！
+        if (this.gameObject.CompareTag("Player_L1") || this.gameObject.CompareTag("Player_L2"))
+        {
+            Character_Speed = gameObject.GetComponent<Player_Manager_L>().Character;
+        }
+        else if(this.gameObject.CompareTag("Player_R1"))
+        {
+            PL = GameObject.Find("Player_L1").GetComponent<Player_Manager_L>();
+            Character_Speed = PL.Character;
+        }
+        else if (this.gameObject.CompareTag("Player_R2"))
+        {
+            PL = GameObject.Find("Player_L2").GetComponent<Player_Manager_L>();
+            Character_Speed = PL.Character;
+        }
+
+        //キャラクタースピード設定
+        if (Character_Speed == 1)
+        {
+            speed = 500;
+        }
+        else if (Character_Speed == 2)
+        {
+            speed = 1000;
+        }
+        else if (Character_Speed == 3)
+        {
+            speed = 1500;
+        }
 
     }
 
