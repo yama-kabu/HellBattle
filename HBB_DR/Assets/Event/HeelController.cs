@@ -6,8 +6,6 @@ public class HeelController : MonoBehaviour
 {
     public GameObject Player1;
     public GameObject Player2;
-    public GameObject StageL;
-    public GameObject StageR;
     public int HeelPoint;
     public float FallSpeed;
     private Rigidbody2D rb;
@@ -22,7 +20,16 @@ public class HeelController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(rb.velocity.x , -FallSpeed);
+        if(transform.position.x < 0)
+        {
+            Vector2 Move = new Vector2(0, -FallSpeed);
+            rb.velocity = Move;
+        }
+        else if(transform.position.x >0)
+        {
+            Vector2 Move = new Vector2(0, FallSpeed);
+            rb.velocity = Move;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

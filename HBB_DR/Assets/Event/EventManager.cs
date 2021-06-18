@@ -24,9 +24,10 @@ public class EventManager : MonoBehaviour
     public float PlayerSlow;//時間鈍化中のプレイヤー速度
     public float BulletSpeed1, BulletSpeed2;//時間鈍化中のプレイヤー速度
     float Time2, Time3, Time5;
-    public bool HPSwitch = false;
     bool SESwitch, Barrier = false;
     float EventTime;
+    public bool B_Switch = false;
+    public bool HPSwitch = false;
 
     //イベントまでのカウントダウン
     float EventCount;
@@ -84,13 +85,32 @@ public class EventManager : MonoBehaviour
                 Aud.PlayOneShot(StartSE);
                 SESwitch = true;
             }
+            switch(Rand)
+            {
+                case 1:
+                    Event1();
+                    break;
+                case 2:
+                    Event2();
+                    break;
+                case 3:
+                    Event3();
+                    break;
+                case 4:
+                    Event4();
+                    break;
+                case 5:
+                    Event5();
+                    break;
+            }
         }
     }
 
     //各イベントの処理
     void Event1()//ライフ回復イベント
     {
-        Instantiate(LifeItem);//回復アイテム生成(完成するまでコメントアウト)
+        var Item = Instantiate(LifeItem, new Vector2(-5, 5), Quaternion.identity);
+        var Item2 = Instantiate(LifeItem, new Vector2(5, -5), Quaternion.Euler(0, 0, 180f));
 
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
         EventSwitch = false;
@@ -138,6 +158,7 @@ public class EventManager : MonoBehaviour
         if (Barrier == false)
         {
             //ここにバリア生成の処理を書く
+            B_Switch = true;
             Barrier = true;
             EventSwitch = false;
         }
