@@ -28,6 +28,7 @@ public class EventManager : MonoBehaviour
     float EventTime;
     public bool B_Switch = false;
     public bool HPSwitch = false;
+    bool OnOff = false;
 
     //イベントまでのカウントダウン
     float EventCount;
@@ -55,15 +56,21 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         EventSwitch = false;
+        OnOff = false;
         Aud = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         Textchange();
+
+        float x = 60;
+        x -= Time.deltaTime;
+        if (x <=0) { OnOff = true; }
+
         //イベント発生までの時間の振れ幅を決める
         //どのイベントを行うか決める
-        if (EventSwitch == false)
+        if (EventSwitch == false && OnOff == true)
         {
             EventCount = UnityEngine.Random.Range(TimeA, TimeB);
             //イベントの個数を把握し、その中からランダムな数を取り出す
@@ -157,8 +164,8 @@ public class EventManager : MonoBehaviour
     {
         if (Barrier == false)
         {
-            //ここにバリア生成の処理を書く
             B_Switch = true;
+            Player1.GetComponent<Player_Manager_R>();
             Barrier = true;
             EventSwitch = false;
         }
