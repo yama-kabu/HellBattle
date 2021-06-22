@@ -294,7 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3767531790062545902, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3767531790062545902, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,8 +539,8 @@ MonoBehaviour:
   Time_AtcUP: 30
   Time_Speed: 0
   Time_HP: 0
-  Player1: {fileID: 1829896830}
-  Player2: {fileID: 181226323}
+  Player1: {fileID: 181226323}
+  Player2: {fileID: 1829896830}
   LifeItem: {fileID: 6992314487823387357, guid: efce95e939bf18844b2b78ebb8fecc4e, type: 3}
   EventText: {fileID: 2006003711}
   Event1tex: "\u30A4\u30D9\u30F3\u30C81\u767A\u751F"
@@ -560,7 +560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1473487523
 GameObject:
