@@ -43,7 +43,7 @@ public class Shot_Judgment : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     void OnTriggerEnter2D(Collider2D BD)
     {
@@ -58,7 +58,6 @@ public class Shot_Judgment : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
-
         if (BD.gameObject.tag == "Barrier")
         {
             Destroy(this.gameObject);
@@ -67,8 +66,6 @@ public class Shot_Judgment : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        
-    }
-//--------------------------------------------------------------------------------------
 
+    }
 }

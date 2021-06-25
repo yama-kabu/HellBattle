@@ -37,12 +37,15 @@ public class Player_Manager_L : MonoBehaviour
             {
                 //キャラクターが使える４つの弾
                 //１つ目　操作キー：Z　｜　操作ボタン：A
-                
+                s_Manager1.Shot8();//Cross
                 //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager1.Shot3();//Homing
                 //３つ目　操作キー：C　｜　操作ボタン：X
-
+                s_Manager1.Shot7();//Explosion
                 //４つ目　操作キー：V　｜　操作ボタン：Y
+                s_Manager1.Shot5();//Barrage
+
+                //テスト
 
 
 
@@ -57,14 +60,15 @@ public class Player_Manager_L : MonoBehaviour
                 //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager1.Shot4();//Reflect
                 //３つ目　操作キー：C　｜　操作ボタン：X
-
+                s_Manager1.Shot1();//Way
                 //４つ目　操作キー：V　｜　操作ボタン：Y
-
+                s_Manager1.Shot6();//Random_Homing
 
 
                 //必殺技
 
             }
+            /*
             else if (Character == 3)
             {
                 //キャラクターが使える４つの弾
@@ -73,14 +77,15 @@ public class Player_Manager_L : MonoBehaviour
                 //２つ目　操作キー：X　｜　操作ボタン：B
 
                 //３つ目　操作キー：C　｜　操作ボタン：X
-                s_Manager1.Shot5();//Barrage
+                
                 //４つ目　操作キー：V　｜　操作ボタン：Y
-                s_Manager1.Shot6();//Random_Homing
+                
 
 
                 //必殺技
 
             }
+            */
         }
         //プレイヤー２だった場合
         else if (this.gameObject.CompareTag("Player_L2"))
@@ -89,12 +94,15 @@ public class Player_Manager_L : MonoBehaviour
             {
                 //キャラクターが使える４つの弾
                 //１つ目　操作キー：Z　｜　操作ボタン：A
-
+                s_Manager2.Shot8();//Cross
                 //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager2.Shot3();//Homing
                 //３つ目　操作キー：C　｜　操作ボタン：X
-
+                s_Manager2.Shot7();//Explosion
                 //４つ目　操作キー：V　｜　操作ボタン：Y
+                s_Manager2.Shot5();//Barrage
+
+                //テスト
 
 
 
@@ -109,14 +117,15 @@ public class Player_Manager_L : MonoBehaviour
                 //２つ目　操作キー：X　｜　操作ボタン：B
                 s_Manager2.Shot4();//Reflect
                 //３つ目　操作キー：C　｜　操作ボタン：X
-
+                s_Manager2.Shot1();//Way
                 //４つ目　操作キー：V　｜　操作ボタン：Y
-
+                s_Manager2.Shot6();//Random_Homing
 
 
                 //必殺技
 
             }
+            /*
             else if (Character == 3)
             {
                 //キャラクターが使える４つの弾
@@ -125,19 +134,20 @@ public class Player_Manager_L : MonoBehaviour
                 //２つ目　操作キー：X　｜　操作ボタン：B
 
                 //３つ目　操作キー：C　｜　操作ボタン：X
-                s_Manager2.Shot5();//Barrage
+                
                 //４つ目　操作キー：V　｜　操作ボタン：Y
-                s_Manager2.Shot6();//Random_Homing
+                
+
 
                 //必殺技
 
             }
+            */
         }
-//--------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------
 
         //保留
-        //s_Manager1.Shot1();//Way
-        //s_Manager1.Shot7();//Cross
+        //
 
     }
 

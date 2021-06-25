@@ -26,12 +26,12 @@ TagManager:
   - 
   - Water
   - UI
+  - Event
   - Hit_Body
   - Player
   - Bullet
-  - 
-  - 
-  - 
+  - Stage
+  - Back Stage
   - 
   - 
   - 

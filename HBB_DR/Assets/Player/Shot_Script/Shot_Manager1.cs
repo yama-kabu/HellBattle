@@ -7,7 +7,6 @@ public class Shot_Manager1 : MonoBehaviour
 {
 
     //Player_Shot プレハブ
-    //public GameObject Shot01;
     public GameObject Shot01;
     public GameObject Shot02;
     public GameObject Shot03;
@@ -17,6 +16,8 @@ public class Shot_Manager1 : MonoBehaviour
     public GameObject Shot05;
     public GameObject Shot06;
     public GameObject Shot07;
+    public GameObject Shot08;
+
 
 //--------------------------------------------------------------------------------------
 
@@ -29,15 +30,29 @@ public class Shot_Manager1 : MonoBehaviour
 
     //射撃のクールタイム
     float Shot_Cooltime = 3;//全体のクールタイムを決める
-    float homing_Cooltime = 10;//ホーミングのクールタイム数
-    float Random_homing_Cooltime = 15;//ランダムホーミングのクールタイム数
 
+     
     float Shot1_Cooltime_Count = 100;//Shot1用のクールタイムカウンター
     //float Shot2_Cooltime_Count;//Shot2用のクールタイムカウンター
     float Shot3_Cooltime_Count = 100;//Shot3用のクールタイムカウンター
     float Shot4_Cooltime_Count = 100;//Shot4用のクールタイムカウンター
     //float Shot5_Cooltime_Count;//Shot5用のクールタイムカウンター
     float Shot6_Cooltime_Count = 100;//Shot6用のクールタイムカウンター
+    float Shot7_Cooltime_Count = 100;//Shot7用のクールタイムカウンター
+
+    float homing_Cooltime = 10;      //ホーミングのクールタイム数 
+    float Random_homing_Cooltime = 15;//ランダムホーミングのクールタイム数
+    float Explosion_Cooltime =5;   //エクスプロージョンのクールタイム数
+
+
+    //発射感覚
+    float Way_time_count = 0;
+    int Way_count = 1;
+    //
+    float Push_time_count = 0;
+    int Push_count = 0;
+    bool Is_Attack = false;
+
 
     int Spiral_count = 0;
     int Barrage_count = 0;
@@ -79,7 +94,21 @@ public class Shot_Manager1 : MonoBehaviour
 
     public float Spiral_kaiten;
     public float Barrage_ryou;
-//--------------------------------------------------------------------------------------
+
+
+
+
+
+    //曲がる方向を示す　右ならtrue,左ならfalse
+    bool Cross_houkou;
+    bool Cross_Duration = false;
+    bool Cross_Cooltime_check = false;
+    float Cross_Duration_time = 3;
+    float Cross_time_count = 0;
+
+
+    bool Explosion_houkou;
+//-------------------------------------------------------------------------------------
 
     void Start()
     {
@@ -94,101 +123,155 @@ public class Shot_Manager1 : MonoBehaviour
             Player = GameObject.Find("Player_L2");
             Target = GameObject.Find("Player_R1");
         }
-
+        
 
     }
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
     //8Way
 
-    //public void Shot1()
-    //{
+    public void Shot1()
+    {
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown("Button_X1"))
+        {
+            //攻撃してないのを確認
+            if (!Is_Attack)
+            {
+                //５回まで押されるの許可
+                if (Push_count < 5)
+                {
+                    //押された回数プラス
+                    Push_count++;
+                }
+                else if (Push_count == 5)
+                {
+                    //５回に達したら攻撃許可
+                    Is_Attack = true;
+                }
+            }
+        }
+        //２秒計算開始
+        if(Push_time_count < 2 && Push_count != 0)
+        {
+            Push_time_count += Time.deltaTime;
+        }
+        //２秒たったらチェック
+        else if (Push_time_count > 2)
+        {
+            //攻撃許可
+            Is_Attack = true;
+        }
 
-    //    if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Button_A1"))
-    //    {
-    //        Vector3 Distance = Target.transform.position - Player.transform.position;
+        //攻撃開始
+        if (Is_Attack)
+        {
+            //0.5秒計算
+            Way_time_count += Time.deltaTime;
+            //0,5秒立って、押された回数が０ではなく、ウェイカウントを下回っていたら
+            if (Way_time_count > 0.5 && Push_count != 0 && Push_count >= Way_count)
+            {
+                //ベクトル計算
+                Vector3 Distance = Target.transform.position - Player.transform.position;
 
-    //        if (Way_count == 5)
-    //        {
-    //            for (int i = 0; i < 5; i++)
-    //            {
-    //                Vector2 vec = new Vector2(0.0f, 1.0f);
-    //                vec = Quaternion.Euler(0, 0, 0) * vec;
-    //                vec *= Shot01_Speed;
-    //                var q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-10 + (5 * i)));
-    //                var t = Instantiate(Shot01, transform.position, q);
-    //                t.GetComponent<Rigidbody2D>().velocity = vec;
-    //                Way_count--;
-    //            }
-    //            Way_time = 0.5f;
-    //        }
-    //        else if (Way_count == 4)
-    //        {
-    //            for (int i = 0; i < 4; i++)
-    //            {
+                //カウントが５だった場合
+                if (Way_count == 5)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Way(Distance, Way_count, i);
+                    }
+                }
+                //カウントが４だった場合
+                else if (Way_count == 4)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Way(Distance, Way_count, i);
+                    }
+                }
+                //カウントが３だった場合
+                else if (Way_count == 3)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Way(Distance, Way_count, i);
+                    }
+                }
+                //カウントが２だった場合
+                else if (Way_count == 2)
+                {
 
-    //                Vector2 vec = new Vector2(0.0f, 1.0f);
-    //                vec = Quaternion.Euler(0, 0, 0) * vec;
-    //                vec *= Shot01_Speed;
-    //                var q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-6 + (4 * i)));
-    //                var t = Instantiate(Shot01, transform.position, q);
-    //                t.GetComponent<Rigidbody2D>().velocity = vec;
-    //                Way_count--;
-    //            }
-    //            Way_time = 0.5f;
-    //        }
-    //        else if (Way_count == 3)
-    //        {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        Way(Distance, Way_count, i);
+                    }
+                }
+                //カウントが１だった場合
+                else if (Way_count == 1)
+                {
 
-    //            for (int i = 0; i < 3; i++)
-    //            {
-    //                Vector2 vec = new Vector2(0.0f, 1.0f);
-    //                vec = Quaternion.Euler(0, 0, 0) * vec;
-    //                vec *= Shot01_Speed;
-    //                var q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-5 + (10 * i)));
-    //                var t = Instantiate(Shot01, transform.position, q);
-    //                t.GetComponent<Rigidbody2D>().velocity = vec;
-    //                Way_count--;
-    //            }
-    //            Way_time = 0.5f;
-    //        }
-    //        else if (Way_count == 2)
-    //        {
+                    for (int i = 0; i < 1; i++)
+                    {
+                        Way(Distance, Way_count, i);
+                    }
+                }
+                //カウント加算
+                Way_count++;
+                //時間を０に
+                Way_time_count = 0;
+            }
 
-    //            for (int i = 0; i < 2; i++)
-    //            {
-    //                Vector2 vec = new Vector2(0.0f, 1.0f);
-    //                vec = Quaternion.Euler(0, 0, 0) * vec;
-    //                vec *= Shot01_Speed;
-    //                var q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-3 + (6 * i)));
-    //                var t = Instantiate(Shot01, transform.position, q);
-    //                t.GetComponent<Rigidbody2D>().velocity = vec;
-    //                Way_count--;
-    //            }
-    //            Way_time = 0.5f;
-    //        }
-    //        else if (Way_count == 1)
-    //        {
+            //初期化
+            if (Push_count < Way_count)
+            {
+                Way_time_count = 0;
+                Push_count = 0;
+                Way_count = 1;
+                Push_time_count = 0;
+                Is_Attack = false;
+            }
+        }
+    }
 
-    //            for (int i = 0; i < 1; i++)
-    //            {
-    //                Vector2 vec = new Vector2(0.0f, 1.0f);
-    //                vec = Quaternion.Euler(0, 0, 0) * vec;
-    //                vec *= Shot01_Speed;
-    //                var q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg));
-    //                var t = Instantiate(Shot01, transform.position, q);
-    //                t.GetComponent<Rigidbody2D>().velocity = vec;
-    //                Way_count--;
-    //            }
-    //        }
-
-    //    }
-    //}
-        
 //--------------------------------------------------------------------------------------
-//Spiral
 
-        public void Shot2()
+    //Way処理の中身
+    public void Way(Vector3 Distance,int Way_count,int i)
+    {
+
+        Vector2 vec = new Vector2(0.0f, 1.0f);
+        vec = Quaternion.Euler(0, 0, 0) * vec;
+        vec *= Shot01_Speed;
+
+        //初期化
+        var q = Quaternion.Euler(0, 0, 0);
+        if (Way_count == 1)
+        {
+            q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg));
+        }
+        else if(Way_count == 2)
+        {
+            q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-3 + (6 * i)));
+        }
+        else if (Way_count == 3)
+        {
+            q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-4 + (4 * i)));
+        }
+        else if(Way_count == 4)
+        {
+            q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-6 + (4 * i)));
+        }
+        else if (Way_count == 5)
+        {
+            q = Quaternion.Euler(0, 0, (-Mathf.Atan2(Distance.x, Distance.y) * Mathf.Rad2Deg) + (-10 + (5 * i)));
+        }
+        var t = Instantiate(Shot01, transform.position, q);
+        t.GetComponent<Rigidbody2D>().velocity = vec;
+    }
+//--------------------------------------------------------------------------------------
+    //Spiral
+
+    public void Shot2()
         {
 
             if (Input.GetKey(KeyCode.Z) || Input.GetButtonDown("Button_A1"))
@@ -315,7 +398,7 @@ public class Shot_Manager1 : MonoBehaviour
 
     public void Shot5()
     {
-        if (Input.GetKey(KeyCode.X) || Input.GetButtonDown("Button_A1"))
+        if (Input.GetKey(KeyCode.V) || Input.GetButtonDown("Button_Y1"))
         {
             if (Barrage_Cooltime_check == false && Barrage_Duration == false)
             {
@@ -389,8 +472,106 @@ public class Shot_Manager1 : MonoBehaviour
         }
     }
 
- //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+    //Explosion
 
+    public void Shot7()
+    {
+        Shot7_Cooltime_Count += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown("Button_X1"))
+        {
+            if (Shot7_Cooltime_Count > Explosion_Cooltime)
+            {
+                Shot7_Cooltime_Count = 0;
+            }
+            if (Shot7_Cooltime_Count == 0)
+            {
+                GameObject Shot = Instantiate(Shot07);
+                Shot.transform.position = this.transform.position;
+            }
+        }
+    }
+
+//--------------------------------------------------------------------------------------
+    //Cross
+
+    public void Shot8()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Button_A1"))
+        {
+            if (Cross_Cooltime_check == false && Cross_Duration == false)
+            {
+                Cross_Duration = true;
+            }
+        }
+        if (Cross_Cooltime_check == false && Cross_Duration == true)
+        {
+            Cross_time_count ++;
+            if (Cross_time_count % 120 == 0)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+
+                    // 左
+                    {
+                        //玉の角度
+                        float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
+
+                        Vector3 Angle = transform.eulerAngles;
+                        Angle.x = transform.rotation.x;
+                        Angle.y = transform.rotation.y;
+                        Angle.z = Shot_Angle;
+
+                        GameObject Shot7 = Instantiate(Shot08) as GameObject;
+                        Shot7.transform.rotation = Quaternion.Euler(Angle);
+                        Shot7.transform.position = this.transform.position;
+                        Cross_houkou = true;
+                        Shot08.GetComponent<Shot_Cross>().houkou = Cross_houkou;
+                    }
+                    // 右
+                    {
+                        //玉の角度
+                        float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
+
+                        Vector3 Angle = transform.eulerAngles;
+                        Angle.x = transform.rotation.x;
+                        Angle.y = transform.rotation.y;
+                        Angle.z = Shot_Angle;
+
+                        GameObject ShotShot_test_cross = Instantiate(Shot08) as GameObject;
+                        ShotShot_test_cross.transform.rotation = Quaternion.Euler(Angle);
+                        ShotShot_test_cross.transform.position = this.transform.position;
+                        Cross_houkou = false;
+                        Shot08.GetComponent<Shot_Cross>().houkou = Cross_houkou;
+                    }
+                }
+            }
+        }
+        if (Cross_Duration == true && Cross_Cooltime_check == false)
+        {
+            Cross_Duration_time -= Time.deltaTime;
+            if (Cross_Duration_time <= 0)
+            {
+                Cross_Duration = false;
+                Cross_Cooltime_check = true;
+                Cross_Duration_time = Spiral_Time;
+            }
+        }
+        else if (Cross_Cooltime_check == true && Cross_Duration == false)
+        {
+            Shot_Count_Time_Save -= Time.deltaTime;
+            if (Shot_Count_Time_Save <= 0)
+            {
+                Cross_Cooltime_check = false;
+                Shot_Count_Time_Save = 3;
+                
+            }
+        }
+    }
+
+
+//--------------------------------------------------------------------------------------
+    //
 
  //--------------------------------------------------------------------------------------
     //名前
@@ -400,122 +581,4 @@ public class Shot_Manager1 : MonoBehaviour
 
 
 
-//Cross
-/*
-public void Shot99()
-{
-    if (Input.GetKey(KeyCode.M) || Input.GetButtonDown("Button_B1"))
-    {
-        if (Cross_Cooltime_check == false && Cross_Duration == false)
-        {
-            Cross_Duration = true;
-        }
-    }
-    if (Cross_Cooltime_check == false && Cross_Duration == true)
-    {
-        //↓５０の倍数で上げていくと出る球の量が変わる
-        if (Cross_count % Cross_ryou == 0)
-        {
-            for (int i = 0; i < 8; i++)
-            {
 
-                // 左
-                {
-                    //玉の角度
-                    float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
-
-                    Vector3 Angle = transform.eulerAngles;
-                    Angle.x = transform.rotation.x;
-                    Angle.y = transform.rotation.y;
-                    Angle.z = Shot_Angle;
-
-                    GameObject Shot7 = Instantiate(Shot07) as GameObject;
-                    Shot7.transform.rotation = Quaternion.Euler(Angle);
-                    Shot7.transform.position = this.transform.position;
-                    SC.houkou = true;
-                }
-                // 右
-                {
-                    //玉の角度
-                    float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
-
-                    Vector3 Angle = transform.eulerAngles;
-                    Angle.x = transform.rotation.x;
-                    Angle.y = transform.rotation.y;
-                    Angle.z = Shot_Angle;
-
-                    GameObject Shot7 = Instantiate(Shot07) as GameObject;
-                    Shot7.transform.rotation = Quaternion.Euler(Angle);
-                    Shot7.transform.position = this.transform.position;
-                    SC.houkou = false;
-                }
-            }
-        }
-        Cross_count++;
-    }
-
-    if (Cross_Duration == true && Cross_Cooltime_check == false)
-    {
-        Cross_Duration_time -= Time.deltaTime;
-        if (Cross_Duration_time <= 0)
-        {
-            Cross_Duration = false;
-            Cross_Cooltime_check = true;
-            Cross_Duration_time = Cross_Time;
-        }
-    }
-    else if (Cross_Cooltime_check == true && Cross_Duration == false)
-    {
-        Shot_Count_Time_Save -= Time.deltaTime;
-        if (Shot_Count_Time_Save <= 0)
-        {
-            Cross_Cooltime_check = false;
-            Shot_Count_Time_Save = 3;
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-public void Shot1()
-    {
-        if (Shot1_Cooltime_Count < Shot_Cooltime)
-        {
-            Shot1_Cooltime_Count += Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.Z) )
-        {
-
-            if (Shot1_Cooltime_Count > Shot_Cooltime)
-            {
-                for (int i = 1; i <= 8; i++)
-                {
-                    //玉の角度
-                    float Shot_Angle = i * 45;//変更時は22.5(全方向ではなく前だけの場合)
-
-                    Vector3 Angle = transform.eulerAngles;
-                    Angle.x = transform.rotation.x;
-                    Angle.y = transform.rotation.y;
-                    Angle.z = Shot_Angle;
-
-                    GameObject Shot1 = Instantiate(Shot01) as GameObject;
-                    Shot1.transform.rotation = Quaternion.Euler(Angle);
-                    Shot1.transform.position = this.transform.position;
-                }
-                //クールタイム初期化
-                Shot1_Cooltime_Count = 0;
-            }
-           
-        }
-    }
-*/
