@@ -28,7 +28,10 @@ public class EventManager : MonoBehaviour
     float EventTime;
     public bool B_Switch = false;
     public bool HPSwitch = false;
-    bool OnOff = false;
+
+    //最初の60秒間はイベントが動かないようにする
+    public bool OnOff = false;
+    private float x;
 
     //イベントまでのカウントダウン
     float EventCount;
@@ -58,13 +61,12 @@ public class EventManager : MonoBehaviour
         EventSwitch = false;
         OnOff = false;
         Aud = GetComponent<AudioSource>();
+        x = 60;
     }
 
     void Update()
     {
         Textchange();
-
-        float x = 60;
         x -= Time.deltaTime;
         if (x <=0) { OnOff = true; }
 
@@ -162,27 +164,27 @@ public class EventManager : MonoBehaviour
 
     void Event4()
     {
-        if (Barrier == false)
-        {
-            B_Switch = true;
-            Player1.GetComponent<Player_Manager_R>();
-            Barrier = true;
-            EventSwitch = false;
-        }
-        else
-        {
-            Rand = UnityEngine.Random.Range(1, EventNumber + 1);
-        }
-    }
-
-    void Event5()
-    {
         HPSwitch = true;//これをプレイヤー側等で参照して、吸収攻撃を処理
         Time5 += Time.deltaTime;
         if (Time5 >= Time_HP)
         {
             HPSwitch = false;
             EventSwitch = false;
+        }
+    }
+
+    void Event5()
+    {
+        if (Barrier == false)
+        {
+            B_Switch = Player1.GetComponent<Player_Manager_R>();
+            B_Switch = true;
+            Barrier = true;
+            EventSwitch = false;
+        }
+        else
+        {
+            Rand = UnityEngine.Random.Range(1, EventNumber + 1);
         }
     }
 
