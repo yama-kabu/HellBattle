@@ -7,7 +7,7 @@ public class Shot_ReflectP1 : MonoBehaviour
 {
     public float damage;
     private Vector2 lastVelocity;
-
+    Vector3 Distance;
     //Rigidbody2D コンポーネントを格納する変数
     private Rigidbody2D Reflect;
 
@@ -23,7 +23,7 @@ public class Shot_ReflectP1 : MonoBehaviour
     //ターゲットを敵の位置に
     public GameObject Target;
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     void Start()
     {
@@ -33,10 +33,17 @@ public class Shot_ReflectP1 : MonoBehaviour
         Player = GameObject.Find("Player_L1");
         Target = GameObject.Find("Hit_Body_P2");
 
-        //ｘとｙを計算
-        Vector3 Distance = Target.transform.position - Player.transform.position;
+        if (Target != null)
+        {
+            //ｘとｙを計算
+            Distance = Target.transform.position - Player.transform.position;
+        }
+        else if (Target == null)
+        {
+            //ｘとｙを計算
+        }
 
-        this.Reflect = this.GetComponent<Rigidbody2D>();
+            this.Reflect = this.GetComponent<Rigidbody2D>();
 
         if (this.gameObject.CompareTag("Bullet_1"))
         {
@@ -55,6 +62,8 @@ public class Shot_ReflectP1 : MonoBehaviour
             //発射するプログラム　
             Reflect.AddForce(new Vector2((Distance.x * (Shot_Speed * tyousei) - 35000), (Distance.y * (Shot_Speed * tyousei))));
         }
+
+
     }
 //--------------------------------------------------------------------------------------
 

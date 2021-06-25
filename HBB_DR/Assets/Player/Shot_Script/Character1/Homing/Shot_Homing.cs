@@ -13,6 +13,7 @@ public class Shot_Homing : MonoBehaviour
     public GameObject Shot01;
     public GameObject Stage;
 
+
     //’Ç‚¢‚©‚¯‚é‘ÎÛ‚ÌTransform
     GameObject enemy;
     //’e‚Ì§ŒÀ‘¬“x
@@ -94,20 +95,26 @@ public class Shot_Homing : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (BD.gameObject.tag == "Absorption")
-        {
-            Destroy(this.gameObject);
-        }
     }
 
 //--------------------------------------------------------------------------------------
 
     private void FixedUpdate()
     {
-        //’e‚©‚ç’Ç‚¢‚©‚¯‚é‘ÎÛ‚Ö‚Ì•ûŒü‚ğŒvZ
-        Vector3 vector3 = enemy.transform.position - BulletTrans.position;
-        //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»A”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é
-        Homing.AddForce(vector3.normalized * Shot_Speed);
+        if (enemy != null)
+        {
+            //’e‚©‚ç’Ç‚¢‚©‚¯‚é‘ÎÛ‚Ö‚Ì•ûŒü‚ğŒvZ
+            Vector3 vector3 = enemy.transform.position - BulletTrans.position;
+            //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»A”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é
+            Homing.AddForce(vector3.normalized * Shot_Speed);
+        }
+        else if (enemy == null)
+        {
+            //’e‚©‚ç’Ç‚¢‚©‚¯‚é‘ÎÛ‚Ö‚Ì•ûŒü‚ğŒvZ
+            Vector3 vector3 = BulletTrans.position;
+            //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»A”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é
+            Homing.AddForce(vector3.normalized * Shot_Speed);
+        }
         //X•ûŒü‚Ì‘¬“x‚ğ§ŒÀ
         float speedXTemp = Mathf.Clamp(Homing.velocity.x, -limitSpeed, limitSpeed);
         //Y•ûŒü‚Ì‘¬“x‚ğ§ŒÀ

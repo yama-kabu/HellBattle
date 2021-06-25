@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1856791898625411755}
   m_Layer: 8
   m_Name: Bullet_Spiral
-  m_TagString: Bullet
+  m_TagString: Bullet_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

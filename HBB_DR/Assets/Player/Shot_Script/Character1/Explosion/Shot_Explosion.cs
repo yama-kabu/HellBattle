@@ -22,7 +22,6 @@ public class Shot_Explosion : MonoBehaviour
 
     public int sakuretu = 60;
 
-    public float damage;
     public float Shot_Speed = 1000;
     public float Shot_Ex = 200;
     int time_count = 0;

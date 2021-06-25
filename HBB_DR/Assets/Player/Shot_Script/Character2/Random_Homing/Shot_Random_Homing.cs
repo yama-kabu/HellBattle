@@ -49,10 +49,14 @@ public class Shot_Random_Homing : MonoBehaviour
 
     public int ForcePawer;
     public int HomingPawer;
+
+
+
 //--------------------------------------------------------------------------------------
 
     void Start()
     {
+
         //“–‚½‚è”»’è@•Ç
         BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
 
@@ -219,10 +223,21 @@ public class Shot_Random_Homing : MonoBehaviour
             {
                 //ˆê“x‘¬“x‚ğ‚O‚É‚·‚é
                 Reflect.velocity = Vector2.zero;
-                //’e‚©‚ç’Ç‚¢‚©‚¯‚é‘ÎÛ‚Ö‚Ì•ûŒü‚ğŒvZ
-                Vector3 Distance = enemy.transform.position - BulletTrans.position;
-                //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»A”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é
-                Reflect.AddForce(Distance.normalized * Homing_Speed * HomingPawer);
+                if (enemy != null)
+                {
+                    //’e‚©‚ç’Ç‚¢‚©‚¯‚é‘ÎÛ‚Ö‚Ì•ûŒü‚ğŒvZ
+                    Vector3 Distance = enemy.transform.position - BulletTrans.position;
+                    //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»A”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é
+                    Reflect.AddForce(Distance.normalized * Homing_Speed * HomingPawer);
+                }
+                if(enemy == null)
+                {
+                    //’e‚©‚ç’Ç‚¢‚©‚¯‚é‘ÎÛ‚Ö‚Ì•ûŒü‚ğŒvZ
+                    Vector3 Distance = BulletTrans.position;
+                    //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»A”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é
+                    Reflect.AddForce(Distance.normalized * Homing_Speed * HomingPawer);
+
+                }
             }
         }
     }

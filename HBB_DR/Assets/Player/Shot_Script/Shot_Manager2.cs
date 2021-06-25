@@ -25,7 +25,8 @@ public class Shot_Manager2 : MonoBehaviour
     //ターゲットを敵の位置に
     private GameObject Target;
 
-//--------------------------------------------------------------------------------------
+    Vector3 Distance;
+    //--------------------------------------------------------------------------------------
 
     //射撃のクールタイム
     float Shot_Cooltime = 3;//全体のクールタイムを決める
@@ -169,8 +170,15 @@ public class Shot_Manager2 : MonoBehaviour
             //0,5秒立って、押された回数が０ではなく、ウェイカウントを下回っていたら
             if (Way_time_count > 0.5 && Push_count != 0 && Push_count >= Way_count)
             {
-                //ベクトル計算
-                Vector3 Distance = Target.transform.position - Player.transform.position;
+                if (Target != null)
+                {
+                    //ベクトル計算
+                    Distance = Target.transform.position - Player.transform.position;
+                }
+                else if (Target == null)
+                {
+                    Distance = Player.transform.position;
+                }
 
                 //カウントが５だった場合
                 if (Way_count == 5)
@@ -413,7 +421,15 @@ public class Shot_Manager2 : MonoBehaviour
             if (Barrage_count % Barrage_ryou == 0)
             {
 
-                Vector3 Distance = Target.transform.position - Player.transform.position;
+                if (Target != null)
+                {
+                    //ベクトル計算
+                    Distance = Target.transform.position - Player.transform.position;
+                }
+                else if (Target == null)
+                {
+                    Distance = Player.transform.position;
+                }
 
 
                 Vector2 vec = new Vector2(0.0f, 1.0f);

@@ -8,10 +8,6 @@ public class Shot_Explosion_ed : MonoBehaviour
 
     public GameObject Stage;
 
-
-
-
-
     void OnTriggerEnter2D(Collider2D BD)
     {
 
@@ -27,10 +23,6 @@ public class Shot_Explosion_ed : MonoBehaviour
         }
 
         if (BD.gameObject.tag == "Barrier")
-        {
-            Destroy(this.gameObject);
-        }
-        if (BD.gameObject.tag == "Absorption")
         {
             Destroy(this.gameObject);
         }

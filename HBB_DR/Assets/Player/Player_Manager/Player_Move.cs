@@ -9,6 +9,8 @@ public class Player_Move : MonoBehaviour
     GameObject Player_L2;//ˆÚ“®—pƒLƒƒƒ‰‚ÌŠi”[—p
     Player_Manager_L PL;
 
+    //Ÿ”s‚ğŒˆ‚ß‚é•Ï”“ü‚ê‚é‚æ‚¤
+    GameObject Syouhai;
     //ƒXƒs[ƒh
     [SerializeField]
     private float speed;
@@ -24,6 +26,9 @@ public class Player_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Ÿ”sBoolæ“¾
+        Syouhai = GameObject.Find("Stage");
+
         //s“®”ÍˆÍİ’è
         rd = GetComponent<Rigidbody2D>();
         if (this.gameObject.CompareTag("Player_L1"))
@@ -72,11 +77,11 @@ public class Player_Move : MonoBehaviour
         }
         else if (Character_Speed == 2)
         {
-            speed = 1000;
+            speed = 1500;
         }
         else if (Character_Speed == 3)
         {
-            speed = 1500;
+            speed = 1000;
         }
 
     }
@@ -85,21 +90,25 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
-        if(this.gameObject.CompareTag("Player_L1"))
+        //Ÿ”s‚ª‚Â‚¢‚Ä‚¢‚È‚©‚Á‚½ê‡ˆÚ“®‚ğ‹–‰Â
+        if (!Syouhai.GetComponent<Setting>().syouhai)
         {
-            MovePlayer_L1();
-        }
-        else if(this.gameObject.CompareTag("Player_L2"))
-        {
-            MovePlayer_L2();
-        }
-        else if(this.gameObject.CompareTag("Player_R1"))
-        {
-            MovePlayer_R1();
-        }
-        else if(this.gameObject.CompareTag("Player_R2"))
-        {
-            MovePlayer_R2();
+            if (this.gameObject.CompareTag("Player_L1"))
+            {
+                MovePlayer_L1();
+            }
+            else if (this.gameObject.CompareTag("Player_L2"))
+            {
+                MovePlayer_L2();
+            }
+            else if (this.gameObject.CompareTag("Player_R1"))
+            {
+                MovePlayer_R1();
+            }
+            else if (this.gameObject.CompareTag("Player_R2"))
+            {
+                MovePlayer_R2();
+            }
         }
     }
 

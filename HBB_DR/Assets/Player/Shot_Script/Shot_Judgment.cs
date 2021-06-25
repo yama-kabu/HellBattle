@@ -62,10 +62,6 @@ public class Shot_Judgment : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if (BD.gameObject.tag == "Absorption")
-        {
-            Destroy(this.gameObject);
-        }
 
     }
 }
