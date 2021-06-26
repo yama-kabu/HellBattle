@@ -5,30 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerHPbar : MonoBehaviour
 {
-    Slider HPSlider;
-    // Start is called before the first frame update
+    public GameObject Player;
+
+    public Slider HPGauge;
+
+    private float PlayerHP,PlayerHPMax,CurrentHP;
+
     void Start()
     {
-        HPSlider = GetComponent<Slider>();
+        PlayerHPMax = Player.GetComponent<Player_Manager_R>().Player_MAXHP;
 
-        float MaxHP = 200f;
-        float NowHP = 200f;
-
-        HPSlider.maxValue = MaxHP;//スライダーの最大値の設定
-        HPSlider.value = NowHP;//スライダーの現在値の設定
+        HPGauge.maxValue = PlayerHPMax;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.GetMouseButtonDown(0))//左クリックで体力バーを減らす
-        {
-            HPSlider.value -= 10f;
-        }
+        PlayerHP = Player.GetComponent<Player_Manager_R>().Player_HP;
 
-        if(Input.GetKey(KeyCode.K))
-        {
-            HPSlider.value += 0.1f;
-        }
+        HPGauge.value = PlayerHP;
     }
 }
