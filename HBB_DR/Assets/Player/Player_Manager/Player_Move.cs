@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-    public  int Character_Speed; //参照したキャラクタースピードの確認
-    GameObject Player_L1;//移動用キャラの格納用
-    GameObject Player_L2;//移動用キャラの格納用
-    Player_Manager_L PL;
-
-    //勝敗を決める変数入れるよう
-    GameObject Syouhai;
     //スピード
     [SerializeField]
-    private float speed;
+    private float speed = 3;
 
     [SerializeField]
     public float maxY, maxX, minY, minX;
@@ -26,62 +19,17 @@ public class Player_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //勝敗Bool取得
-        Syouhai = GameObject.Find("Stage");
-
-        //行動範囲設定
         rd = GetComponent<Rigidbody2D>();
-        if (this.gameObject.CompareTag("Player_L1"))
+
+        if (this.gameObject.CompareTag("Player_L1") ||  this.gameObject.CompareTag("Player_R2"))
         {
             //L1
-            maxY = -446f; minY = -725f; maxX = 1335f; minX = 460f;
+            maxY = 3.77f; minY = -3.77f; maxX = 7.26f; minX = 2.74f;
         }
-        else if (this.gameObject.CompareTag("Player_R2"))
-        {
-            //R2
-            maxY = 725f; minY = -730f; maxX = 1335f; minX = 460f;
-        }
-
-        else if (this.gameObject.CompareTag("Player_L2"))
+        else if (this.gameObject.CompareTag("Player_L2") || this.gameObject.CompareTag("Player_R1"))
         {
             //L2
-            maxY = 725f; minY = 446f; maxX = -460f; minX = -1335f;
-        }
-        else if (this.gameObject.CompareTag("Player_R1"))
-        {
-            //R1
-            maxY = 725f; minY = -730f; maxX = -460f; minX = -1335f;
-        }
-
-
-        //選択されたキャラクターを見るよ！
-        if (this.gameObject.CompareTag("Player_L1") || this.gameObject.CompareTag("Player_L2"))
-        {
-            Character_Speed = gameObject.GetComponent<Player_Manager_L>().Character;
-        }
-        else if(this.gameObject.CompareTag("Player_R1"))
-        {
-            PL = GameObject.Find("Player_L1").GetComponent<Player_Manager_L>();
-            Character_Speed = PL.Character;
-        }
-        else if (this.gameObject.CompareTag("Player_R2"))
-        {
-            PL = GameObject.Find("Player_L2").GetComponent<Player_Manager_L>();
-            Character_Speed = PL.Character;
-        }
-
-        //キャラクタースピード設定
-        if (Character_Speed == 1)
-        {
-            speed = 500;
-        }
-        else if (Character_Speed == 2)
-        {
-            speed = 1500;
-        }
-        else if (Character_Speed == 3)
-        {
-            speed = 1000;
+            maxY = 3.74f; minY = -3.74f; maxX = -2.74f; minX = -7.27f;
         }
 
     }
@@ -90,25 +38,21 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
-        //勝敗がついていなかった場合移動を許可
-        if (!Syouhai.GetComponent<Setting>().syouhai)
+        if(this.gameObject.CompareTag("Player_L1"))
         {
-            if (this.gameObject.CompareTag("Player_L1"))
-            {
-                MovePlayer_L1();
-            }
-            else if (this.gameObject.CompareTag("Player_L2"))
-            {
-                MovePlayer_L2();
-            }
-            else if (this.gameObject.CompareTag("Player_R1"))
-            {
-                MovePlayer_R1();
-            }
-            else if (this.gameObject.CompareTag("Player_R2"))
-            {
-                MovePlayer_R2();
-            }
+            MovePlayer_L1();
+        }
+        else if(this.gameObject.CompareTag("Player_L2"))
+        {
+            MovePlayer_L2();
+        }
+        else if(this.gameObject.CompareTag("Player_R1"))
+        {
+            MovePlayer_R1();
+        }
+        else if(this.gameObject.CompareTag("Player_R2"))
+        {
+            MovePlayer_R2();
         }
     }
 
@@ -135,8 +79,8 @@ public class Player_Move : MonoBehaviour
         else if (Input.GetAxisRaw("Vertical_L1") < 0)　
         {
             Vector3 playerPos = transform.position;
-            //通常移動
             playerPos.y -= speed * Time.deltaTime;
+
             //追加
             if (minY > playerPos.y)
             {
@@ -149,7 +93,6 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal_L1") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //通常移動
             playerPos.x += speed * Time.deltaTime; //y座標にspeedを加算
 
             //追加
@@ -183,7 +126,6 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Vertical_L2") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //通常移動
             playerPos.y += speed * Time.deltaTime; //y座標にspeedを加算
 
             //追加
@@ -195,11 +137,9 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos; //現在の位置情報に反映させる
 
         }
-        //もし下矢印キーが押されたら
-        else if (Input.GetAxisRaw("Vertical_L2") < 0)
+        else if (Input.GetAxisRaw("Vertical_L2") < 0)　//もし下矢印キーが押されたら
         {
             Vector3 playerPos = transform.position;
-            //通常移動
             playerPos.y -= speed * Time.deltaTime;
 
             //追加
@@ -214,9 +154,8 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal_L2") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //通常移動
             playerPos.x += speed * Time.deltaTime; //y座標にspeedを加算
-            
+
             //追加
             //もしplayerPosのY座標がmaxY（最大Y座標）より大きくなったら
             if (maxX < playerPos.x)
@@ -229,7 +168,6 @@ public class Player_Move : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal_L2") < 0)　//もし下矢印キーが押されたら
         {
             Vector3 playerPos = transform.position;
-            //通常移動
             playerPos.x -= speed * Time.deltaTime;
 
             //追加
@@ -249,16 +187,7 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Vertical_R1") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.y += (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.y += speed * Time.deltaTime; //y座標にspeedを加算
-            }
+            playerPos.y += speed * Time.deltaTime; //y座標にspeedを加算
 
             //追加
             //もしplayerPosのY座標がmaxY（最大Y座標）より大きくなったら
@@ -269,20 +198,11 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos; //現在の位置情報に反映させる
 
         }
-        //もし下矢印キーが押されたら
-        else if (Input.GetAxisRaw("Vertical_R1") < 0)
+        else if (Input.GetAxisRaw("Vertical_R1") < 0)　//もし下矢印キーが押されたら
         {
             Vector3 playerPos = transform.position;
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.y -= (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.y -= speed * Time.deltaTime;
-            }
+            playerPos.y -= speed * Time.deltaTime;
+
             //追加
             if (minY > playerPos.y)
             {
@@ -295,16 +215,8 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal_R1") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.x += (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.x += speed * Time.deltaTime; //y座標にspeedを加算
-            }
+            playerPos.x += speed * Time.deltaTime; //y座標にspeedを加算
+
             //追加
             //もしplayerPosのY座標がmaxY（最大Y座標）より大きくなったら
             if (maxX < playerPos.x)
@@ -317,16 +229,8 @@ public class Player_Move : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal_R1") < 0)　//もし下矢印キーが押されたら
         {
             Vector3 playerPos = transform.position;
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.x -= (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.x -= speed * Time.deltaTime;
-            }
+            playerPos.x -= speed * Time.deltaTime;
+
             //追加
             if (minX > playerPos.x)
             {
@@ -344,16 +248,7 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Vertical_R2") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.y += (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.y += speed * Time.deltaTime; //y座標にspeedを加算
-            }
+            playerPos.y += speed * Time.deltaTime; //y座標にspeedを加算
 
             //追加
             //もしplayerPosのY座標がmaxY（最大Y座標）より大きくなったら
@@ -364,20 +259,11 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos; //現在の位置情報に反映させる
 
         }
-        //もし下矢印キーが押されたら
-        else if (Input.GetAxisRaw("Vertical_R2") < 0)
+        else if (Input.GetAxisRaw("Vertical_R2") < 0) //もし下矢印キーが押されたら
         {
             Vector3 playerPos = transform.position;
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.y -= (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.y -= speed * Time.deltaTime;
-            }
+            playerPos.y -= speed * Time.deltaTime;
+
             //追加
             if (minY > playerPos.y)
             {
@@ -390,16 +276,8 @@ public class Player_Move : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal_R2") > 0)
         {
             Vector3 playerPos = transform.position; //Vector3型のplayerPosに現在の位置情報を格納
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.x += (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.x += speed * Time.deltaTime; //y座標にspeedを加算
-            }
+            playerPos.x += speed * Time.deltaTime; //y座標にspeedを加算
+
             //追加
             //もしplayerPosのY座標がmaxY（最大Y座標）より大きくなったら
             if (maxX < playerPos.x)
@@ -409,19 +287,11 @@ public class Player_Move : MonoBehaviour
             transform.position = playerPos; //現在の位置情報に反映させる
 
         }
-        else if (Input.GetAxisRaw("Horizontal_R2") < 0)　//もし下矢印キーが押されたら
+        else if (Input.GetAxisRaw("Horizontal_R2") < 0) //もし下矢印キーが押されたら
         {
             Vector3 playerPos = transform.position;
-            //減速移動
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                playerPos.x -= (speed * 0.4f) * Time.deltaTime; //y座標にspeedを加算
-            }
-            //通常移動
-            else
-            {
-                playerPos.x -= speed * Time.deltaTime;
-            }
+            playerPos.x -= speed * Time.deltaTime;
+
             //追加
             if (minX > playerPos.x)
             {
