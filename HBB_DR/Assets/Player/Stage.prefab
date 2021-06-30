@@ -430,6 +430,7 @@ GameObject:
   - component: {fileID: 1095558028262176861}
   - component: {fileID: 1095558028262176860}
   - component: {fileID: 1095558027321700848}
+  - component: {fileID: 7199814292093924815}
   m_Layer: 10
   m_Name: Stage
   m_TagString: BuckStage
@@ -547,6 +548,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d034c98bc63efa49acf5e36b5e464fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syouhai: 0
+--- !u!114 &7199814292093924815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095558028262176863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &1095558028749112588
 GameObject:
   m_ObjectHideFlags: 0

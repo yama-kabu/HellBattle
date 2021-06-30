@@ -749,13 +749,41 @@ PrefabInstance:
       value: Stage
       objectReference: {fileID: 0}
     - target: {fileID: 2883241077118484708, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883241077118484708, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883241077118484708, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883241077118484708, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 4.949
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883241077118484708, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3066808283783712046, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -4.91
       objectReference: {fileID: 0}
+    - target: {fileID: 3464064272320905881, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464064272320905881, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ef8c45221d26e7b4da4589d879bee4fb, type: 3}
+    - target: {fileID: 4454293597392220609, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ef8c45221d26e7b4da4589d879bee4fb, type: 3}
     - target: {fileID: 5119294359743201360, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1183,6 +1211,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 517959967}
+    - target: {fileID: 8812141398829621667, guid: 771df529b9ea0b74c92057dc340ecd93, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b047a34498e0e44f8c25b4c18fc7499, type: 3}
     - target: {fileID: 8812141399181222730, guid: 771df529b9ea0b74c92057dc340ecd93, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1231,5 +1263,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 8812141399434988200, guid: 771df529b9ea0b74c92057dc340ecd93, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b047a34498e0e44f8c25b4c18fc7499, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 771df529b9ea0b74c92057dc340ecd93, type: 3}
