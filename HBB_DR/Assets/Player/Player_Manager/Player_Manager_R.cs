@@ -25,7 +25,7 @@ public class Player_Manager_R : MonoBehaviour
         m_Player_HP = m_Player_MAXHP;
 
         //Ÿ”sBoolæ“¾
-        Syouhai = GameObject.Find("Stage");
+        Syouhai = GameObject.Find("Setting");
 
         if (this.gameObject.CompareTag("Hit_Body_P1"))
         {

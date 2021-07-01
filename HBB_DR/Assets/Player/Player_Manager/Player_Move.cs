@@ -27,7 +27,7 @@ public class Player_Move : MonoBehaviour
     void Start()
     {
         //Ÿ”sBoolæ“¾
-        Syouhai = GameObject.Find("Stage");
+        Syouhai = GameObject.Find("Setting");
 
         //s“®”ÍˆÍİ’è
         rd = GetComponent<Rigidbody2D>();

@@ -10,15 +10,16 @@ public class Shot_Judgment : MonoBehaviour
     //’e‚Ì‘¬“x
     public float Shot_Speed = 0;
 
-    public GameObject Stage;
+    public GameObject Setting;
 
 
 //--------------------------------------------------------------------------------------
 
     void Start()
     {
+        Setting = GameObject.Find("Setting");
         //“–‚½‚è”»’è@•Ç
-        BoxCollider2D Hit_Wall = Stage.GetComponent<BoxCollider2D>();
+        BoxCollider2D Hit_Wall = Setting.GetComponent<BoxCollider2D>();
 
     }
 

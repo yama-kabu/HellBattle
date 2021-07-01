@@ -25,7 +25,7 @@ public class Player_Manager_L : MonoBehaviour
         Player_L = GetComponent<Rigidbody2D>();
 
         //Ÿ”sBoolæ“¾
-        Syouhai = GameObject.Find("Stage");
+        Syouhai = GameObject.Find("Setting");
     }
 
 //--------------------------------------------------------------------------------------

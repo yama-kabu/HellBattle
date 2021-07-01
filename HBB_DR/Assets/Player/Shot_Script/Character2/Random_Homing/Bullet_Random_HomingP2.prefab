@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  Stage: {fileID: 1095558028262176863, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
+  Stage: {fileID: 6732743477682107911, guid: 63d0731da7706554c84518b28aaf6284, type: 3}
   Shot01: {fileID: 7040369304351146246, guid: 618dac88ce7f1d449b5b48d7e604a729, type: 3}
   Homing_Speed: 1000
   ForcePawer: 1000
