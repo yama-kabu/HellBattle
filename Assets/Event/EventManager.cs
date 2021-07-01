@@ -59,7 +59,6 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         EventSwitch = false;
-        OnOff = false;
         Aud = GetComponent<AudioSource>();
         x = 60;
     }
@@ -246,7 +245,7 @@ public class EventManager : MonoBehaviour
                             Rand = 5;
                             break;
                     }
-                    Debug.Log(Rand);
+                    //Debug.Log(Rand);
                     break;
                 }
             }

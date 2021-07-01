@@ -22,8 +22,6 @@ public class PlayerHPbar : MonoBehaviour
     {
         PlayerHP = Player.GetComponent<Player_Manager_R>().m_Player_HP;
 
-        CurrentHP = PlayerHP / PlayerHPMax;
-
-        HPGauge.value = CurrentHP;
+        HPGauge.value = PlayerHP;
     }
 }
