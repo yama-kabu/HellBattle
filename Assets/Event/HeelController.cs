@@ -43,15 +43,15 @@ public class HeelController : MonoBehaviour
             PlayerManager = Player.GetComponent<Player_Manager_R>();
             
             //体力回復
-            PlayerManager.Player_HP += HeelPoint;
-            Debug.Log(PlayerManager.Player_HP + "Heel");
+            PlayerManager.m_Player_HP += HeelPoint;
+            Debug.Log(PlayerManager.m_Player_HP + "Heel");
 
             //オーバーしたら
-            if (PlayerManager.Player_HP > PlayerManager.Player_MAXHP)
+            if (PlayerManager.m_Player_HP > PlayerManager.m_Player_MAXHP)
             {
-                PlayerManager.Player_HP = PlayerManager.Player_MAXHP;
+                PlayerManager.m_Player_HP = PlayerManager.m_Player_MAXHP;
             }
-            Debug.Log("体力は" + PlayerManager.Player_HP);
+            Debug.Log("体力は" + PlayerManager.m_Player_HP);
             Destroy(this.gameObject);
         }
     }

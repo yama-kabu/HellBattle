@@ -13,15 +13,17 @@ public class PlayerHPbar : MonoBehaviour
 
     void Start()
     {
-        PlayerHPMax = Player.GetComponent<Player_Manager_R>().Player_MAXHP;
+        PlayerHPMax = Player.GetComponent<Player_Manager_R>().m_Player_MAXHP;
 
         HPGauge.maxValue = PlayerHPMax;
     }
 
     private void Update()
     {
-        PlayerHP = Player.GetComponent<Player_Manager_R>().Player_HP;
+        PlayerHP = Player.GetComponent<Player_Manager_R>().m_Player_HP;
 
-        HPGauge.value = PlayerHP;
+        CurrentHP = PlayerHP / PlayerHPMax;
+
+        HPGauge.value = CurrentHP;
     }
 }
