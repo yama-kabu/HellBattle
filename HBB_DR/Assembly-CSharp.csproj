@@ -84,6 +84,7 @@
     <Compile Include="Assets\Player\Player_Manager\Event\Event_Manager.cs" />
     <Compile Include="Assets\Player\Shot_Script\Shot_Manager1.cs" />
     <Compile Include="Assets\Player\Player_Manager\Player_Manager_R.cs" />
+    <Compile Include="Assets\Player\TateScroll.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
