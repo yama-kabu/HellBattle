@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartSE: {fileID: 8300000, guid: 80001c6a4635f4742a379d1fa4280281, type: 3}
-  TimeA: 3
-  TimeB: 3
+  TimeA: 10
+  TimeB: 15
   EventNumber: 5
   AtcRatio: 3
   EventSwitch: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.010215823, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
