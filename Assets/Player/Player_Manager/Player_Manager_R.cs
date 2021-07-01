@@ -46,7 +46,7 @@ public class Player_Manager_R : MonoBehaviour
         //現在の体力からダメージを引く(倍率計算は行う)
         m_Player_HP -= damage;
 
-        Debug.Log(damage + "ダメージを受けて残り" + m_Player_HP + "です");
+        //Debug.Log(damage + "ダメージを受けて残り" + m_Player_HP + "です");
         //体力が０以下の場合
         if (m_Player_HP <= 0)
         {
@@ -55,25 +55,25 @@ public class Player_Manager_R : MonoBehaviour
             {
                 GameObject PL = GameObject.Find("Player_L1");
                 GameObject PR = GameObject.Find("Player_R1_Ma");
-                Destroy(PL);
+                PL.SetActive(false);
                 //本体削除
-                Destroy(PR);
+                PR.SetActive(false);
             }
             else if (this.gameObject.CompareTag("Hit_Body_P2"))
             {
                 GameObject PL = GameObject.Find("Player_L2");
                 GameObject PR = GameObject.Find("Player_R2_Ma");
-                Destroy(PL);
+                PL.SetActive(false);
                 //本体削除
-                Destroy(PR);
+                PR.SetActive(false);
             }
 
 
-            Debug.Log("体力が [0] になりました。");
+            //Debug.Log("体力が [0] になりました。");
 
             //弾の発射を止める
             Syouhai.GetComponent<Setting>().syouhai = true;
-            Debug.Log("ゲーム終了");
+            //Debug.Log("ゲーム終了");
         }
     }
 //--------------------------------------------------------------------------------------
