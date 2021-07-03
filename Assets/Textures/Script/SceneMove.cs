@@ -20,14 +20,18 @@ public class SceneMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Z))
+        if(SceneManager.GetActiveScene().name == "CharacterSelectScene1")
         {
-            SceneManager.LoadScene("ButtleScene");
-            
+            if (Input.GetKey(KeyCode.Z))
+            {
+                SceneManager.LoadScene("ButtleScene");
+
+            }
+            if (Input.GetKey(KeyCode.X))
+            {
+                SceneManager.LoadScene("TitleScene");
+            }
         }
-        if(Input.GetKey(KeyCode.X))
-        {
-            SceneManager.LoadScene("TitleScene");
-        }
+        
     }
 }
