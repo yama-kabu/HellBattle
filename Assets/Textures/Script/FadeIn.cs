@@ -23,6 +23,6 @@ public class FadeIn : MonoBehaviour
     void Update()
     {
         GetComponent<Image>().color = new Color(red, green, blue, alfa);
-        alfa -= 0.001f;   
+        alfa -= speed;   
     }
 }
