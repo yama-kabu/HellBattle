@@ -7,7 +7,7 @@ public class Player_Move : MonoBehaviour
 //--------------------------------------------------------------------------------------
 //参照系
 
-    GameObject Syouhai;     //勝敗がついているか否かをチェックするための変数だよ
+    GameObject System;     //勝敗がついているかをチェックするための変数だよ
     GameObject player_l1;   //移動用キャラを格納する変数だよ
     GameObject player_l2;   //移動用キャラの格納する変数だよ
     Player_Manager_L pl;    //キャラクターの位置を代入する変数だよ
@@ -27,7 +27,7 @@ public class Player_Move : MonoBehaviour
 
     void Start()
     {
-        Syouhai = GameObject.Find("Game_Setting");     //勝敗Boolを取得するよ
+        System = GameObject.Find("Game_Setting");     //勝敗Boolを取得するよ
         rd = GetComponent<Rigidbody2D>();   //弾についているRigidbody2Dを入れるよ
         #region 移動範囲の設定
         if (this.gameObject.CompareTag("Player_L1"))
@@ -78,12 +78,12 @@ public class Player_Move : MonoBehaviour
         #endregion
     }
 
-    //--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
     void Update()
     {
         //勝敗がついていなかった場合移動を許可
-        if (!Syouhai.GetComponent<Setting>().syouhai)
+        if (System.GetComponent<Start_Timer>().is_start_chack && !System.GetComponent<Setting>().syouhai)
         {
             if (this.gameObject.CompareTag("Player_L1"))
             {

@@ -5,15 +5,19 @@ using UnityEngine;
 
 public class Player_Manager_L : MonoBehaviour
 {
-    //Rigidbody2D コンポーネントを格納する変数
-    private Rigidbody2D Player_L;
-    private Rigidbody2D Reflect;
-    //勝敗を決める変数入れるよう
-    GameObject Syouhai;
-    //キャラクター選択
-    public int Character;
-    //キャラクターの攻撃力[%]
-    public float AttackPower_percent = 1;
+//--------------------------------------------------------------------------------------
+//参照系
+
+    
+    private Rigidbody2D Player_L;   //Rigidbody2D コンポーネントを格納する変数だよ
+    private Rigidbody2D Reflect;    //Rigidbody2D コンポーネントを格納する変数だよ
+    GameObject System;//勝敗を決める変数、スタートしているかを決める変数を見るものだよ
+
+//--------------------------------------------------------------------------------------
+//変数系
+
+    public int Character; //キャラクター選択だよ　１，２，３が対応しているよ
+    public float AttackPower_percent = 1;//キャラクターの攻撃力[%]
 
     [SerializeField]
     Way s_Way;
@@ -33,22 +37,24 @@ public class Player_Manager_L : MonoBehaviour
     Cross s_Cross;
  
 //--------------------------------------------------------------------------------------
-    // ゲームのスタート時の処理
+//ゲームのスタート時の処理
+
     void Start()
     {
         //Rigidbody2D　コンポーネントを取得して変数　Player_L　に格納
         Player_L = GetComponent<Rigidbody2D>();
         //勝敗Bool取得
-        Syouhai = GameObject.Find("Game_Setting");
+        System = GameObject.Find("Game_Setting");
     }
 
 //--------------------------------------------------------------------------------------
+// 繰り返す処理
 
-    // 繰り返す処理
     void Update()
     {
-        //勝敗がついていなかった場合弾を打つことを許可
-        if (!Syouhai.GetComponent<Setting>().syouhai)
+
+        //ゲームがスタートしていて、勝敗がついていなかった場合弾を打つことを許可
+        if (System.GetComponent<Start_Timer>().is_start_chack && !System.GetComponent<Setting>().syouhai)
         {
             //プレイヤー１だった場合
             if (this.gameObject.CompareTag("Player_L1"))
@@ -58,11 +64,11 @@ public class Player_Manager_L : MonoBehaviour
                     //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
                     s_Cross.Shot8();//Cross
-                                       //２つ目　操作キー：X　｜　操作ボタン：B
+                    //２つ目　操作キー：X　｜　操作ボタン：B
                     s_Homing.Shot3();//Homing
-                                       //３つ目　操作キー：C　｜　操作ボタン：X
+                    //３つ目　操作キー：C　｜　操作ボタン：X
                     s_Explosion.Shot7();//Explosion
-                                       //４つ目　操作キー：V　｜　操作ボタン：Y
+                    //４つ目　操作キー：V　｜　操作ボタン：Y
                     s_Barrage.Shot5();//Barrage
                     //テスト
 
@@ -74,11 +80,11 @@ public class Player_Manager_L : MonoBehaviour
                     //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
                     s_Spiral.Shot2();//spiral
-                                       //２つ目　操作キー：X　｜　操作ボタン：B
+                    //２つ目　操作キー：X　｜　操作ボタン：B
                     s_Reflect.Shot4();//Reflect
-                                       //３つ目　操作キー：C　｜　操作ボタン：X
+                    //３つ目　操作キー：C　｜　操作ボタン：X
                     s_Way.Shot1();//Way
-                                       //４つ目　操作キー：V　｜　操作ボタン：Y
+                    //４つ目　操作キー：V　｜　操作ボタン：Y
                     s_Random_Homing.Shot6();//Random_Homing
 
 
@@ -112,11 +118,11 @@ public class Player_Manager_L : MonoBehaviour
                     //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
                     s_Cross.Shot8();//Cross
-                                    //２つ目　操作キー：X　｜　操作ボタン：B
+                    //２つ目　操作キー：X　｜　操作ボタン：B
                     s_Homing.Shot3();//Homing
-                                     //３つ目　操作キー：C　｜　操作ボタン：X
+                    //３つ目　操作キー：C　｜　操作ボタン：X
                     s_Explosion.Shot7();//Explosion
-                                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                    //４つ目　操作キー：V　｜　操作ボタン：Y
                     s_Barrage.Shot5();//Barrage
 
                     //テスト
@@ -130,11 +136,11 @@ public class Player_Manager_L : MonoBehaviour
                     //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
                     s_Spiral.Shot2();//spiral
-                                     //２つ目　操作キー：X　｜　操作ボタン：B
+                    //２つ目　操作キー：X　｜　操作ボタン：B
                     s_Reflect.Shot4();//Reflect
-                                      //３つ目　操作キー：C　｜　操作ボタン：X
+                    //３つ目　操作キー：C　｜　操作ボタン：X
                     s_Way.Shot1();//Way
-                                  //４つ目　操作キー：V　｜　操作ボタン：Y
+                    //４つ目　操作キー：V　｜　操作ボタン：Y
                     s_Random_Homing.Shot6();//Random_Homing
 
 
