@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class CharacterSelect : MonoBehaviour
 {
     [SerializeField] GameObject Panel1;
     [SerializeField] GameObject Panel2;
     [SerializeField] GameObject Panel3;
 
-    public GameObject Player1;
-    public GameObject Player2;
-    public GameObject Player3;
+    public static int SeletectedPlayer { get; set; } = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -26,7 +24,7 @@ public class CharacterSelect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                
+                SeletectedPlayer = 1;
             }
         }
 
@@ -34,7 +32,7 @@ public class CharacterSelect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                
+                SeletectedPlayer = 2;
             }
         }
 
@@ -42,7 +40,7 @@ public class CharacterSelect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                
+                SeletectedPlayer = 3;
             }
         }
     }

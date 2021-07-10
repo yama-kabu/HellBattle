@@ -26,6 +26,8 @@ public class Player_Manager_L : MonoBehaviour
 
         //勝敗Bool取得
         Syouhai = GameObject.Find("Setting");
+
+        Character = CharacterSelect.SeletectedPlayer;
     }
 
 //--------------------------------------------------------------------------------------
@@ -45,6 +47,7 @@ public class Player_Manager_L : MonoBehaviour
             {
                 if (Character == 1)
                 {
+                    Debug.Log("1");
                     //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
                     s_Manager1.Shot8();//Cross
@@ -64,6 +67,7 @@ public class Player_Manager_L : MonoBehaviour
                 }
                 else if (Character == 2)
                 {
+                    Debug.Log("2");
                     //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
                     s_Manager1.Shot2();//spiral
