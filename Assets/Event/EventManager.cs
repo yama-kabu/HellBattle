@@ -7,7 +7,6 @@ using System;
 public class EventManager : MonoBehaviour
 {
     AudioSource Aud;
-    public AudioClip StartSE;//イベント発動SE
 
     //A～Bの間にイベントを発生させる
     public float TimeA;
@@ -24,7 +23,7 @@ public class EventManager : MonoBehaviour
     public float PlayerSlow;//時間鈍化中のプレイヤー速度
     public float BulletSpeed1, BulletSpeed2;//時間鈍化中のプレイヤー速度
     float Time2, Time3, Time5;
-    bool SESwitch, Barrier = false;
+    bool Barrier = false;
     float EventTime;
     public bool B_Switch = false;
     public bool HPSwitch = false;
@@ -77,7 +76,6 @@ public class EventManager : MonoBehaviour
             //イベントの個数を把握し、その中からランダムな数を取り出す
             Rand = UnityEngine.Random.Range(1, EventNumber + 1);
             EventSwitch = true;
-            SESwitch = false;
         }
 
         EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
@@ -88,11 +86,6 @@ public class EventManager : MonoBehaviour
         //カウントが終っている間はイベントを行う
         if (EventCount <= 0)
         {
-            if (SESwitch == false)
-            {
-                Aud.PlayOneShot(StartSE);
-                SESwitch = true;
-            }
             switch(Rand)
             {
                 case 1:
