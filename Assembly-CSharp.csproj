@@ -67,6 +67,7 @@
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Spiral\Spiral.cs" />
     <Compile Include="Assets\Battle\Player\Scripts\Player_Manager_L.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Barrage\Shot_Barrage.cs" />
+    <Compile Include="Assets\Battle\System\Start_Timer.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Random_Homing\Random_Homing.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Cross\Shot_Cross.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Explosion\Explosion.cs" />
@@ -83,7 +84,6 @@
     <Compile Include="Assets\Battle\Bullet\Shot_Manager.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Homing\Homing.cs" />
     <Compile Include="Assets\Battle\Player\Scripts\Player_Manager_R.cs" />
-    <Compile Include="Assets\Battle\System\Start_Timer.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

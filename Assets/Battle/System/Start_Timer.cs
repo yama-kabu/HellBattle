@@ -18,7 +18,7 @@ public class Start_Timer : MonoBehaviour
     int count;  //整数に直した数字を入れる変数だよ
 
     public bool is_start_chack = false;    //ゲームの開始するか見るよ
-
+    bool chack = false; //処理が行われたかチェック
 //--------------------------------------------------------------------------------------
 //カウントダウンの処理
 
@@ -28,7 +28,7 @@ public class Start_Timer : MonoBehaviour
         {
             count_down -= Time.deltaTime;
             count = (int)count_down;   //整数に直すよ
-            //--------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------
             count_text_L1.text = 
                 (count != 0) ? count.ToString(): //表示するよ
                                "Start";          //表示するよ
@@ -45,13 +45,14 @@ public class Start_Timer : MonoBehaviour
                 countText.text = "Start";
             }
             */
-            //--------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------
         }
-        if (count_down <= 0)
+        if (count_down <= 0 && !chack)
         {
             count_text_L1.text = "";    //テキストを消すよ
             count_text_L2.text = "";    //テキストを消すよ
             is_start_chack = true;     //ゲームの開始だ！
+            chack = true;
         }
     }
 }

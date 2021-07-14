@@ -52,6 +52,7 @@ public class Player_Manager_R : MonoBehaviour
             #region UŒ‚©‹@íœ
             if (this.gameObject.CompareTag("Hit_Body_P1"))
             {
+                Syouhai.GetComponent<Setting>().WINER = false;   //L‚Q‚ÌŸ‚¿‚É‚·‚é
                 GameObject PL = GameObject.Find("Player_L1");
                 GameObject PR = GameObject.Find("Player_R1_Ma");
                 Destroy(PL);
@@ -60,6 +61,7 @@ public class Player_Manager_R : MonoBehaviour
             }
             else if (this.gameObject.CompareTag("Hit_Body_P2"))
             {
+                Syouhai.GetComponent<Setting>().WINER = true; ;   //L‚P‚ÌŸ‚¿‚É‚·‚é
                 GameObject PL = GameObject.Find("Player_L2");
                 GameObject PR = GameObject.Find("Player_R2_Ma");
                 Destroy(PL);

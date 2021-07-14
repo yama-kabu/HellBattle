@@ -2,14 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Setting : MonoBehaviour
 {
 //--------------------------------------------------------------------------------------
 //参照系
 
-    //勝敗が決まったか  false= また終わっていない。 true= 終わった
-    public bool syouhai = false;
+    public Text syouhai_text_L1;  //テキストをいじるためにテキストを格納するものだよ
+    public Text syouhai_text_L2;  //テキストをいじるためにテキストを格納するものだよ
+
+    public bool syouhai = false;//勝敗が決まったか  false= また終わっていない。 true= 終わった
+    public bool WINER;  //L1がかったらtrue、L2がかったらfalse
+    bool chack = false; //消す処理や勝敗を表示する処理が行われたかチェック
 
 //--------------------------------------------------------------------------------------
 //最初の準備
@@ -23,10 +28,26 @@ public class Setting : MonoBehaviour
 
     private void Update()
     {
-        //勝敗がついたら消去開始
+
+        
         if (syouhai)
         {
-            zenkesi();
+            if (!chack)//勝敗がついたら消去開始
+            {
+                zenkesi();
+
+                if (WINER)
+                {
+                    syouhai_text_L1.text = "WIN";          //表示するよ
+                    syouhai_text_L2.text = "LOSE";          //表示するよ
+                }
+                else
+                {
+                    syouhai_text_L1.text = "LOSE";          //表示するよ
+                    syouhai_text_L2.text = "WIN";          //表示するよ
+                }
+                chack = true;   //処理が終わったよ
+            }
         }
     }
     //消去の中身
