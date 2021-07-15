@@ -49,3 +49,14 @@ Thumbs.db
 
 #python bytecode cache, for some plugins.
 *.pyc
+HBB_DR/Library/ArtifactDB
+HBB_DR/Library/CurrentLayout-default.dwlt
+HBB_DR/Library/SourceAssetDB
+HBB_DR/Library/Artifacts/c5/c5d279d82bb5a08c6d35ca6e7354c728
+HBB_DR/Library/ScriptAssemblies/Assembly-CSharp.dll
+HBB_DR/Library/SceneVisibilityState.asset
+HBB_DR/Library/Artifacts/e7/e70517ec1460afaab0dc25e46ebc8a3b
+HBB_DR/Library/Artifacts/ad/adc391493faffbf81ee093baf5eb756e
+HBB_DR/Library/Artifacts/84/8448c11739e281396de95a7eb646b0ad
+HBB_DR/Library/PackageManager/ProjectCache
+HBB_DR/Library/PackageManager/ProjectCache.md5
