@@ -46,9 +46,17 @@ public class Player_Move : MonoBehaviour
         {
             maxY = 725f; minY = 446f; maxX = -460f; minX = -1335f;  //L2キャラクターの移動できる範囲だよ
         }
-        if (this.gameObject.CompareTag("Player_L1") || this.gameObject.CompareTag("Player_L2"))
+
+
+        if (this.gameObject.CompareTag("Player_L1"))
         {
-            Character_Speed = gameObject.GetComponent<Player_Manager_L>().Character;    //キャラクターの速度を取得するよ
+            pl = GameObject.Find("Player_L1").GetComponent<Player_Manager_L>();    //キャラクターの速度を取得するよ
+            Character_Speed = pl.Character;    //キャラクターの速度と一緒にするよ
+        }
+        else if (this.gameObject.CompareTag("Player_L2"))
+        {
+            pl = GameObject.Find("Player_L2").GetComponent<Player_Manager_L>();    //キャラクターの速度を取得するよ
+            Character_Speed = pl.Character;    //キャラクターの速度と一緒にするよ
         }
         else if(this.gameObject.CompareTag("Player_R1"))
         {

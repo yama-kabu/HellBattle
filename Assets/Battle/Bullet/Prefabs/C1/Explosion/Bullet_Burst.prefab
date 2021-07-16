@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 315816774375343906}
   - component: {fileID: 5414658765336252113}
   - component: {fileID: -3000270844278782471}
-  - component: {fileID: 4866833894238180109}
   - component: {fileID: -5819038272588640429}
   - component: {fileID: 2970075463458168115}
   m_Layer: 8
@@ -126,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d32498357b0c0418c7edc3da9714e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: {fileID: 0}
   bullet_normal: {fileID: 0}
   damage: 10
   bullet_Speed: 100
@@ -145,27 +145,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00031306912, y: -0.0040699597}
   m_Size: {x: 0.0373118, y: 0.113075666}
   m_Direction: 0
---- !u!223 &4866833894238180109
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7040369304351146246}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
-  m_TargetDisplay: 0
 --- !u!222 &-5819038272588640429
 CanvasRenderer:
   m_ObjectHideFlags: 0

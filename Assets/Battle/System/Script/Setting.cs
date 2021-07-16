@@ -28,8 +28,6 @@ public class Setting : MonoBehaviour
 
     private void Update()
     {
-
-        
         if (syouhai)
         {
             if (!chack)//Ÿ”s‚ª‚Â‚¢‚½‚çÁ‹ŠJn

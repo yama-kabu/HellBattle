@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -194091792705503548}
   - component: {fileID: -8513936109505656223}
   - component: {fileID: 2107909983674755720}
-  - component: {fileID: -6107440395918098548}
   - component: {fileID: 1953848435801301842}
   m_Layer: 8
   m_Name: Bullet_Normal
@@ -126,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32902398946d1514eb4c7b469276d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: {fileID: 0}
   bullet_normal: {fileID: 0}
   damage: 10
   bullet_Speed: 1000
@@ -153,27 +153,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7040369304351146246}
   m_CullTransparentMesh: 1
---- !u!223 &-6107440395918098548
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7040369304351146246}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
-  m_TargetDisplay: 0
 --- !u!114 &1953848435801301842
 MonoBehaviour:
   m_ObjectHideFlags: 0
