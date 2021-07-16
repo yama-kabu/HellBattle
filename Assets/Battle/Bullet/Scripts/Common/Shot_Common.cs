@@ -7,7 +7,7 @@ public class Shot_Common : MonoBehaviour
 {
 //--------------------------------------------------------------------------------------
 //参照系
-    GameObject stage;   //当たり判定となるステージ格納する変数だよ
+    public GameObject stage;   //当たり判定となるステージ格納する変数だよ
 
     protected GameObject player_position;   //敵との距離を測る時に使うプレイヤーの位置を格納する変数だよ
     protected GameObject target_position;   //敵との距離を測る時に使うターゲットの位置を格納する変数だよ

@@ -62,12 +62,12 @@
     <Compile Include="Assets\Battle\Player\Event\Scripts\Absorption.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\Common\Shot_Common.cs" />
     <Compile Include="Assets\Battle\Player\Scripts\Player_Move.cs" />
-    <Compile Include="Assets\Battle\System\Setting.cs" />
+    <Compile Include="Assets\Battle\System\Script\Setting.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Explosion\Shot_Explosion.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Spiral\Spiral.cs" />
     <Compile Include="Assets\Battle\Player\Scripts\Player_Manager_L.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Barrage\Shot_Barrage.cs" />
-    <Compile Include="Assets\Battle\System\Start_Timer.cs" />
+    <Compile Include="Assets\Battle\System\Script\Start_Timer.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Random_Homing\Random_Homing.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Cross\Shot_Cross.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Explosion\Explosion.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="Assets\Battle\Stage\Scripts\TateScroll.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Way\Way.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Spiral\Shot_Spiral.cs" />
+    <Compile Include="Assets\Battle\Player\Scripts\Set_Image.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Reflect\Reflect.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C1\Cross\Cross.cs" />
     <Compile Include="Assets\Battle\Bullet\Scripts\C2\Way\Shot_Way.cs" />

@@ -59,6 +59,7 @@ public class Shot_Homing : Shot_Common
                 Angle.y = transform.rotation.y;     //ｙ軸を入れるよ
                 Angle.z = Shot_Angle;   //ｚ軸を入れるよ
                 GameObject Bullet = Instantiate(bullet_normal) as GameObject;   //出す弾を指定するよ
+                Bullet.transform.SetParent(this.transform.parent);    //プレハブをここを親にして出すよ
                 Bullet.transform.rotation = Quaternion.Euler(Angle);    //角度を代入するよ
                 Bullet.transform.position = this.transform.position;    //発射ぁ！
             }

@@ -21,9 +21,13 @@ public class Shot_Explosion : Shot_Common
 
     Vector3 vector3;    //角度を図るときに使うVector3を用意するよ
 
-//--------------------------------------------------------------------------------------
-//最初の準備
+    //--------------------------------------------------------------------------------------
+    //最初の準備
 
+    void Awake()
+    {
+        this.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
+    }
     void Start()
     {
 
@@ -126,6 +130,7 @@ public class Shot_Explosion : Shot_Common
         vec *= burst_speed;
         var q = Quaternion.Euler(0, 0, -Mathf.Atan2(vec.x, vec.y) * Mathf.Rad2Deg);     //敵との角度を代入するよ
         var t = Instantiate(bullet_burst, transform.position, q);   //弾に情報を代入するよ
+        t.transform.SetParent(this.transform.parent);    //プレハブをここを親にして出すよ
         t.GetComponent<Rigidbody2D>().velocity = vec;   //発射ぁ！
 
     }

@@ -133,6 +133,7 @@ public class Shot_Random_Homing : Shot_Common
             {
                 #region おまけの三方向に飛ばす処理
                 bullet_position = GetComponent<Transform>(); //弾についている位置を入れるよ 
+                transform.SetParent(this.transform.parent);    //プレハブをここを親にして出すよ
                 rb.velocity = Vector2.zero;     //一度速度を０にする
                 if (target_position != null)
                 {
