@@ -1593,6 +1593,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2449897591843446383, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7062263634630014903, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
       propertyPath: BulletList.Array.size
       value: 8
@@ -1629,7 +1633,9 @@ PrefabInstance:
       propertyPath: BulletList.Array.data[7]
       value: 
       objectReference: {fileID: 7040369304351146246, guid: 5b8cc76b9fbd53a4b91bb7b112b7fde3, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1546810386757928338, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
+    - {fileID: 2449897591843446383, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
 --- !u!1001 &4405372406951238879
 PrefabInstance:
@@ -1706,7 +1712,13 @@ PrefabInstance:
       propertyPath: em
       value: 
       objectReference: {fileID: 1796158235}
-    m_RemovedComponents: []
+    - target: {fileID: 4906926256545916709, guid: 36f8950dbdc3fd04892e38c44c1cc3d7, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4581868899431607612, guid: 36f8950dbdc3fd04892e38c44c1cc3d7, type: 3}
+    - {fileID: 4906926256545916709, guid: 36f8950dbdc3fd04892e38c44c1cc3d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36f8950dbdc3fd04892e38c44c1cc3d7, type: 3}
 --- !u!1001 &4693372690940535120
 PrefabInstance:
