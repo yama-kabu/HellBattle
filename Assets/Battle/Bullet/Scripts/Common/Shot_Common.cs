@@ -13,9 +13,11 @@ public class Shot_Common : MonoBehaviour
     protected GameObject target_position;   //敵との距離を測る時に使うターゲットの位置を格納する変数だよ
     protected Transform bullet_position;    //敵との距離を測る時に使う弾の位置を格納する変数だよ
     public  GameObject bullet_normal;    //最後に飛び散る処理があるときに使う弾を格納する変数するだよ
+    public GameObject particle_damage;
+    public  GameObject Ecanvas;
 
-//--------------------------------------------------------------------------------------
-//変数系
+    //--------------------------------------------------------------------------------------
+    //変数系
 
     public float damage;    //弾のダメージだよ        
     public float bullet_Speed = 0;  //弾の速度だよ
@@ -26,6 +28,7 @@ public class Shot_Common : MonoBehaviour
     void Start()
     {
         stage = GameObject.Find("Stage");   //ステージのオブジェクトを入れるよ
+        Ecanvas = GameObject.Find("Effect_Canvas");
     }
 
 //--------------------------------------------------------------------------------------
@@ -46,6 +49,13 @@ public class Shot_Common : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        
+        if (collision.gameObject.tag == "Hit_Body_P1" || collision.gameObject.tag == "Hit_Body_P2") //Objectタグの付いたゲームオブジェクトと衝突したか判別
+        {
+            GameObject Effect1 = Instantiate(particle_damage, this.transform.position, Quaternion.identity); //パーティクル用ゲームオブジェクト生成
+            Effect1.transform.SetParent(Ecanvas.transform);
+            Destroy(this.gameObject); //衝突したゲームオブジェクトを削除
+        }
         #region ダメージ処理だよ
         if (collision.gameObject.tag == "Hit_Body_P1" || collision.gameObject.tag == "Hit_Body_P2")
         {
@@ -60,6 +70,8 @@ public class Shot_Common : MonoBehaviour
         #region バリアが張られていたら弾を消す処理だよ
         if (collision.gameObject.tag == "Barrier")
         {
+            GameObject Effect1 = Instantiate(particle_damage, this.transform.position, Quaternion.identity); //パーティクル用ゲームオブジェクト生成
+            Effect1.transform.SetParent(Ecanvas.transform);
             Destroy(this.gameObject);   //弾自体を消去するよ
         }
         #endregion

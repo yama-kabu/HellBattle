@@ -141,7 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5979516c23f5974096b167c0dda3194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: {fileID: 0}
   bullet_normal: {fileID: 0}
+  particle_damage: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7, type: 3}
+  Ecanvas: {fileID: 5661904175897686544, guid: 5ffe880eb757bf5438d6ceac1cc1ca64, type: 3}
   damage: 10
   bullet_Speed: 5000
   force_pawer: 500

@@ -31,6 +31,10 @@ public class Shot_Random_Homing : Shot_Common
 
     void Start()
     {
+        Ecanvas = GameObject.Find("Effect_Canvas");
+        stage = GameObject.Find("Stage");   //ステージのオブジェクトを入れるよ
+
+
         rb = this.GetComponent<Rigidbody2D>();  //弾についているRigidbody2Dを入れるよ
         rb.AddForce(new Vector2(Random.Range(-force_pawer, force_pawer) * 100f,
                                 Random.Range(-force_pawer, force_pawer) * 100f));     //ランダムな方向に力を加えるよ
@@ -113,6 +117,7 @@ public class Shot_Random_Homing : Shot_Common
     {
         if (random_time > 0)
         {
+
             Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, Reflect.contacts[0].normal);    ////反射する角度の計算
             this.rb.velocity = refrectVec;  //ぶち込みー
         }

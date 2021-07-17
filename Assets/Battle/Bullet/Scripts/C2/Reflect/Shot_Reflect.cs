@@ -23,6 +23,9 @@ public class Shot_Reflect : Shot_Common
 
     void Start()
     {
+        Ecanvas = GameObject.Find("Effect_Canvas");
+        stage = GameObject.Find("Stage");   //ステージのオブジェクトを入れるよ
+
         rb = this.GetComponent<Rigidbody2D>();     //弾についているRigidbody2Dを入れるよ
         rb.AddForce(gameObject.transform.rotation * new Vector3(0, bullet_Speed * 50, 0));
     }
