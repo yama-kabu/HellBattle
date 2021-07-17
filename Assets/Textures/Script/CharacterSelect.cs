@@ -9,9 +9,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] GameObject Panel1;
     [SerializeField] GameObject Panel2;
     [SerializeField] GameObject Panel3;
-
-    public static int SeletectedPlayer { get; set; } = 0;
-
+    
     void Start()
     {
         
@@ -24,7 +22,7 @@ public class CharacterSelect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                SeletectedPlayer = 1;
+                DataManager.Character = 1;
             }
         }
 
@@ -32,7 +30,7 @@ public class CharacterSelect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                SeletectedPlayer = 2;
+                DataManager.Character = 2;
             }
         }
 
@@ -40,7 +38,7 @@ public class CharacterSelect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                SeletectedPlayer = 3;
+                DataManager.Character = 3;
             }
         }
     }

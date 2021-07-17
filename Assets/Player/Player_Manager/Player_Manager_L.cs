@@ -27,7 +27,7 @@ public class Player_Manager_L : MonoBehaviour
         //Ÿ”sBoolæ“¾
         Syouhai = GameObject.Find("Setting");
 
-        Character = CharacterSelect.SeletectedPlayer;
+        Character = DataManager.Character;
     }
 
 //--------------------------------------------------------------------------------------
