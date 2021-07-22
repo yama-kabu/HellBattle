@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelectScene1.unity
     guid: 6405c29973c8cc84bb012049bb7ea3ae
   - enabled: 1
-    path: Assets/Scenes/ButtleScene.unity
+    path: Assets/Scenes/Taiki.unity
+    guid: bffca9daf0eff644d93b758ddff3ee22
+  - enabled: 1
+    path: Assets/Scenes/Room for 2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

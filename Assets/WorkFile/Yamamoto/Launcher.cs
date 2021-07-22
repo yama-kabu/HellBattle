@@ -3,7 +3,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
-public class Launcher : MonoBehaviour //PunCallbacks
+public class Launcher : MonoBehaviourPunCallbacks
 {
     #region Private Serializable Fields
 
@@ -40,8 +40,8 @@ public class Launcher : MonoBehaviour //PunCallbacks
 
     void Start()
     {
-        progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
+        //progressLabel.SetActive(false);
+        //controlPanel.SetActive(true);
     }
 
     void Update()
