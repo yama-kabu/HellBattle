@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField]
+
     private const int BGM_CHANNEL = 2;
 
-    private const int JNG_CHANNEL = 4;
+    private const int JNG_CHANNEL = 0;
 
     private const int SE_CHANNEL = 8;
 
@@ -17,8 +17,7 @@ public class SoundManager : MonoBehaviour
 
     private const float SE_DEFAULT_VOLUME = 1;
 
-    private static string[] fileNamePrefix =
-    {
+    private static string[] fileNamePrefix = {
         "bgm",
         "jgl",
         "se"
@@ -206,4 +205,5 @@ public class SoundManager : MonoBehaviour
     {
         return string.Format(fileNameFormat, prefix, id);
     }
+
 }

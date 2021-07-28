@@ -1,37 +1,37 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-//public class SceneMove : MonoBehaviour
-//{
-    
-//    private void Awake()
-//    {
-//        DontDestroyOnLoad(this);//アタッチしたやつを消えないようにする
-//    }
+public class SceneMove : MonoBehaviour
+{
 
-//    // Start is called before the first frame update
-//    void Start()
-//    {
- 
-//    }
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);//アタッチしたやつを消えないようにする
+    }
 
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        if(SceneManager.GetActiveScene().name == "CharacterSelectScene1")
-//        {
-//            if (Input.GetKey(KeyCode.Z))
-//            {
-//                SceneManager.LoadScene("ButtleScene");
+    // Start is called before the first frame update
+    void Start()
+    {
 
-//            }
-//            if (Input.GetKey(KeyCode.X))
-//            {
-//                SceneManager.LoadScene("TitleScene");
-//            }
-//        }
-        
-//    }
-//}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "CharacterSelectScene1")
+        {
+            if (Input.GetKey(KeyCode.Z))
+            {
+                SceneManager.LoadScene("Room for 2");
+
+            }
+            if (Input.GetKey(KeyCode.X))
+            {
+                SceneManager.LoadScene("TitleScene");
+            }
+        }
+
+    }
+}
