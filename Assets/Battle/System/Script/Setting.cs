@@ -12,12 +12,17 @@ public class Setting : MonoBehaviour
     public Text syouhai_text_L1;  //テキストをいじるためにテキストを格納するものだよ
     public Text syouhai_text_L2;  //テキストをいじるためにテキストを格納するものだよ
 
+//--------------------------------------------------------------------------------------
+//変数系
+
+    public bool last_of_agaki_check = false;  //最後のあがきを使ったかどうかチェック
     public bool syouhai = false;//勝敗が決まったか  false= また終わっていない。 true= 終わった
     public bool WINER;  //L1がかったらtrue、L2がかったらfalse
     bool chack = false; //消す処理や勝敗を表示する処理が行われたかチェック
 
 //--------------------------------------------------------------------------------------
 //最初の準備
+
     void Start()
     {
         Application.targetFrameRate = 240; //FPSを240に設定 

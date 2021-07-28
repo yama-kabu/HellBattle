@@ -16,8 +16,8 @@ public class Shot_Common : MonoBehaviour
     public GameObject particle_damage;
     public  GameObject Ecanvas;
 
-    //--------------------------------------------------------------------------------------
-    //•Ï”Œn
+//--------------------------------------------------------------------------------------
+//•Ï”Œn
 
     public float damage;    //’e‚Ìƒ_ƒ[ƒW‚¾‚æ        
     public float bullet_Speed = 0;  //’e‚Ì‘¬“x‚¾‚æ

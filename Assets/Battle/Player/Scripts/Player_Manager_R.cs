@@ -10,13 +10,15 @@ public class Player_Manager_R : MonoBehaviour
  
     public float m_Player_MAXHP;
     public float m_Player_HP;
+    public int m_set_agaki_HP;  //あがきが使えるようになるHP
 
     //勝敗を決める変数入れるよう
     GameObject Syouhai;
     GameObject PA;  //弾が当たった際のプレイヤーが受けるダメージ量を調べる変すだよ
-//--------------------------------------------------------------------------------------
 
-    // ゲームのスタート時の処理
+//--------------------------------------------------------------------------------------
+// ゲームのスタート時の処理
+
     void Start()
     {
         //Rigidbody2D　コンポーネントを取得して変数　Player_R　に格納
@@ -38,14 +40,15 @@ public class Player_Manager_R : MonoBehaviour
     }
 
 //--------------------------------------------------------------------------------------
-//弾に当たった際の処理
-    public void Damage(float damage)
+//あがきに関する処理
+
+    void Update()
     {
-        //ダメージ倍率の計算
-        damage *= PA.GetComponent<Player_Manager_L>().AttackPower_percent;
-        //現在の体力からダメージを引く(倍率計算は行う)
-        m_Player_HP -= damage;
-        Debug.Log(damage + "ダメージを受けて残り" + m_Player_HP + "です");
+        if((m_Player_HP < m_set_agaki_HP) && (PA.GetComponent<Player_Manager_L>().agaki == false))
+        {
+            PA.GetComponent<Player_Manager_L>().agaki = true;   //あがきを使えるようにするよ。
+        }
+
         //体力が０以下の場合
         if (m_Player_HP <= 0)
         {
@@ -55,18 +58,26 @@ public class Player_Manager_R : MonoBehaviour
                 Syouhai.GetComponent<Setting>().WINER = false;   //L２の勝ちにする
                 GameObject PL = GameObject.Find("Player_L1");
                 GameObject PR = GameObject.Find("Player_R1_Ma");
-                Destroy(PL);
+                GameObject P_L1 = GameObject.Find("P_L1");
+                GameObject P_R1 = GameObject.Find("P_R1");
                 //本体削除
+                Destroy(PL);
                 Destroy(PR);
+                Destroy(P_L1);
+                Destroy(P_R1);
             }
             else if (this.gameObject.CompareTag("Hit_Body_P2"))
             {
                 Syouhai.GetComponent<Setting>().WINER = true; ;   //L１の勝ちにする
                 GameObject PL = GameObject.Find("Player_L2");
                 GameObject PR = GameObject.Find("Player_R2_Ma");
-                Destroy(PL);
+                GameObject P_L2 = GameObject.Find("P_L2");
+                GameObject P_R2 = GameObject.Find("P_R2");
                 //本体削除
+                Destroy(PL);
                 Destroy(PR);
+                Destroy(P_L2);
+                Destroy(P_R2);
             }
             #endregion
             Debug.Log("体力が [0] になりました。");
@@ -74,6 +85,17 @@ public class Player_Manager_R : MonoBehaviour
             Syouhai.GetComponent<Setting>().syouhai = true;
             Debug.Log("ゲーム終了");
         }
+    }
+
+//--------------------------------------------------------------------------------------
+//弾に当たった際の処理
+    public void Damage(float damage)
+    {
+        //ダメージ倍率の計算
+        damage *= PA.GetComponent<Player_Manager_L>().AttackPower_percent;
+        //現在の体力からダメージを引く(倍率計算は行う)
+        m_Player_HP -= damage;
+        Debug.Log(damage + "ダメージを受けて残り" + m_Player_HP + "です");
     }
 //--------------------------------------------------------------------------------------
 

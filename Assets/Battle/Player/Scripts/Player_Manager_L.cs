@@ -18,6 +18,8 @@ public class Player_Manager_L : MonoBehaviour
 
     public int Character; //キャラクター選択だよ　１，２，３が対応しているよ
     public float AttackPower_percent = 1;//キャラクターの攻撃力[%]
+    public bool agaki = false;  //あがきが使えるかどうかを判定するよ
+    public bool used_agaki = false; //キャラクターがアガキを使ったかどうか
 
     [SerializeField]
     Way s_Way;
@@ -35,7 +37,8 @@ public class Player_Manager_L : MonoBehaviour
     Explosion s_Explosion;
     [SerializeField]
     Cross s_Cross;
- 
+    [SerializeField]
+    Last_Agaki s_Agaki;
 //--------------------------------------------------------------------------------------
 //ゲームのスタート時の処理
 
@@ -62,34 +65,42 @@ public class Player_Manager_L : MonoBehaviour
                 if (Character == 1)
                 {
                     //キャラクターが使える４つの弾
-                    //１つ目　操作キー：Z　｜　操作ボタン：A
-                    s_Cross.Shot8();//Cross
-                    //２つ目　操作キー：X　｜　操作ボタン：B
-                    s_Homing.Shot3();//Homing
-                    //３つ目　操作キー：C　｜　操作ボタン：X
-                    s_Explosion.Shot7();//Explosion
-                    //４つ目　操作キー：V　｜　操作ボタン：Y
-                    s_Barrage.Shot5();//Barrage
-                    //テスト
-
+                    if (used_agaki == false)
+                    {
+                        //１つ目　操作キー：Z　｜　操作ボタン：A
+                        s_Cross.Shot8();//Cross
+                        //２つ目　操作キー：X　｜　操作ボタン：B
+                        s_Homing.Shot3();//Homing
+                        //３つ目　操作キー：C　｜　操作ボタン：X
+                        s_Explosion.Shot7();//Explosion
+                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                        s_Barrage.Shot5();//Barrage
+                    }
                     //必殺技
-
+                    if (agaki == true)
+                    {
+                        s_Agaki.Shot_agaki();
+                    }
                 }
                 else if (Character == 2)
                 {
                     //キャラクターが使える４つの弾
-                    //１つ目　操作キー：Z　｜　操作ボタン：A
-                    s_Spiral.Shot2();//spiral
-                    //２つ目　操作キー：X　｜　操作ボタン：B
-                    s_Reflect.Shot4();//Reflect
-                    //３つ目　操作キー：C　｜　操作ボタン：X
-                    s_Way.Shot1();//Way
-                    //４つ目　操作キー：V　｜　操作ボタン：Y
-                    s_Random_Homing.Shot6();//Random_Homing
-
-
+                    if (used_agaki == false)
+                    {
+                        //１つ目　操作キー：Z　｜　操作ボタン：A
+                        s_Spiral.Shot2();//spiral
+                        //２つ目　操作キー：X　｜　操作ボタン：B
+                        s_Reflect.Shot4();//Reflect
+                        //３つ目　操作キー：C　｜　操作ボタン：X
+                        s_Way.Shot1();//Way
+                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                        s_Random_Homing.Shot6();//Random_Homing
+                    }
                     //必殺技
-
+                    if (agaki == true)
+                    {
+                        s_Agaki.Shot_agaki();
+                    }
                 }
                 /*
                 else if (Character == 3)
@@ -116,36 +127,42 @@ public class Player_Manager_L : MonoBehaviour
                 if (Character == 1)
                 {
                     //キャラクターが使える４つの弾
-                    //１つ目　操作キー：Z　｜　操作ボタン：A
-                    s_Cross.Shot8();//Cross
-                    //２つ目　操作キー：X　｜　操作ボタン：B
-                    s_Homing.Shot3();//Homing
-                    //３つ目　操作キー：C　｜　操作ボタン：X
-                    s_Explosion.Shot7();//Explosion
-                    //４つ目　操作キー：V　｜　操作ボタン：Y
-                    s_Barrage.Shot5();//Barrage
-
-                    //テスト
-
-
+                    if (used_agaki == false)
+                    {
+                        //１つ目　操作キー：Z　｜　操作ボタン：A
+                        s_Cross.Shot8();//Cross
+                        //２つ目　操作キー：X　｜　操作ボタン：B
+                        s_Homing.Shot3();//Homing
+                        //３つ目　操作キー：C　｜　操作ボタン：X
+                        s_Explosion.Shot7();//Explosion
+                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                        s_Barrage.Shot5();//Barrage
+                    }
                     //必殺技
-
+                    if (agaki == true)
+                    {
+                        s_Agaki.Shot_agaki();
+                    }
                 }
                 else if (Character == 2)
                 {
                     //キャラクターが使える４つの弾
-                    //１つ目　操作キー：Z　｜　操作ボタン：A
-                    s_Spiral.Shot2();//spiral
-                    //２つ目　操作キー：X　｜　操作ボタン：B
-                    s_Reflect.Shot4();//Reflect
-                    //３つ目　操作キー：C　｜　操作ボタン：X
-                    s_Way.Shot1();//Way
-                    //４つ目　操作キー：V　｜　操作ボタン：Y
-                    s_Random_Homing.Shot6();//Random_Homing
-
-
+                    if (used_agaki == false)
+                    {
+                        //１つ目　操作キー：Z　｜　操作ボタン：A
+                        s_Spiral.Shot2();//spiral
+                        //２つ目　操作キー：X　｜　操作ボタン：B
+                        s_Reflect.Shot4();//Reflect
+                        //３つ目　操作キー：C　｜　操作ボタン：X
+                        s_Way.Shot1();//Way
+                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                        s_Random_Homing.Shot6();//Random_Homing
+                    }
                     //必殺技
-
+                    if (agaki == true)
+                    {
+                        s_Agaki.Shot_agaki();
+                    }
                 }
                 /*
                 else if (Character == 3)
