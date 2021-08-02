@@ -35,16 +35,6 @@ public class Start_Timer : MonoBehaviour
             count_text_L2.text =
                 (count != 0) ? count.ToString(): //•\Ž¦‚·‚é‚æ
                                "Start";          //•\Ž¦‚·‚é‚æ
-            /*
-             if(count != 0)
-            {
-                CountText.text = count.ToString();
-            }
-            else
-            {
-                countText.text = "Start";
-            }
-            */
         //--------------------------------------------------------------------------------------
         }
         if (count_down <= 0 && !chack)

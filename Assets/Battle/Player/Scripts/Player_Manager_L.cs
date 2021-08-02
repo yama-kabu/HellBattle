@@ -102,24 +102,24 @@ public class Player_Manager_L : MonoBehaviour
                         s_Agaki.Shot_agaki();
                     }
                 }
-                /*
+
                 else if (Character == 3)
                 {
-                    //キャラクターが使える４つの弾
                     //１つ目　操作キー：Z　｜　操作ボタン：A
-
-                    //２つ目　操作キー：X　｜　操作ボタン：B
-
-                    //３つ目　操作キー：C　｜　操作ボタン：X
-
-                    //４つ目　操作キー：V　｜　操作ボタン：Y
-
-
-
-                    //必殺技
-
+                    s_Cross.Shot8();//Cross
+                                    //２つ目　操作キー：X　｜　操作ボタン：B
+                    s_Homing.Shot3();//Homing
+                                     //３つ目　操作キー：C　｜　操作ボタン：X
+                    s_Explosion.Shot7();//Explosion
+                                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                    s_Barrage.Shot5();//Barrage
                 }
-                */
+                //必殺技
+                if (agaki == true)
+                {
+                    s_Agaki.Shot_agaki();
+                }
+
             }
             //プレイヤー２だった場合
             else if (this.gameObject.CompareTag("Player_L2"))
@@ -164,22 +164,28 @@ public class Player_Manager_L : MonoBehaviour
                         s_Agaki.Shot_agaki();
                     }
                 }
-                /*
+
                 else if (Character == 3)
                 {
                     //キャラクターが使える４つの弾
-                    //１つ目　操作キー：Z　｜　操作ボタン：A
-
-                    //２つ目　操作キー：X　｜　操作ボタン：B
-
-                    //３つ目　操作キー：C　｜　操作ボタン：X
-
-                    //４つ目　操作キー：V　｜　操作ボタン：Y
-
+                    if (used_agaki == false)
+                    {
+                        //１つ目　操作キー：Z　｜　操作ボタン：A
+                        s_Cross.Shot8();//Cross
+                        //２つ目　操作キー：X　｜　操作ボタン：B
+                        s_Homing.Shot3();//Homing
+                        //３つ目　操作キー：C　｜　操作ボタン：X
+                        s_Explosion.Shot7();//Explosion
+                        //４つ目　操作キー：V　｜　操作ボタン：Y
+                        s_Barrage.Shot5();//Barrage
+                    }
                     //必殺技
-
+                    if (agaki == true)
+                    {
+                        s_Agaki.Shot_agaki();
+                    }
                 }
-                */
+
             }
         }
     }
