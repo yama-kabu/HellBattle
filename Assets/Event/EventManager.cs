@@ -6,48 +6,30 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
-    AudioSource Aud;
 
-    //A～Bの間にイベントを発生させる
+    [Header("最初の60秒間を飛ばすスイッチ")]
+    public bool OnOff = false;
+
+    [Header("A～Bの間にイベントを発生させる")]
     public float TimeA;
     public float TimeB;
 
-    //イベントの数
-    public int EventNumber;
+    [Header("攻撃力アップ倍率")]
+    public float AtcRatio;
 
-    //イベント処理用変数
-    int Rand;//乱数格納
-    public float AtcRatio;//攻撃力アップ倍率
-    float AtcBOX1, AtcBOX2;//元の攻撃力を保管しておく変数
-    public bool EventSwitch;//時間の乱数生成を制御するスイッチ
-    public float PlayerSlow;//時間鈍化中のプレイヤー速度
-    public float BulletSpeed1, BulletSpeed2;//時間鈍化中のプレイヤー速度
-    float Time2, Time3, Time5;
-    bool Barrier = false;
-    float EventTime;
-    public bool B_Switch = false;
-    public bool HPSwitch = false;
+    [Header("鈍化中のプレイヤー速度")]
+    public float PlayerSlow;
+    [Header("鈍化中の弾速")]
+    public float BulletSpeed1, BulletSpeed2;
 
-    //最初の60秒間はイベントが動かないようにする
-    public bool OnOff = false;
-    private float x;
+    [Header("不利プレイヤー攻撃力アップの時間")]
+    public float Time_AtcUP;
+    [Header("鈍化の時間")]
+    public float Time_Speed;
+    [Header("吸収攻撃の時間")]
+    public float Time_HP;
 
-    //イベントまでのカウントダウン
-    float EventCount;
-    //各イベントの時間
-    public float Time_AtcUP, Time_Speed, Time_HP;
-
-    //プレイヤーオブジェクト格納
-    public GameObject Player1;
-    public GameObject Player2;
-    //プレイヤーステータス格納
-    float HP1 = 0, Atc1, Speed1, BSpeed1;//Player1
-    float HP2 = 1, Atc2, Speed2, BSpeed2;//Player2
-
-    //アイテム格納
-    public GameObject LifeItem;
-
-    //アナウンス文字
+    [Header("アナウンス文字")]
     public GameObject EventText;
     public string Event1tex;
     public string Event2tex;
@@ -55,16 +37,37 @@ public class EventManager : MonoBehaviour
     public string Event4tex;
     public string Event5tex;
 
+    [Header("イベント処理用変数(触らないでね)")]
+    float EventCount;//イベントまでのカウントダウン
+    public bool B_Switch = false;//バリアのスイッチ
+    public bool HPSwitch = false;//吸収攻撃のスイッチ
+    public bool EventSwitch;//時間の乱数生成を制御するスイッチ
+    float Time2, Time3, Time5;//各イベントのカウントダウン用
+    bool Barrier = false;//バリアが一度使ったか判断するスイッチ
+    private float x;//最初の60秒のカウント
+    float AtcBOX1, AtcBOX2;//元の攻撃力を保管しておく変数
+    int Rand;//乱数格納
+    public int EventNumber;//イベントの数
+    public GameObject LifeItem;//回復アイテムのprefab
+    public GameObject Canvas;
+    //ステータス保存用
+    float HP1 = 0, Atc1, Speed1, BSpeed1;
+    float HP2 = 1, Atc2, Speed2, BSpeed2;
+    //プレイヤーオブジェクト格納
+    public GameObject Player1;
+    public GameObject Player2;
+
     void Start()
     {
         EventSwitch = false;
-        Aud = GetComponent<AudioSource>();
         x = 60;
     }
 
     void Update()
     {
         Textchange();
+        
+        //最初の60秒
         x -= Time.deltaTime;
         if (x <=0) { OnOff = true; }
 
@@ -110,9 +113,14 @@ public class EventManager : MonoBehaviour
     //各イベントの処理
     void Event1()//ライフ回復イベント
     {
-        var Item = Instantiate(LifeItem, new Vector2(-5, 5), Quaternion.identity);
-        var Item2 = Instantiate(LifeItem, new Vector2(5, -5), Quaternion.Euler(0, 0, 180f));
+        GameObject HeelItem = (GameObject)Instantiate(LifeItem);
+        HeelItem.transform.SetParent(Canvas.transform, false);
+        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(-500,600);
+        GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0, 0), Quaternion.Euler(0, 0, 180f));
+        HeelItem2.transform.SetParent(Canvas.transform, false);
+        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -600);
 
+        SoundManager.Instance.PlaySE(SE.HeelItem);
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
         EventSwitch = false;
     }

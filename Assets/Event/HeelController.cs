@@ -9,6 +9,7 @@ public class HeelController : MonoBehaviour
     public int HeelPoint;
     public float FallSpeed;
     private Rigidbody2D rb;
+    private float posx, posy;
 
     Player_Manager_R PlayerManager;
 
@@ -18,17 +19,19 @@ public class HeelController : MonoBehaviour
         GameObject EMane = GameObject.Find("EventManager");
         Player1 = EMane.GetComponent<EventManager>().Player1;
         Player2 = EMane.GetComponent<EventManager>().Player2;
+        posx = GetComponent<RectTransform>().localPosition.x;
+        posy = GetComponent<RectTransform>().localPosition.y;
     }
 
 
     void FixedUpdate()
     {
-        if(transform.position.x < 0)
+        if(posx < 0)
         {
             Vector2 Move = new Vector2(0, -FallSpeed);
             rb.velocity = Move;
         }
-        else if(transform.position.x >0)
+        else if(posx >0)
         {
             Vector2 Move = new Vector2(0, FallSpeed);
             rb.velocity = Move;

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272516523199375096}
+  - component: {fileID: -1425096413305036808}
+  - component: {fileID: 5437060385150975409}
   m_Layer: 0
   m_Name: Event
   m_TagString: Untagged
@@ -32,6 +34,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &-1425096413305036808
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786257992930639378}
+  m_Enabled: 1
+--- !u!114 &5437060385150975409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786257992930639378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13523213818d08409fe34ac2298ba93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6442256308971703340
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +164,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6442256309646050826}
   - component: {fileID: 6442256309646050827}
-  - component: {fileID: 6442256309646050868}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -176,126 +197,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a7da9c58e08154e8e20972bfe238e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartSE: {fileID: 8300000, guid: 80001c6a4635f4742a379d1fa4280281, type: 3}
+  OnOff: 1
   TimeA: 10
   TimeB: 15
-  EventNumber: 5
   AtcRatio: 3
-  EventSwitch: 0
   PlayerSlow: 15
   BulletSpeed1: 0
   BulletSpeed2: 0
-  B_Switch: 0
-  HPSwitch: 0
-  OnOff: 1
   Time_AtcUP: 30
   Time_Speed: 0
   Time_HP: 0
-  Player1: {fileID: 0}
-  Player2: {fileID: 0}
-  LifeItem: {fileID: 6992314487823387357, guid: efce95e939bf18844b2b78ebb8fecc4e, type: 3}
   EventText: {fileID: 6442256310632061140}
   Event1tex: "\u30E9\u30A4\u30D5\u56DE\u5FA9\u30A2\u30A4\u30C6\u30E0\u51FA\u73FE\uFF01"
   Event2tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u653B\u6483\u529B\u30A2\u30C3\u30D7\uFF01"
   Event3tex: "\u30B2\u30FC\u30E0\u30B9\u30D4\u30FC\u30C9\u4F4E\u4E0B\uFF01"
   Event4tex: "\u5F3E\u5E55\u547D\u4E2D\u3067\u4F53\u529B\u5438\u53CE\uFF01"
   Event5tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u30D0\u30EA\u30A2\u4ED8\u4E0E\uFF01"
---- !u!82 &6442256309646050868
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6442256309646050869}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  B_Switch: 0
+  HPSwitch: 0
+  EventSwitch: 0
+  EventNumber: 5
+  LifeItem: {fileID: 3720470844570412289, guid: b4074e7407ea72041b78b72f4518de35, type: 3}
+  Canvas: {fileID: 6442256308971703340}
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
 --- !u!1 &6442256310632061140
 GameObject:
   m_ObjectHideFlags: 0
