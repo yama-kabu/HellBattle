@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Setting : MonoBehaviour
 {
@@ -51,7 +52,14 @@ public class Setting : MonoBehaviour
                 }
                 chack = true;   //処理が終わったよ
             }
+
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene("TitleScene");   //スペース押したらタイトルへ
+            }
+
         }
+
     }
     //消去の中身
     void zenkesi()
@@ -62,8 +70,6 @@ public class Setting : MonoBehaviour
         Bullets = GameObject.FindGameObjectsWithTag("Bullet_1");
         Clean(Bullets);
         Bullets = GameObject.FindGameObjectsWithTag("Bullet_2");
-        Clean(Bullets);
-        Bullets = GameObject.FindGameObjectsWithTag("Bullet_3");
         Clean(Bullets);
     }
     //消すぜえええええ

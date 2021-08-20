@@ -42,6 +42,10 @@ public class Player_Manager_L : MonoBehaviour
 //--------------------------------------------------------------------------------------
 //ゲームのスタート時の処理
 
+    private void Awake()
+    {
+        //Character = PanelSwitch.getA();
+    }
     void Start()
     {
         //Rigidbody2D　コンポーネントを取得して変数　Player_L　に格納
