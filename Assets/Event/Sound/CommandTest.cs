@@ -7,8 +7,7 @@ public class CommandTest : MonoBehaviour
 {
     void Update()
     {
-        //入力されたコード名を表示する処理
-        /*if (Input.anyKeyDown)
+        if (Input.anyKeyDown)
         {
             foreach (KeyCode code in Enum.GetValues(typeof(KeyCode)))
             {
@@ -19,6 +18,6 @@ public class CommandTest : MonoBehaviour
                     break;
                 }
             }
-        }*/
+        }
     }
 }

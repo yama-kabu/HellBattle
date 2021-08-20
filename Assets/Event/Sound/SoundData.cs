@@ -29,10 +29,6 @@ public enum SE
     CollisionA = 4,
     CollisionB = 5,
     Special_attackA = 6,
-<<<<<<< HEAD
-    Special_attackB = 7
-=======
     Special_attackB = 7,
     HeelItem = 8
->>>>>>> origin/main
 }
