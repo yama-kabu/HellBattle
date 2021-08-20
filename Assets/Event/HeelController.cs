@@ -17,8 +17,8 @@ public class HeelController : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         GameObject EMane = GameObject.Find("EventManager");
-        Player1 = EMane.GetComponent<EventManager>().Player1;
-        Player2 = EMane.GetComponent<EventManager>().Player2;
+        Player1 = EMane.GetComponent<EventManager>().PlayerR1;
+        Player2 = EMane.GetComponent<EventManager>().PlayerR2;
         posx = GetComponent<RectTransform>().localPosition.x;
         posy = GetComponent<RectTransform>().localPosition.y;
     }
