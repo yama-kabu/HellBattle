@@ -40,7 +40,6 @@ public class EventManager : MonoBehaviour
     [Header("イベント処理用変数(触らないでね)")]
     float EventCount;//イベントまでのカウントダウン
     public bool B_Switch = false;//バリアのスイッチ
-    public bool HPSwitch = false;//吸収攻撃のスイッチ
     public bool EventSwitch;//時間の乱数生成を制御するスイッチ
     float Time2, Time3, Time5;//各イベントのカウントダウン用
     bool Barrier = false;//バリアが一度使ったか判断するスイッチ
@@ -51,11 +50,13 @@ public class EventManager : MonoBehaviour
     public GameObject LifeItem;//回復アイテムのprefab
     public GameObject Canvas;
     //ステータス保存用
-    float HP1 = 0, Atc1, Speed1, BSpeed1;
-    float HP2 = 1, Atc2, Speed2, BSpeed2;
+    float HP1, Atc1, SpeedL1, SpeedR1, BSpeed1;
+    float HP2, Atc2, SpeedL2, SpeedR2, BSpeed2;
     //プレイヤーオブジェクト格納
-    public GameObject Player1;
-    public GameObject Player2;
+    public GameObject PlayerL1;
+    public GameObject PlayerR1;
+    public GameObject PlayerL2;
+    public GameObject PlayerR2;
 
     void Start()
     {
@@ -127,6 +128,8 @@ public class EventManager : MonoBehaviour
 
     void Event2()//不利プレイヤー攻撃力アップイベント
     {
+        AtcBOX1 = PlayerL1.GetComponent<Player_Manager_L>().AttackPower_percent;
+        AtcBOX2 = PlayerL2.GetComponent<Player_Manager_L>().AttackPower_percent;
         /*ここにプレイヤーの攻撃力を参照する文を書く*/
         Time2 += Time.deltaTime;
         if (HP1 < HP2)
@@ -151,41 +154,68 @@ public class EventManager : MonoBehaviour
 
     void Event3()
     {
-        Time3 += Time.deltaTime;
-        Speed1 = Speed2 = PlayerSlow;
+        //一旦保留
+        /*SpeedL1 = PlayerL1.GetComponent<Player_Move>().Character_Speed;
+        SpeedR1 = PlayerL1.GetComponent<Player_Move>().Character_Speed;
+        SpeedL2 = PlayerL2.GetComponent<Player_Move>().Character_Speed;
+        SpeedR2 = PlayerL2.GetComponent<Player_Move>().Character_Speed;
+        //BSpeed1 = PlayerL1.GetComponent<>
+
+        SpeedL1 = SpeedR1 = SpeedR2 = SpeedL2 = PlayerSlow;
         BSpeed1 = BulletSpeed1;
         BSpeed2 = BulletSpeed2;
+
+        Time3 += Time.deltaTime;
         if (Time3 >= Time_Speed)
         {
             Time3 = 0;
             EventSwitch = false;
-        }
+        }*/
+
+        //再抽選
+        Rand = UnityEngine.Random.Range(1, EventNumber + 1);
     }
 
     void Event4()
     {
-        HPSwitch = true;//これをプレイヤー側等で参照して、吸収攻撃を処理
+        PlayerL1.GetComponent<Event_Manager>().HPSwitch = true;
+        PlayerL2.GetComponent<Event_Manager>().HPSwitch = true;
         Time5 += Time.deltaTime;
         if (Time5 >= Time_HP)
         {
-            HPSwitch = false;
+            PlayerL1.GetComponent<Event_Manager>().HPSwitch = false;
+            PlayerL2.GetComponent<Event_Manager>().HPSwitch = false;
             EventSwitch = false;
         }
     }
 
     void Event5()
     {
+        HP1 = PlayerR1.GetComponent<Player_Manager_R>().m_Player_HP;
+        HP2 = PlayerR2.GetComponent<Player_Manager_R>().m_Player_HP;
+        B_Switch = PlayerR1.GetComponent<Event_Manager>().B_Switch;
         if (Barrier == false)
         {
-            B_Switch = Player1.GetComponent<Player_Manager_R>();
-            B_Switch = true;
-            Barrier = true;
-            EventSwitch = false;
+            if (HP1 < HP2)
+            {
+                B_Switch = PlayerR1.GetComponent<Event_Manager>().B_Switch;
+                B_Switch = true;
+                Barrier = true;
+                EventSwitch = false;
+            }
+            else if (HP2 < HP1)
+            {
+                B_Switch = PlayerR2.GetComponent<Event_Manager>().B_Switch;
+                B_Switch = true;
+                Barrier = true;
+                EventSwitch = false;
+            }
         }
         else
         {
             Rand = UnityEngine.Random.Range(1, EventNumber + 1);
         }
+        
     }
 
     void Textchange()
