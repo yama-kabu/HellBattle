@@ -127,6 +127,7 @@ NavMeshSettings:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5995159355528496690, guid: 79d43274d1555a2478a24f5aca97d12f, type: 3}
   m_PrefabInstance: {fileID: 5995159355482386407}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -419,6 +420,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 967c0828ab96d34478aeb1cc32b4793d, type: 3}
+=======
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &327093053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2543956701815672137, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+  m_PrefabInstance: {fileID: 5151292586361318897}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 --- !u!1 &517959965
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +610,11 @@ GameObject:
   m_Component:
   - component: {fileID: 781176846}
   m_Layer: 0
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   m_Name: ========================
+=======
+  m_Name: "=====\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC\u95A2\u4FC2====="
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,17 +634,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
 --- !u!1 &972120697 stripped
+=======
+--- !u!114 &1315697160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5995159356449545711, guid: 79d43274d1555a2478a24f5aca97d12f, type: 3}
+  m_PrefabInstance: {fileID: 5995159355482386407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1376687953
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1959490340733356042, guid: cb905b3a43a7f25408f3ea009d9a6f51, type: 3}
   m_PrefabInstance: {fileID: 1959490341699185267}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
 --- !u!114 &972120698
 MonoBehaviour:
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376687954}
+  m_Layer: 0
+  m_Name: "=====\u30B9\u30C6\u30FC\u30B8\u95A2\u4FC2====="
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1376687954
+Transform:
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   m_GameObject: {fileID: 972120697}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -676,6 +726,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1376687953
+=======
+  m_GameObject: {fileID: 1376687953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.340753, y: 65.76901, z: -1368.2013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1406705168
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -683,20 +744,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   - component: {fileID: 1376687954}
   m_Layer: 0
   m_Name: ========================
+=======
+  - component: {fileID: 1406705170}
+  - component: {fileID: 1406705169}
+  - component: {fileID: 1406705171}
+  m_Layer: 0
+  m_Name: Game_Setting
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
 --- !u!4 &1376687954
 Transform:
+=======
+--- !u!114 &1406705169
+MonoBehaviour:
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   m_GameObject: {fileID: 1376687953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.340753, y: 65.76901, z: -1368.2013}
@@ -724,11 +799,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1406705169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+=======
   m_GameObject: {fileID: 1406705168}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -737,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syouhai_text_L1: {fileID: 1315697160}
   syouhai_text_L2: {fileID: 88205781}
+  last_of_agaki_check: 0
   syouhai: 0
   WINER: 0
 --- !u!4 &1406705170
@@ -754,11 +826,70 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1406705171
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406705168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
+  m_Script: {fileID: 11500000, guid: 0d034c98bc63efa49acf5e36b5e464fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syouhai_text_L1: {fileID: 1315697160}
+  syouhai_text_L2: {fileID: 88205781}
+  syouhai: 0
+  WINER: 0
+--- !u!4 &1406705170
+Transform:
+=======
+  m_Script: {fileID: 11500000, guid: 31197299010877d438711fb5a797cf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count_text_L1: {fileID: 1315697160}
+  count_text_L2: {fileID: 88205781}
+  count_down: 1
+  is_start_chack: 0
+--- !u!1 &1646169207
+GameObject:
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
+  m_GameObject: {fileID: 1406705168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 632.07666, y: -28.363358, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1406705171
+MonoBehaviour:
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646169208}
+  m_Layer: 0
+  m_Name: "=====\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC\u4EE5\u5916====="
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1646169208
+Transform:
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   m_GameObject: {fileID: 1406705168}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -780,6 +911,22 @@ GameObject:
   m_PrefabInstance: {fileID: 1959490341699185267}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646169207
+=======
+  m_GameObject: {fileID: 1646169207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.340753, y: 65.76901, z: -1368.2013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742843085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1549328241775888302, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+  m_PrefabInstance: {fileID: 1549328241253804899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2071367206
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -787,14 +934,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   - component: {fileID: 1646169208}
   m_Layer: 0
   m_Name: =======================
+=======
+  - component: {fileID: 2071367207}
+  m_Layer: 0
+  m_Name: EventSystem
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
 --- !u!4 &1646169208
 Transform:
   m_ObjectHideFlags: 0
@@ -869,6 +1023,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 --- !u!4 &2071367207
 Transform:
   m_ObjectHideFlags: 0
@@ -901,6 +1057,7 @@ PrefabInstance:
     - target: {fileID: 743505963438339767, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 743505963438339769, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
       propertyPath: m_Enabled
@@ -934,6 +1091,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 0}
+    - target: {fileID: 743505963438339769, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 743505963438339769, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_ShowMaskGraphic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 743505963438339771, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 743505964912341107, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 743505965002239374, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 743505965002239473, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101744072003854544, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101744072003854547, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
     - target: {fileID: 8101744073641642023, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1034,6 +1226,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: aaf2d2024dbe98c4c843613c78723051, type: 3}
 --- !u!1001 &1349315677808556424
 PrefabInstance:
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -1315,12 +1508,71 @@ MonoBehaviour:
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1001 &2193740485870339979
+=======
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1349315678684715683, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_Name
+      value: Explosion_TargetP2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -898
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349315678684715684, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9398ea3a63ad21347954e1c8f83b531e, type: 3}
+--- !u!1001 &1549328241253804899
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
     - target: {fileID: 2193740486036546696, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
       propertyPath: m_Name
       value: Filed
@@ -1392,12 +1644,122 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
 --- !u!1001 &2553439116198752595
+=======
+    - target: {fileID: 291613709133330769, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: search_character_number
+      value: 
+      objectReference: {fileID: 327093053}
+    - target: {fileID: 1549328241544254448, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_Name
+      value: Canvas_D1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254452, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241544254453, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 2399629617868721771, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: search_character_number
+      value: 
+      objectReference: {fileID: 327093053}
+    - target: {fileID: 8511624952765095268, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: Character
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+--- !u!1001 &2193740485870339979
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
     - target: {fileID: 2553439114269461785, guid: 3bce892d07a07b94b90af202d452232d, type: 3}
       propertyPath: search_character_number
       value: 
@@ -1447,13 +1809,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2553439115481082897, guid: 3bce892d07a07b94b90af202d452232d, type: 3}
+=======
+    - target: {fileID: 2193740486036546696, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_Name
+      value: Filed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546696, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
     - target: {fileID: 2553439115481082897, guid: 3bce892d07a07b94b90af202d452232d, type: 3}
+=======
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
     - target: {fileID: 2553439115481082897, guid: 3bce892d07a07b94b90af202d452232d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -1508,6 +1890,58 @@ PrefabInstance:
       objectReference: {fileID: 1742843085}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bce892d07a07b94b90af202d452232d, type: 3}
+=======
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486036546703, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486249034642, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486249034643, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193740486280658959, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 517959967}
+    - target: {fileID: 2193740486563712682, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
 --- !u!1001 &4564742889344269088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1518,19 +1952,30 @@ PrefabInstance:
     - target: {fileID: 4443936098224557334, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4443936099527425145, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+=======
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4443936099527425146, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
       propertyPath: m_Name
       value: Bullet_Mask_Right
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4443936099527425146, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443936099527425146, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
     - target: {fileID: 4443936099527425147, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1617,6 +2062,129 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 145c15f98d835ec4295f13a729e70069, type: 3}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
+--- !u!1001 &5661904177021294961
+=======
+--- !u!1001 &5151292586361318897
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
+    - target: {fileID: 5661904175897686544, guid: 5ffe880eb757bf5438d6ceac1cc1ca64, type: 3}
+      propertyPath: m_Name
+      value: Effect_Canvas
+      objectReference: {fileID: 0}
+=======
+    - target: {fileID: 5151292586487796918, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: search_character_number
+      value: 
+      objectReference: {fileID: 1742843085}
+    - target: {fileID: 5151292587119751344, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 517959967}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751347, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587119751375, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_Name
+      value: Canvas_D2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151292587637330047, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: search_character_number
+      value: 
+      objectReference: {fileID: 1742843085}
+    - target: {fileID: 6460378504427798913, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: Character
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
 --- !u!1001 &5661904177021294961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1628,6 +2196,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect_Canvas
       objectReference: {fileID: 0}
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
     - target: {fileID: 5661904175897686548, guid: 5ffe880eb757bf5438d6ceac1cc1ca64, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2093,10 +2662,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Room for 2.unity
     - target: {fileID: 7407579474809839978, guid: 18ea0d5458499df44b60378bb9ecb7cf, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> origin/main:Assets/Scenes/ButtleScene.unity
     - target: {fileID: 7407579475538144200, guid: 18ea0d5458499df44b60378bb9ecb7cf, type: 3}
       propertyPath: m_IsActive
       value: 1
