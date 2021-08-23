@@ -6,14 +6,14 @@ using Photon.Realtime;
 public class Manager : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        //ルーム内のIDと名前を表示
-        foreach (var player in PhotonNetwork.PlayerList)
-        {
-            Debug.Log($"{player.NickName}({player.ActorNumber})");
-        }
-    }
+    //void Start()
+    //{
+    //    //ルーム内のIDと名前を表示
+    //    foreach (var player in PhotonNetwork.PlayerList)
+    //    {
+    //        Debug.Log($"{player.NickName}({player.ActorNumber})");
+    //    }
+    //}
     void LoadArena()
     {
         if (!PhotonNetwork.IsMasterClient)
