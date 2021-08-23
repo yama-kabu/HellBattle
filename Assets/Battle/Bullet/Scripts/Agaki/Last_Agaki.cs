@@ -61,7 +61,7 @@ public class Last_Agaki : MonoBehaviour
 
     public void Shot_agaki()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && System.GetComponent<Setting>().last_of_agaki_check == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Button_R1") || Input.GetButtonDown("Button_R2")) && System.GetComponent<Setting>().last_of_agaki_check == false)
         {
             System.GetComponent<Setting>().last_of_agaki_check = true;
             set_hp = true;

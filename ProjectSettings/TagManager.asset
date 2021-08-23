@@ -8,6 +8,19 @@ TagManager:
   - BackStage
   - Bullet
   - Target
+  - Bullet_1
+  - Player_L1
+  - Absorption
+  - Barrier
+  - Player_R1
+  - Hit_Body_P1
+  - Bullet_2
+  - Player_L2
+  - Hit_Body_P2
+  - Player_R2
+  - Panel1
+  - Panel2
+  - Panel3
   layers:
   - Default
   - TransparentFX
