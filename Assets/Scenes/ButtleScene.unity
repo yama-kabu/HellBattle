@@ -1239,6 +1239,10 @@ PrefabInstance:
       propertyPath: Character
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7531569512068148503, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_set_agaki_HP
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 7576882670881735070, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
       propertyPath: interval
       value: 60
@@ -1264,7 +1268,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7040369304351146246, guid: 0bad73b5c2211e54b9c70de212e6a940, type: 3}
     m_RemovedComponents:
-    - {fileID: 874982649861503998, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
     - {fileID: 7549365208894432829, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
 --- !u!1 &5151292586361318898 stripped
