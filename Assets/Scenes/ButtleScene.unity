@@ -853,6 +853,14 @@ PrefabInstance:
       propertyPath: m_ScaleFactor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1549328241775888316, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: interval
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241775888316, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: agaki_time
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2399629617868721771, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
       propertyPath: search_character_number
       value: 
@@ -860,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 7343197245539341202, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911853421155738733, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: total_cool_time
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8511624952765095268, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
       propertyPath: Character
@@ -1214,6 +1226,14 @@ PrefabInstance:
     - target: {fileID: 6460378504427798913, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
       propertyPath: Character
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576882670881735070, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584308481345701631, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 874982649861503998, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}

@@ -163,7 +163,7 @@ public class Player_Move1 : MonoBehaviour
         {
             Vector3 playerPos = transform.position; //Vector3Œ^‚ÌplayerPos‚ÉŒ»İ‚ÌˆÊ’uî•ñ‚ğŠi”[
             //Œ¸‘¬ˆÚ“®
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Button_L1"))
             {
                 playerPos.y += (player_speed * 0.4f) * Time.deltaTime; //yÀ•W‚Éspeed‚ğ‰ÁZ
             }
@@ -187,7 +187,7 @@ public class Player_Move1 : MonoBehaviour
         {
             Vector3 playerPos = transform.position;
             //Œ¸‘¬ˆÚ“®
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Button_L1"))
             {
                 playerPos.y -= (player_speed * 0.4f) * Time.deltaTime; //yÀ•W‚Éspeed‚ğ‰ÁZ
             }
@@ -209,7 +209,7 @@ public class Player_Move1 : MonoBehaviour
         {
             Vector3 playerPos = transform.position; //Vector3Œ^‚ÌplayerPos‚ÉŒ»İ‚ÌˆÊ’uî•ñ‚ğŠi”[
             //Œ¸‘¬ˆÚ“®
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Button_L1"))
             {
                 playerPos.x += (player_speed * 0.4f) * Time.deltaTime; //yÀ•W‚Éspeed‚ğ‰ÁZ
             }
@@ -232,7 +232,7 @@ public class Player_Move1 : MonoBehaviour
         {
             Vector3 playerPos = transform.position;
             //Œ¸‘¬ˆÚ“®
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Button_L1"))
             {
                 playerPos.x -= (player_speed * 0.4f) * Time.deltaTime; //yÀ•W‚Éspeed‚ğ‰ÁZ
             }
