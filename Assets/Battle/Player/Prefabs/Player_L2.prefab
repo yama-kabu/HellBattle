@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 7219519193588509216}
   - component: {fileID: 7219519193588509219}
   - component: {fileID: 7219519193588509218}
+  - component: {fileID: 3340386650441098763}
   - component: {fileID: 7219519193588509228}
   m_Layer: 8
   m_Name: Player_L2
@@ -137,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: 2
   AttackPower_percent: 0.5
+  agaki: 0
+  used_agaki: 0
   s_Way: {fileID: 7219519193588509218}
   s_Spiral: {fileID: 7219519193588509219}
   s_Homing: {fileID: 7219519193588509216}
@@ -145,6 +148,7 @@ MonoBehaviour:
   s_Random_Homing: {fileID: 7219519193588509222}
   s_Explosion: {fileID: 7219519193588509220}
   s_Cross: {fileID: 7219519193588509401}
+  s_Agaki: {fileID: 3340386650441098763}
 --- !u!114 &5429512961084906603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +331,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a092ddb10fa93744953dfe5d84fed1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3340386650441098763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7219519193588509404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ff2a885a8483b47a2c4908e11313b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agaki_time: 3
 --- !u!114 &7219519193588509228
 MonoBehaviour:
   m_ObjectHideFlags: 0

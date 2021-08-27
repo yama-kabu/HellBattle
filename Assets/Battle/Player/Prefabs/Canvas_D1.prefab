@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1549328241544254454}
   - component: {fileID: 1549328241544254455}
   m_Layer: 5
-  m_Name: Canvas_D1 1
+  m_Name: Canvas_D1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,8 @@ PrefabInstance:
       propertyPath: search_character_number
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1243193844290694666, guid: 6d12ce426b7352c4bb5135ac83f37460, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6d12ce426b7352c4bb5135ac83f37460, type: 3}
 --- !u!224 &291613709133330780 stripped
 RectTransform:
