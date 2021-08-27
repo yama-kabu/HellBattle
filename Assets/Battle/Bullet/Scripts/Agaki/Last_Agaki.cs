@@ -61,13 +61,25 @@ public class Last_Agaki : MonoBehaviour
 
     public void Shot_agaki()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Button_R1") || Input.GetButtonDown("Button_R2")) && System.GetComponent<Setting>().last_of_agaki_check == false)
+        if (this.CompareTag("Player_L1"))
         {
-            System.GetComponent<Setting>().last_of_agaki_check = true;
-            set_hp = true;
-            Player.GetComponent<Player_Manager_L>().used_agaki = true;
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Button_R1")) && System.GetComponent<Setting>().last_of_agaki_check == false)
+            {
+                System.GetComponent<Setting>().last_of_agaki_check = true;
+                set_hp = true;
+                Player.GetComponent<Player_Manager_L>().used_agaki = true;
+            }
         }
-        if(is_attack == false && set_hp == true)
+        else if (this.CompareTag("Player_L2"))
+        {
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Button_R2")) && System.GetComponent<Setting>().last_of_agaki_check == false)
+            {
+                System.GetComponent<Setting>().last_of_agaki_check = true;
+                set_hp = true;
+                Player.GetComponent<Player_Manager_L>().used_agaki = true;
+            }
+        }
+        if (is_attack == false && set_hp == true)
         {
             HP.GetComponent<Player_Manager_R>().m_Player_HP += 5;   //回復
             if(HP.GetComponent<Player_Manager_R>().m_Player_HP > 100)
@@ -100,7 +112,7 @@ public class Last_Agaki : MonoBehaviour
                     for (int bullet_counter = 0; bullet_counter < 9; bullet_counter++)
                     {
                         var a = Quaternion.Euler(0, 0, -Mathf.Atan2(Vec.x, Vec.y) * Mathf.Rad2Deg + (bullet_counter * 45));
-                        var b = Instantiate(s_Manager.BulletList[1], transform.position, a);
+                        var b = Instantiate(s_Manager.BulletList[8], transform.position, a);
                         b.transform.SetParent(s_Manager.prefab.transform);    //プレハブをここを親にして出すよ
                         b.GetComponent<Rigidbody2D>().velocity = Vec;
                     }
@@ -127,8 +139,8 @@ public class Last_Agaki : MonoBehaviour
                             rotation = false;   // 右向きだよ！
                         }
                         #endregion
-                        s_Manager.BulletList[7].GetComponent<Shot_Cross>().is_direction = rotation;
-                        GameObject Shot = Instantiate(s_Manager.BulletList[7]) as GameObject;
+                        s_Manager.BulletList[9].GetComponent<Shot_Cross>().is_direction = rotation;
+                        GameObject Shot = Instantiate(s_Manager.BulletList[9]) as GameObject;
                         Shot.transform.SetParent(s_Manager.prefab.transform);    //プレハブをここを親にして出すよ
                         Shot.transform.rotation = Quaternion.Euler(Angle);
                         Shot.transform.position = this.transform.position;
