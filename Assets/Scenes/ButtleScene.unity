@@ -853,6 +853,14 @@ PrefabInstance:
       propertyPath: m_ScaleFactor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1549328241775888316, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: interval
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549328241775888316, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: agaki_time
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2399629617868721771, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
       propertyPath: search_character_number
       value: 
@@ -861,6 +869,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7911853421155738733, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: total_cool_time
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911853421155738733, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: BulletList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911853421155738733, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: BulletList.Array.data[8]
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 6c4e5fc79b359eb48ba290ffc7b1089a, type: 3}
+    - target: {fileID: 7911853421155738733, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
+      propertyPath: BulletList.Array.data[9]
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 0bad73b5c2211e54b9c70de212e6a940, type: 3}
     - target: {fileID: 8511624952765095268, guid: 0b21875827b0a1b4a8083e52ccf3c214, type: 3}
       propertyPath: Character
       value: 2
@@ -1215,8 +1239,35 @@ PrefabInstance:
       propertyPath: Character
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7531569512068148503, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_set_agaki_HP
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576882670881735070, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: interval
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576882670881735070, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584308481345701631, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844025873096931267, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: BulletList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844025873096931267, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: BulletList.Array.data[8]
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 6c4e5fc79b359eb48ba290ffc7b1089a, type: 3}
+    - target: {fileID: 8844025873096931267, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
+      propertyPath: BulletList.Array.data[9]
+      value: 
+      objectReference: {fileID: 7040369304351146246, guid: 0bad73b5c2211e54b9c70de212e6a940, type: 3}
     m_RemovedComponents:
-    - {fileID: 874982649861503998, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
     - {fileID: 7549365208894432829, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 181cc863625541f40b32b4e123d0a8d1, type: 3}
 --- !u!1 &5151292586361318898 stripped
