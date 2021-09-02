@@ -13,6 +13,7 @@ public class Shot_Manager : MonoBehaviour
     public GameObject player;
     //ターゲットを敵の位置に
     public GameObject target;
+
     public Vector3 distance;
 
     public GameObject prefab;  //プレハブの親を参照するよ
