@@ -45,6 +45,7 @@ public class Player_Manager_L : MonoBehaviour
     private void Awake()
     {
         Character = PanelSwitch.getA();
+            
     }
     void Start()
     {
