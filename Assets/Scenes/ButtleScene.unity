@@ -1239,7 +1239,7 @@ PrefabInstance:
     - target: {fileID: 2193740485226389198, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1a8f0a2ee6050bf418e14f4e7335cf0a, type: 3}
+      objectReference: {fileID: 21300000, guid: dfb060b66ae7c86409fd520f69ba1920, type: 3}
     - target: {fileID: 2193740486036546696, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
       propertyPath: m_Name
       value: Filed
@@ -1295,7 +1295,7 @@ PrefabInstance:
     - target: {fileID: 2193740486249034641, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1a8f0a2ee6050bf418e14f4e7335cf0a, type: 3}
+      objectReference: {fileID: 21300000, guid: dfb060b66ae7c86409fd520f69ba1920, type: 3}
     - target: {fileID: 2193740486249034642, guid: b644f3f53392dfa40a001a507e9923e9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
