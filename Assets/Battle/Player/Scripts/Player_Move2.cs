@@ -15,7 +15,7 @@ public class Player_Move2 : MonoBehaviour
 //--------------------------------------------------------------------------------------
 //変数系
 
-    public int Character_Speed; //参照したキャラクタースピードの確認
+    public float Character_Speed; //参照したキャラクタースピードの確認
     [SerializeField]
     private float player_speed; //キャラクターの速度を代入するよ
     [SerializeField]

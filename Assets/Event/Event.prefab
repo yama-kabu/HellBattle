@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272516523199375096}
-  - component: {fileID: -1425096413305036808}
-  - component: {fileID: 5437060385150975409}
   m_Layer: 0
   m_Name: Event
   m_TagString: Untagged
@@ -34,26 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &-1425096413305036808
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786257992930639378}
-  m_Enabled: 1
---- !u!114 &5437060385150975409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786257992930639378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13523213818d08409fe34ac2298ba93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6442256308971703340
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,13 +193,17 @@ MonoBehaviour:
   Event5tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u30D0\u30EA\u30A2\u4ED8\u4E0E\uFF01"
   B_Switch: 0
   EventSwitch: 0
+  S_Speed1: 0
+  S_Speed2: 0
   EventNumber: 5
   LifeItem: {fileID: 3720470844570412289, guid: b4074e7407ea72041b78b72f4518de35, type: 3}
   Canvas: {fileID: 6442256308971703340}
-  PlayerL1: {fileID: 0}
-  PlayerR1: {fileID: 0}
-  PlayerL2: {fileID: 0}
-  PlayerR2: {fileID: 0}
+  L1_Rigid: {fileID: 0}
+  L2_Rigid: {fileID: 0}
+  R1_Shoter: {fileID: 0}
+  R2_Shoter: {fileID: 0}
+  Move_L1: {fileID: 0}
+  Move_L2: {fileID: 0}
 --- !u!1 &6442256310632061140
 GameObject:
   m_ObjectHideFlags: 0

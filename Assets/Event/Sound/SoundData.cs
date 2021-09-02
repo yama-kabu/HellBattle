@@ -31,5 +31,6 @@ public enum SE
     CollisionB = 5,
     Special_attackA = 6,
     Special_attackB = 7,
-    HeelItem = 8
+    HeelItem = 8,
+    OKButton =9
 }

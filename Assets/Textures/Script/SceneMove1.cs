@@ -15,7 +15,7 @@ public class SceneMove1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SoundManager.Instance.PlayBGM(BGM.CharacterSelect);
     }
 
     // Update is called once per frame
@@ -26,11 +26,13 @@ public class SceneMove1 : MonoBehaviour
             if (Input.GetKey(KeyCode.A) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
             {
                 SceneManager.LoadScene("CharacterSelectScene2");
+                SoundManager.Instance.PlaySE(SE.OKButton);
 
             }
             if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_B1") || Input.GetButtonDown("Button_B2"))
             {
                 SceneManager.LoadScene("TitleScene");
+                SoundManager.Instance.PlaySE(SE.OKButton);
             }
         }
         

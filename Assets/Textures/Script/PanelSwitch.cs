@@ -31,6 +31,7 @@ public class PanelSwitch : MonoBehaviour
             {
                 Panel1.SetActive(false);
                 Panel2.SetActive(true);
+                SoundManager.Instance.PlaySE(SE.OKButton);
             }
 
             if (Player_Number != 1)
@@ -46,6 +47,7 @@ public class PanelSwitch : MonoBehaviour
             {
                 Panel1.SetActive(true);
                 Panel2.SetActive(false);
+                SoundManager.Instance.PlaySE(SE.OKButton);
             }
 
             //if (Input.GetKeyDown(KeyCode.RightArrow))
