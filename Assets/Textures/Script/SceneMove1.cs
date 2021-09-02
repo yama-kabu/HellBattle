@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneMove : MonoBehaviour
+public class SceneMove1 : MonoBehaviour
 {
 
 
@@ -25,7 +25,7 @@ public class SceneMove : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
             {
-                SceneManager.LoadScene("ButtleScene");
+                SceneManager.LoadScene("CharacterSelectScene2");
 
             }
             if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_B1") || Input.GetButtonDown("Button_B2"))

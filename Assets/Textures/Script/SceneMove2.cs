@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneMove : MonoBehaviour
+public class SceneMove2 : MonoBehaviour
 {
 
 
@@ -21,7 +21,7 @@ public class SceneMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "CharacterSelectScene1")
+        if(SceneManager.GetActiveScene().name == "CharacterSelectScene2")
         {
             if (Input.GetKey(KeyCode.A) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PanelSwitch : MonoBehaviour
+public class PanelSwitch2 : MonoBehaviour
 {
     [SerializeField] GameObject Panel1;
     [SerializeField] GameObject Panel2;
@@ -27,7 +27,7 @@ public class PanelSwitch : MonoBehaviour
     {
         if (Panel1.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("Button_R1") || Input.GetButtonDown("Button_R2"))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 Panel1.SetActive(false);
                 Panel2.SetActive(true);
@@ -42,7 +42,7 @@ public class PanelSwitch : MonoBehaviour
 
         else if (Panel2.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 Panel1.SetActive(true);
                 Panel2.SetActive(false);
@@ -70,7 +70,7 @@ public class PanelSwitch : MonoBehaviour
         //        Player_Number = 3;
         //}
     }
-    public static int getA()
+    public static int getB()
     {
         return Player_Number;
     }

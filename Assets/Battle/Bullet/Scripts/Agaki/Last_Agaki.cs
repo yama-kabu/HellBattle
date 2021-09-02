@@ -15,7 +15,7 @@ public class Last_Agaki : MonoBehaviour
 //--------------------------------------------------------------------------------------
 //•Ï”Œn
 
-    private float interval = 22;  //”­ËŠÔŠu‚¾‚æ
+    public float interval = 22;  //”­ËŠÔŠu‚¾‚æ
     private int launch_interval = 3;    //”­ËÛ‚Ég‚¤‚â‚Â‚¾‚æB©—R‚É’²®‚Å‚«‚é‚æ
     float rotation_speed = 1f;  //‰ñ“]‚·‚é‘¬“x‚¾‚æ  ‚P‚O‚O‚O‚É‚·‚é‚Æ•KE‹Z‚İ‚½‚¢‚É‚È‚é‚æi‚æ‚¯‚ç‚ê‚é‚Æv‚¤‚Èj
 
@@ -61,13 +61,26 @@ public class Last_Agaki : MonoBehaviour
 
     public void Shot_agaki()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Button_R1") || Input.GetButtonDown("Button_R2")) && System.GetComponent<Setting>().last_of_agaki_check == false)
+        if (s_Manager.player.gameObject.CompareTag("Player_L1"))
         {
-            System.GetComponent<Setting>().last_of_agaki_check = true;
-            set_hp = true;
-            Player.GetComponent<Player_Manager_L>().used_agaki = true;
+            if ((Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("Button_R1")) && System.GetComponent<Setting>().last_of_agaki_check == false)
+            {
+                System.GetComponent<Setting>().last_of_agaki_check = true;
+                set_hp = true;
+                Player.GetComponent<Player_Manager_L>().used_agaki = true;
+            }
         }
-        if(is_attack == false && set_hp == true)
+        if (s_Manager.player.gameObject.CompareTag("Player_L2"))
+        {
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Button_R2")) && System.GetComponent<Setting>().last_of_agaki_check == false)
+            {
+                Debug.Log("a");
+                System.GetComponent<Setting>().last_of_agaki_check = true;
+                set_hp = true;
+                Player.GetComponent<Player_Manager_L>().used_agaki = true;
+            }
+        }
+        if (is_attack == false && set_hp == true)
         {
             HP.GetComponent<Player_Manager_R>().m_Player_HP += 5;   //‰ñ•œ
             if(HP.GetComponent<Player_Manager_R>().m_Player_HP > 100)
@@ -99,8 +112,8 @@ public class Last_Agaki : MonoBehaviour
                     //‚R•ûŒü‚Éo‚·ˆ—
                     for (int bullet_counter = 0; bullet_counter < 9; bullet_counter++)
                     {
-                        var a = Quaternion.Euler(0, 0, -Mathf.Atan2(Vec.x, Vec.y) * Mathf.Rad2Deg + (bullet_counter * 45));    //‚R•ûŒü‚Ìspral‚È‚Ì‚Å‚P‚Q‚O“x‚²‚Æ‚Éo‚·‚æ
-                        var b = Instantiate(s_Manager.BulletList[1], transform.position, a);
+                        var a = Quaternion.Euler(0, 0, -Mathf.Atan2(Vec.x, Vec.y) * Mathf.Rad2Deg + (bullet_counter * 45));
+                        var b = Instantiate(s_Manager.BulletList[8], transform.position, a);
                         b.transform.SetParent(s_Manager.prefab.transform);    //ƒvƒŒƒnƒu‚ğ‚±‚±‚ğe‚É‚µ‚Äo‚·‚æ
                         b.GetComponent<Rigidbody2D>().velocity = Vec;
                     }
@@ -127,8 +140,8 @@ public class Last_Agaki : MonoBehaviour
                             rotation = false;   // ‰EŒü‚«‚¾‚æI
                         }
                         #endregion
-                        s_Manager.BulletList[7].GetComponent<Shot_Cross>().is_direction = rotation;
-                        GameObject Shot = Instantiate(s_Manager.BulletList[7]) as GameObject;
+                        s_Manager.BulletList[9].GetComponent<Shot_Cross>().is_direction = rotation;
+                        GameObject Shot = Instantiate(s_Manager.BulletList[9]) as GameObject;
                         Shot.transform.SetParent(s_Manager.prefab.transform);    //ƒvƒŒƒnƒu‚ğ‚±‚±‚ğe‚É‚µ‚Äo‚·‚æ
                         Shot.transform.rotation = Quaternion.Euler(Angle);
                         Shot.transform.position = this.transform.position;
@@ -139,7 +152,7 @@ public class Last_Agaki : MonoBehaviour
         if (is_attack == true)    //ƒ_ƒ[ƒW(c‚è‚Ì•b”‚ğƒQ[ƒW‚É”½‰f‚³‚¹‚é‚½‚ß‚Ì‘Ì—ÍŒ¸­ˆ—)
         {
             time_interval += Time.deltaTime;
-            if (time_interval > 0.1f)
+            if (time_interval > 0.2f)
             {
                 HP.GetComponent<Player_Manager_R>().m_Player_HP -= agaki_damage;
                 Debug.Log(HP.GetComponent<Player_Manager_R>().m_Player_HP);

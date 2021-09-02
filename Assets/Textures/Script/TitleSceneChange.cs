@@ -20,7 +20,7 @@ public class TitleSceneChange : MonoBehaviour
 
     public void TitleChange()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetButtonDown("Button_A1"))
         {
             SceneManager.LoadScene("CharacterSelectScene1");
         }
