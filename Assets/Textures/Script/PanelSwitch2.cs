@@ -27,7 +27,7 @@ public class PanelSwitch2 : MonoBehaviour
     {
         if (Panel1.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("Button_R1") || Input.GetButtonDown("Button_R2"))
             {
                 Panel1.SetActive(false);
                 Panel2.SetActive(true);
@@ -42,7 +42,7 @@ public class PanelSwitch2 : MonoBehaviour
 
         else if (Panel2.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
             {
                 Panel1.SetActive(true);
                 Panel2.SetActive(false);
