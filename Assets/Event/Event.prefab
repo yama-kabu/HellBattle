@@ -214,13 +214,14 @@ MonoBehaviour:
   Event4tex: "\u5F3E\u5E55\u547D\u4E2D\u3067\u4F53\u529B\u5438\u53CE\uFF01"
   Event5tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u30D0\u30EA\u30A2\u4ED8\u4E0E\uFF01"
   B_Switch: 0
-  HPSwitch: 0
   EventSwitch: 0
   EventNumber: 5
   LifeItem: {fileID: 3720470844570412289, guid: b4074e7407ea72041b78b72f4518de35, type: 3}
   Canvas: {fileID: 6442256308971703340}
-  Player1: {fileID: 0}
-  Player2: {fileID: 0}
+  PlayerL1: {fileID: 0}
+  PlayerR1: {fileID: 0}
+  PlayerL2: {fileID: 0}
+  PlayerR2: {fileID: 0}
 --- !u!1 &6442256310632061140
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6321bc7534194349b214743e81ad3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NonRotatableCharacters: 
+  NonRotatableCharacters: fc30
   ShiftCharacters: 
   ShiftXPixels: []
   ShiftYPixels: []
