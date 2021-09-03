@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 42a8c58f6a44ba94da2ec8bd656c73c7
+=======
+guid: 952c7e1e1346e3340a5a30bddffb7fd5
+>>>>>>> origin/newRyu-6_i
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -44,7 +44,14 @@ public class Player_Manager_L : MonoBehaviour
 
     private void Awake()
     {
+<<<<<<< HEAD
         //Character = PanelSwitch.getA();
+=======
+        if(gameObject.CompareTag("Player_L1"))
+        Character = PanelSwitch.getA();
+        else if (gameObject.CompareTag("Player_L2"))
+        Character = PanelSwitch2.getB();
+>>>>>>> origin/newRyu-6_i
     }
     void Start()
     {

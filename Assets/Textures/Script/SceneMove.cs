@@ -23,12 +23,12 @@ public class SceneMove : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "CharacterSelectScene1")
         {
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.A) || Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
             {
                 SceneManager.LoadScene("ButtleScene");
 
             }
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKey(KeyCode.B) || Input.GetButtonDown("Button_B1") || Input.GetButtonDown("Button_B2"))
             {
                 SceneManager.LoadScene("TitleScene");
             }

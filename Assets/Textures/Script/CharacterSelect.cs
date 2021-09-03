@@ -18,25 +18,19 @@ public class CharacterSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Panel1.activeSelf)
+        if (Input.GetButtonDown("Button_A1") || Input.GetButtonDown("Button_A2"))
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Panel1.activeSelf)
             {
                 DataManager.Character = 1;
             }
-        }
 
-        else if (Panel2.activeSelf)
-        {
-            if (Input.GetKeyDown(KeyCode.Z))
+            else if (Panel2.activeSelf)
             {
                 DataManager.Character = 2;
             }
-        }
 
-        else if (Panel3.activeSelf)
-        {
-            if (Input.GetKeyDown(KeyCode.Z))
+            else if (Panel3.activeSelf)
             {
                 DataManager.Character = 3;
             }

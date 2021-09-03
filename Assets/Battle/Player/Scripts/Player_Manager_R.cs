@@ -16,15 +16,19 @@ public class Player_Manager_R : MonoBehaviour
     GameObject Syouhai;
     GameObject PA;  //弾が当たった際のプレイヤーが受けるダメージ量を調べる変すだよ
 
-//--------------------------------------------------------------------------------------
-// ゲームのスタート時の処理
+    //--------------------------------------------------------------------------------------
+    // ゲームのスタート時の処理
+
+    private void Awake()
+    {
+        m_Player_MAXHP = 100;
+        m_Player_HP = m_Player_MAXHP;
+    }
 
     void Start()
     {
         //Rigidbody2D　コンポーネントを取得して変数　Player_R　に格納
         Player_R = GetComponent<Rigidbody2D>();
-        m_Player_MAXHP = 100;
-        m_Player_HP = m_Player_MAXHP;
 
         //勝敗Bool取得
         Syouhai = GameObject.Find("Game_Setting");
@@ -39,8 +43,8 @@ public class Player_Manager_R : MonoBehaviour
         }
     }
 
-//--------------------------------------------------------------------------------------
-//あがきに関する処理
+    //--------------------------------------------------------------------------------------
+    //あがきに関する処理
 
     void Update()
     {

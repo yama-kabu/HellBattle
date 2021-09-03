@@ -1,6 +1,4 @@
 //ル
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -19,7 +17,7 @@ public class Setting : MonoBehaviour
     public bool last_of_agaki_check = false;  //最後のあがきを使ったかどうかチェック
     public bool syouhai = false;//勝敗が決まったか  false= また終わっていない。 true= 終わった
     public bool WINER;  //L1がかったらtrue、L2がかったらfalse
-    bool chack = false; //消す処理や勝敗を表示する処理が行われたかチェック
+    public bool check = false; //消す処理や勝敗を表示する処理が行われたかチェック
 
 //--------------------------------------------------------------------------------------
 //最初の準備
@@ -36,21 +34,11 @@ public class Setting : MonoBehaviour
     {
         if (syouhai)
         {
-            if (!chack)//勝敗がついたら消去開始
+            if (!check)//勝敗がついたら消去開始
             {
                 zenkesi();
 
-                if (WINER)
-                {
-                    syouhai_text_L1.text = "WIN";          //表示するよ
-                    syouhai_text_L2.text = "LOSE";          //表示するよ
-                }
-                else
-                {
-                    syouhai_text_L1.text = "LOSE";          //表示するよ
-                    syouhai_text_L2.text = "WIN";          //表示するよ
-                }
-                chack = true;   //処理が終わったよ
+                check = true;   //処理が終わったよ
             }
 
             if(Input.GetKeyDown(KeyCode.Space))

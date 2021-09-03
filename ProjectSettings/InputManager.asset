@@ -278,7 +278,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal_R1
+    m_Name: Horizontal_L1
     descriptiveName: stick R left
     descriptiveNegativeName: stick R right
     negativeButton: left
@@ -290,11 +290,16 @@ InputManager:
     sensitivity: 3
     snap: 0
     invert: 0
+<<<<<<< HEAD
     type: 0
     axis: 2
+=======
+    type: 2
+    axis: 3
+>>>>>>> origin/newRyu-6_i
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Vertical_R1
+    m_Name: Vertical_L1
     descriptiveName: stick R up
     descriptiveNegativeName: stick R down
     negativeButton: up
@@ -306,6 +311,7 @@ InputManager:
     sensitivity: 3
     snap: 1
     invert: 1
+<<<<<<< HEAD
     type: 0
     axis: 3
     joyNum: 1
@@ -315,6 +321,17 @@ InputManager:
     descriptiveNegativeName: stick L right
     negativeButton: left
     positiveButton: right
+=======
+    type: 2
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Horizontal_R1
+    descriptiveName: stick L right
+    descriptiveNegativeName: stick L left
+    negativeButton: 
+    positiveButton: 
+>>>>>>> origin/newRyu-6_i
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -326,7 +343,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Vertical_L1
+    m_Name: Vertical_R1
     descriptiveName: stick L up
     descriptiveNegativeName: stick L down
     negativeButton: up
@@ -342,7 +359,7 @@ InputManager:
     axis: 1
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Horizontal_R2
+    m_Name: Horizontal_L2
     descriptiveName: stick R left
     descriptiveNegativeName: stick R right
     negativeButton: a
@@ -354,11 +371,16 @@ InputManager:
     sensitivity: 3
     snap: 1
     invert: 0
+<<<<<<< HEAD
     type: 0
     axis: 0
+=======
+    type: 2
+    axis: 3
+>>>>>>> origin/newRyu-6_i
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Vertical_R2
+    m_Name: Vertical_L2
     descriptiveName: stick R up
     descriptiveNegativeName: stick R down
     negativeButton: w
@@ -370,11 +392,16 @@ InputManager:
     sensitivity: 3
     snap: 1
     invert: 1
+<<<<<<< HEAD
     type: 0
     axis: 1
+=======
+    type: 2
+    axis: 4
+>>>>>>> origin/newRyu-6_i
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Horizontal_L2
+    m_Name: Horizontal_R2
     descriptiveName: stick L left
     descriptiveNegativeName: stick L right
     negativeButton: a
@@ -386,11 +413,16 @@ InputManager:
     sensitivity: 3
     snap: 1
     invert: 0
+<<<<<<< HEAD
     type: 0
     axis: 3
+=======
+    type: 2
+    axis: 0
+>>>>>>> origin/newRyu-6_i
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Vertical_L2
+    m_Name: Vertical_R2
     descriptiveName: stick L up
     descriptiveNegativeName: stick L down
     negativeButton: w
@@ -402,8 +434,13 @@ InputManager:
     sensitivity: 3
     snap: 1
     invert: 1
+<<<<<<< HEAD
     type: 0
     axis: 4
+=======
+    type: 2
+    axis: 1
+>>>>>>> origin/newRyu-6_i
     joyNum: 2
   - serializedVersion: 3
     m_Name: Button_A1
@@ -554,7 +591,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 6
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -586,7 +623,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 2 button 6
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -618,7 +655,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 7
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -650,7 +687,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 2 button 7
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3

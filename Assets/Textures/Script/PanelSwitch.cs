@@ -27,10 +27,11 @@ public class PanelSwitch : MonoBehaviour
     {
         if (Panel1.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("Button_R1") || Input.GetButtonDown("Button_R2"))
             {
                 Panel1.SetActive(false);
                 Panel2.SetActive(true);
+                SoundManager.Instance.PlaySE(SE.OKButton);
             }
 
             if (Player_Number != 1)
@@ -42,10 +43,14 @@ public class PanelSwitch : MonoBehaviour
 
         else if (Panel2.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("Button_L1") || Input.GetButtonDown("Button_L2"))
             {
                 Panel1.SetActive(true);
                 Panel2.SetActive(false);
+<<<<<<< HEAD
+=======
+                SoundManager.Instance.PlaySE(SE.OKButton);
+>>>>>>> origin/newRyu-6_i
             }
 
             //if (Input.GetKeyDown(KeyCode.RightArrow))

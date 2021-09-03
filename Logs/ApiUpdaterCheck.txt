@@ -308,6 +308,7 @@ C# parse time         : 675ms
 candidates check time : 64ms
 console write time    : 2ms
 
+<<<<<<< HEAD
 [api-updater (non-obsolete-error-filter)] 2021/07/22 12:01:54 : Starting C:/Users/kabuto/Unity_C/2020.2.5f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
@@ -346,5 +347,25 @@ moved types parse time: 52ms
 candidates parse time : 1ms
 C# parse time         : 264ms
 candidates check time : 34ms
+=======
+[api-updater (non-obsolete-error-filter)] 2021/08/20 16:28:19 : Starting C:/Program Files/Unity/2020.2.5f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 820.3856ms
+moved types parse time: 124ms
+candidates parse time : 2ms
+C# parse time         : 684ms
+candidates check time : 130ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 2021/08/20 16:29:47 : Starting C:/Program Files/Unity/2020.2.5f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 100.6479ms
+moved types parse time: 62ms
+candidates parse time : 2ms
+C# parse time         : 265ms
+candidates check time : 112ms
+>>>>>>> origin/newRyu-6_i
 console write time    : 0ms
 
