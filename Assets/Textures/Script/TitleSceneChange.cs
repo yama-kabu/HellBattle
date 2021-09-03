@@ -9,20 +9,21 @@ public class TitleSceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager.Instance.PlayBGM(BGM.TitleBGM);
     }
 
     // Update is called once per frame
     void Update()
     {
-       TitleChange();
+        TitleChange();
     }
 
     public void TitleChange()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetButtonDown("Button_A1"))
         {
             SceneManager.LoadScene("CharacterSelectScene1");
+            SoundManager.Instance.PlaySE(SE.OKButton);
         }
     }
 }

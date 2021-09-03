@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5151292587119751345}
   - component: {fileID: 5151292587119751374}
   m_Layer: 5
-  m_Name: Canvas_D2 1
+  m_Name: Canvas_D2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5429512961084906603, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 974d7cde5a235ac4fa64fed287319fc5, type: 3}
 --- !u!1 &2543956701815672137 stripped
 GameObject:

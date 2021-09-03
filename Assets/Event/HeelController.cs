@@ -17,8 +17,8 @@ public class HeelController : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         GameObject EMane = GameObject.Find("EventManager");
-        Player1 = EMane.GetComponent<EventManager>().Player1;
-        Player2 = EMane.GetComponent<EventManager>().Player2;
+        Player1 = EMane.GetComponent<EventManager>().L1_Rigid;
+        Player2 = EMane.GetComponent<EventManager>().L2_Rigid;
         posx = GetComponent<RectTransform>().localPosition.x;
         posy = GetComponent<RectTransform>().localPosition.y;
     }
@@ -38,13 +38,14 @@ public class HeelController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject == Player1 || collision.gameObject == Player2)
+        Debug.Log("“–‚½‚Á‚½‚æ");
+        if (collision.gameObject == Player1 || collision.gameObject == Player2)
         {
             GameObject Player = collision.gameObject;
             PlayerManager = Player.GetComponent<Player_Manager_R>();
-            
+
             //‘Ì—Í‰ñ•œ
             PlayerManager.m_Player_HP += HeelPoint;
             Debug.Log(PlayerManager.m_Player_HP + "Heel");
@@ -58,15 +59,4 @@ public class HeelController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }
-
-    private void OnTriggerExit2D(Collider2D colision)
-    {
-        
-    }
-
 }

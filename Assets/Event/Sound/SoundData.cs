@@ -13,7 +13,8 @@ public enum BGM
     Thunderbolt = 9,
     Versus = 10,
     Bit_Lossbor = 12,
-    Toguro = 13
+    Toguro = 13,
+    CharacterSelect = 14
 }
 
 public enum JNG
@@ -30,5 +31,6 @@ public enum SE
     CollisionB = 5,
     Special_attackA = 6,
     Special_attackB = 7,
-    HeelItem = 8
+    HeelItem = 8,
+    OKButton =9
 }
