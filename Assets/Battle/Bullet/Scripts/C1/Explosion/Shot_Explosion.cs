@@ -106,8 +106,8 @@ public class Shot_Explosion : Shot_Common
         #endregion
     }
 
-    //--------------------------------------------------------------------------------------
-    //’e‚Ì¶¬ˆ—
+//--------------------------------------------------------------------------------------
+//’e‚Ì¶¬ˆ—
 
     void Exp(int i)
     {
@@ -115,17 +115,11 @@ public class Shot_Explosion : Shot_Common
         vec.Normalize();
         #region ’e‚ğw’è‚ÌŠp“x‚²‚Æ‚Éo‚·ˆ—
         if (check == 1)
-        {
             vec = Quaternion.Euler(0, 0, (360 / 10) * i) * vec;     //‚R‚U“x‚¸‚Âo‚·‚æ
-        }
         else if (check == 2)
-        {
             vec = Quaternion.Euler(0, 0, (360 / 20) * i) * vec;     //‚P‚W“x‚¸‚Âo‚·‚æ
-        }
         if (check == 3)
-        {
             vec = Quaternion.Euler(0, 0, (360 / 10) * i) * vec;     //‚R‚U“x‚¸‚Âo‚·‚æ
-        }
         #endregion
         vec *= burst_speed;
         var q = Quaternion.Euler(0, 0, -Mathf.Atan2(vec.x, vec.y) * Mathf.Rad2Deg);     //“G‚Æ‚ÌŠp“x‚ğ‘ã“ü‚·‚é‚æ
@@ -135,7 +129,7 @@ public class Shot_Explosion : Shot_Common
 
     }
 
-//--------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
     void OnTriggerEnter2D(Collider2D BD)
     {

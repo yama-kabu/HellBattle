@@ -62,8 +62,15 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
-        Atc1 = R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
-        Atc2 = R2_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
+        if (Atc1 != null || Atc2 == null)
+        {
+            return;
+        }
+        else
+        {
+            Atc1 = R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
+            Atc2 = R2_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
+        }
         E_Atc1 = Atc1 * AtcRatio;
         E_Atc2 = Atc2 * AtcRatio;
         Speed1 = Move_L1.GetComponent<Player_Move1>().Character_Speed;
@@ -142,8 +149,15 @@ public class EventManager : MonoBehaviour
 
     void Event2()//不利プレイヤー攻撃力アップイベント
     {
-        HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
-        HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+        if (HP1 != null || HP2 == null)
+        {
+            return;
+        }
+        else
+        {
+            HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+            HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+        }
         /*ここにプレイヤーの攻撃力を参照する文を書く*/
         Time2 += Time.deltaTime;
         if (HP1 < HP2)
