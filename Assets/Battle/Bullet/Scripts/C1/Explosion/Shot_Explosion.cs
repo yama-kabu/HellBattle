@@ -69,32 +69,24 @@ public class Shot_Explosion : Shot_Common
     {
         #region 発射処理
         //４以上かどうかを見るよ
-        if (check < 4)
-        {
-            if (time_count % 100 == 0)
+            if (time_count % 100 == 0 && check < 4)
             {
                 switch (check)
                 {
                     case 3:
                         for (int i = 0; i < 10; i++)
-                        {
                             Exp(i);
-                        }
                         check++;    //次のフェーズに移動するよ
                         Destroy(this.gameObject);
                         break;
                     case 2:
                         for (int i = 0; i < 20; i++)
-                        {
                             Exp(i);
-                        }
                         check++;    //次のフェーズに移動するよ
                         break;
                     case 1:
                         for (int i = 0; i < 30; i++)
-                        {
                             Exp(i);
-                        }
                         check++;    //次のフェーズに移動するよ
                         break;
                     default:
@@ -102,12 +94,11 @@ public class Shot_Explosion : Shot_Common
                 }
             }
             time_count++;
-        }
         #endregion
     }
 
-    //--------------------------------------------------------------------------------------
-    //弾の生成処理
+//--------------------------------------------------------------------------------------
+//弾の生成処理
 
     void Exp(int i)
     {
@@ -115,17 +106,11 @@ public class Shot_Explosion : Shot_Common
         vec.Normalize();
         #region 弾を指定の角度ごとに出す処理
         if (check == 1)
-        {
             vec = Quaternion.Euler(0, 0, (360 / 10) * i) * vec;     //３６度ずつ出すよ
-        }
         else if (check == 2)
-        {
             vec = Quaternion.Euler(0, 0, (360 / 20) * i) * vec;     //１８度ずつ出すよ
-        }
         if (check == 3)
-        {
             vec = Quaternion.Euler(0, 0, (360 / 10) * i) * vec;     //３６度ずつ出すよ
-        }
         #endregion
         vec *= burst_speed;
         var q = Quaternion.Euler(0, 0, -Mathf.Atan2(vec.x, vec.y) * Mathf.Rad2Deg);     //敵との角度を代入するよ
