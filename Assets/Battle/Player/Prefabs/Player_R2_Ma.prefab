@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8775197744252422055}
   - component: {fileID: 9169561587364025364}
   - component: {fileID: 3456675173695749414}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Hit_Body_P2
   m_TagString: Hit_Body_P2
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 6361309261276942552}
   - component: {fileID: 7629034863466064782}
   - component: {fileID: 3332084495542638128}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrier
   m_TagString: Barrier
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3332084495784355924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player_R2_Ma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 794072039045991238}
   - component: {fileID: 5112360025534620162}
   - component: {fileID: 8512203061683711020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Absorption
   m_TagString: Absorption
   m_Icon: {fileID: 0}
