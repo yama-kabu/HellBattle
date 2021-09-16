@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4627176359859824199}
-  m_Layer: 9
+  - component: {fileID: 8477804696694432668}
+  m_Layer: 6
   m_Name: PlayerEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,6 +41,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8477804696694432668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058a3d8af9b3989479faa2a43106577d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScaleMax: 0.06
+  ScaleLeast: 0.04
+  ChangeSpeed: 0.000225
 --- !u!1 &2594509742899145043
 GameObject:
   m_ObjectHideFlags: 0
@@ -51,7 +67,7 @@ GameObject:
   - component: {fileID: 97343729146658686}
   - component: {fileID: 1285953055776816548}
   - component: {fileID: 7272722564804250099}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: GroundFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1179,7 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1216,7 +1232,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1314,7 +1330,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.46666667, g: 0.99215686, b: 0.70980394, a: 0}
         key1: {r: 0.105882354, g: 0.972549, b: 0.18431373, a: 0.2}
-        key2: {r: 0.9647059, g: 0.48235294, b: 0.34117648, a: 0.6039216}
+        key2: {r: 0.9647059, g: 0.48235294, b: 0.34117648, a: 0}
         key3: {r: 0.69803923, g: 0.41960785, b: 0, a: 0.09803922}
         key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -4799,7 +4815,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4836,7 +4852,7 @@ GameObject:
   - component: {fileID: 5658111051111367221}
   - component: {fileID: 4416932908438372244}
   - component: {fileID: 2029114545877831140}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6099,7 +6115,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.46666667, g: 0.99215686, b: 0.70980394, a: 0}
         key1: {r: 0.105882354, g: 0.972549, b: 0.18431373, a: 0.2}
-        key2: {r: 0.9647059, g: 0.48235294, b: 0.34117648, a: 0.6039216}
+        key2: {r: 0.9647059, g: 0.48235294, b: 0.34117648, a: 0}
         key3: {r: 0.69803923, g: 0.41960785, b: 0, a: 0.09803922}
         key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -9584,7 +9600,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9621,7 +9637,7 @@ GameObject:
   - component: {fileID: 6606112509447101412}
   - component: {fileID: 5390089523551274458}
   - component: {fileID: 6384061690535886385}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: MagicCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10884,7 +10900,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.46666667, g: 0.99215686, b: 0.70980394, a: 0}
         key1: {r: 0.105882354, g: 0.972549, b: 0.18431373, a: 0.2}
-        key2: {r: 0.9647059, g: 0.48235294, b: 0.34117648, a: 1}
+        key2: {r: 0.9647059, g: 0.48235294, b: 0.34117648, a: 0}
         key3: {r: 0.69803923, g: 0.41960785, b: 0, a: 0.09803922}
         key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -14369,7 +14385,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -14406,7 +14422,7 @@ GameObject:
   - component: {fileID: 4710822072189963171}
   - component: {fileID: 5643597003068212746}
   - component: {fileID: 7280050600909263687}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15668,7 +15684,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 0, g: 1, b: 0.4627451, a: 0.18039216}
+        key1: {r: 0, g: 1, b: 0.4627451, a: 0}
         key2: {r: 0.007843138, g: 0.61960787, b: 0.8666667, a: 0}
         key3: {r: 0.007843138, g: 0.61960787, b: 0.8666667, a: 0}
         key4: {r: 1, g: 1, b: 1, a: 0}
@@ -19154,7 +19170,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_RenderMode: 1
   m_SortMode: 3
   m_MinParticleSize: 0
@@ -19191,7 +19207,7 @@ GameObject:
   - component: {fileID: 5488354582856411368}
   - component: {fileID: 6948368271565920294}
   - component: {fileID: 765157615698312568}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20194,7 +20210,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -20247,7 +20263,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -20303,7 +20319,7 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -20356,7 +20372,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -23939,7 +23955,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_RenderMode: 1
   m_SortMode: 3
   m_MinParticleSize: 0
