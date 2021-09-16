@@ -6,6 +6,7 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
+    private GameObject Game_Setting;
 
     [Header("最初の60秒間を飛ばすスイッチ")]
     public bool OnOff = false;
@@ -62,15 +63,9 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
-        if (Atc1 != null || Atc2 == null)
-        {
-            return;
-        }
-        else
-        {
-            Atc1 = R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
-            Atc2 = R2_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
-        }
+
+        Atc1 = R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
+        Atc2 = R2_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
         E_Atc1 = Atc1 * AtcRatio;
         E_Atc2 = Atc2 * AtcRatio;
         Speed1 = Move_L1.GetComponent<Player_Move1>().Character_Speed;
@@ -80,51 +75,57 @@ public class EventManager : MonoBehaviour
         EventSwitch = false;
         x = 60;
         SoundManager.Instance.PlayBGM(BGM.BattleBGM);
+
+        Game_Setting = GameObject.Find("Game_Setting");
     }
 
     void Update()
     {
-        Textchange();
-        
-        //最初の60秒
-        x -= Time.deltaTime;
-        if (x <=0) { OnOff = true; }
-
-        //イベント発生までの時間の振れ幅を決める
-        //どのイベントを行うか決める
-        if (EventSwitch == false && OnOff == true)
+        if (Game_Setting.GetComponent<Setting>().WINER == false)
         {
-            EventCount = UnityEngine.Random.Range(TimeA, TimeB);
-            //イベントの個数を把握し、その中からランダムな数を取り出す
-            Rand = UnityEngine.Random.Range(1, EventNumber + 1);
-            EventSwitch = true;
-        }
+            
+            Textchange();
 
-        EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
+            //最初の60秒
+            x -= Time.deltaTime;
+            if (x <= 0) { OnOff = true; }
 
-        //【デバッグ用】押したキーの番号のイベントに変更
-        Eventchange();
-
-        //カウントが終っている間はイベントを行う
-        if (EventCount <= 0)
-        {
-            switch(Rand)
+            //イベント発生までの時間の振れ幅を決める
+            //どのイベントを行うか決める
+            if (EventSwitch == false && OnOff == true)
             {
-                case 1:
-                    Event1();
-                    break;
-                case 2:
-                    Event2();
-                    break;
-                case 3:
-                    Event3();
-                    break;
-                case 4:
-                    Event4();
-                    break;
-                case 5:
-                    Event5();
-                    break;
+                EventCount = UnityEngine.Random.Range(TimeA, TimeB);
+                //イベントの個数を把握し、その中からランダムな数を取り出す
+                Rand = UnityEngine.Random.Range(1, EventNumber + 1);
+                EventSwitch = true;
+            }
+
+            EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
+
+            //【デバッグ用】押したキーの番号のイベントに変更
+            Eventchange();
+
+            //カウントが終っている間はイベントを行う
+            if (EventCount <= 0)
+            {
+                switch (Rand)
+                {
+                    case 1:
+                        Event1();
+                        break;
+                    case 2:
+                        Event2();
+                        break;
+                    case 3:
+                        Event3();
+                        break;
+                    case 4:
+                        Event4();
+                        break;
+                    case 5:
+                        Event5();
+                        break;
+                }
             }
         }
     }
