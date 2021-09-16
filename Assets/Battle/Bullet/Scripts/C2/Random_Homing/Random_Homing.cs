@@ -44,6 +44,8 @@ public class Random_Homing : MonoBehaviour
                     Shot.transform.SetParent(s_Manager.prefab.transform);    //プレハブをここを親にして出すよ
                     Shot.transform.position = this.transform.position;
                 }
+
+                SoundManager.Instance.PlaySE(SE.Knife);
             }
         }
     }

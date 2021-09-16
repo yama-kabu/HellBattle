@@ -100,6 +100,7 @@ public class Shot_Explosion : Shot_Common
                     default:
                         break;
                 }
+                SoundManager.Instance.PlaySE(SE.Knife);
             }
             time_count++;
         }
@@ -126,7 +127,6 @@ public class Shot_Explosion : Shot_Common
         var t = Instantiate(bullet_burst, transform.position, q);   //弾に情報を代入するよ
         t.transform.SetParent(this.transform.parent);    //プレハブをここを親にして出すよ
         t.GetComponent<Rigidbody2D>().velocity = vec;   //発射ぁ！
-
     }
 
     //--------------------------------------------------------------------------------------
