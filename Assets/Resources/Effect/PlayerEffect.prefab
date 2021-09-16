@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4627176359859824199}
   - component: {fileID: 8477804696694432668}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlayerEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 97343729146658686}
   - component: {fileID: 1285953055776816548}
   - component: {fileID: 7272722564804250099}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: GroundFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4815,7 +4815,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4852,7 +4852,7 @@ GameObject:
   - component: {fileID: 5658111051111367221}
   - component: {fileID: 4416932908438372244}
   - component: {fileID: 2029114545877831140}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9600,7 +9600,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9637,7 +9637,7 @@ GameObject:
   - component: {fileID: 6606112509447101412}
   - component: {fileID: 5390089523551274458}
   - component: {fileID: 6384061690535886385}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: MagicCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14385,7 +14385,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -14422,7 +14422,7 @@ GameObject:
   - component: {fileID: 4710822072189963171}
   - component: {fileID: 5643597003068212746}
   - component: {fileID: 7280050600909263687}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19170,7 +19170,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 1
   m_SortMode: 3
   m_MinParticleSize: 0
@@ -19207,7 +19207,7 @@ GameObject:
   - component: {fileID: 5488354582856411368}
   - component: {fileID: 6948368271565920294}
   - component: {fileID: 765157615698312568}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23955,7 +23955,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 1
   m_SortMode: 3
   m_MinParticleSize: 0
