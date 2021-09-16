@@ -133,19 +133,16 @@ public class EventManager : MonoBehaviour
     //各イベントの処理
     void Event1()//ライフ回復イベント
     {
-        /*GameObject HeelItem = (GameObject)Instantiate(LifeItem);
+        GameObject HeelItem = (GameObject)Instantiate(LifeItem);
         HeelItem.transform.SetParent(Canvas.transform, false);
-        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
-        GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0, 0), Quaternion.Euler(0, 0, 180f));
+        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(-500,540);
+        GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0,0), Quaternion.Euler(0, 0, 180f));
         HeelItem2.transform.SetParent(Canvas.transform, false);
-        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -540);
 
         SoundManager.Instance.PlaySE(SE.HeelItem);
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
-        EventSwitch = false;*/
-
-        //再抽選
-        Rand = UnityEngine.Random.Range(1, EventNumber + 1);
+        EventSwitch = false;
     }
 
     void Event2()//不利プレイヤー攻撃力アップイベント
@@ -185,7 +182,7 @@ public class EventManager : MonoBehaviour
     void Event3()
     {
         //デバフする処理
-        /*Move_L1.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
+        Move_L1.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
         R1_Shoter.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
         Move_L2.GetComponent<Player_Move2>().Character_Speed = S_Speed2;
         R2_Shoter.GetComponent<Player_Move2>().Character_Speed =S_Speed2;
@@ -202,10 +199,10 @@ public class EventManager : MonoBehaviour
             Move_L2.GetComponent<Player_Move2>().Character_Speed = Speed2;
             R2_Shoter.GetComponent<Player_Move2>().Character_Speed = Speed2;
             EventSwitch = false;
-        }*/
+        }
 
         //再抽選
-        Rand = UnityEngine.Random.Range(1, EventNumber + 1);
+        //Rand = UnityEngine.Random.Range(1, EventNumber + 1);
     }
 
     void Event4()
