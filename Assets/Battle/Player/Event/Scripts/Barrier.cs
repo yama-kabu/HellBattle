@@ -33,6 +33,10 @@ public class Barrier : MonoBehaviour
 
             em.GetComponent<Event_Manager>().Protection--;   //Protection（残りの守る回数）をマイナス
         }
+        if(BD.gameObject.tag == "Bullet_Agaki")
+        {
+            em.GetComponent<Event_Manager>().Protection = 0;
+        }
     }
 
 //--------------------------------------------------------------------------------------

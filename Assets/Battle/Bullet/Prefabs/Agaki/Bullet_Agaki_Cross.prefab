@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8914121857576914073}
   m_Layer: 8
   m_Name: Bullet_Agaki_Cross
-  m_TagString: Bullet_1
+  m_TagString: Bullet_Agaki
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
