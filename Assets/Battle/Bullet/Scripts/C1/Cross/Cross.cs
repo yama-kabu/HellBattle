@@ -74,6 +74,7 @@ public class Cross : MonoBehaviour
                         Shot.transform.rotation = Quaternion.Euler(Angle);
                         Shot.transform.position = this.transform.position;
                     }
+                    SoundManager.Instance.PlaySE(SE.Knife);
                 }
             }
         }

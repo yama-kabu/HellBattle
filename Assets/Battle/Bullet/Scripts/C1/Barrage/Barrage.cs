@@ -68,6 +68,8 @@ public class Barrage : MonoBehaviour
                 t.transform.SetParent(s_Manager.prefab.transform);    //プレハブをここを親にして出すよ
                 t.GetComponent<Rigidbody2D>().velocity = vec;
                 #endregion
+
+                SoundManager.Instance.PlaySE(SE.Knife);
             }
         }
         #region クールタイムの処理

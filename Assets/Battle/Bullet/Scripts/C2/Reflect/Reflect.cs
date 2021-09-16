@@ -74,6 +74,9 @@ public class Reflect : MonoBehaviour
                     vec.Normalize();    //‚P‚É³‹K‰»‚·‚é‚æ
                     t.GetComponent<Rigidbody2D>().velocity = vec;
                 }
+
+                SoundManager.Instance.PlaySE(SE.Knife);
+
                 //‰Šú‰»‚·‚é‚æ
                 cooltime_count = 0;
             }

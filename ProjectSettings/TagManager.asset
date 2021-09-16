@@ -21,11 +21,12 @@ TagManager:
   - Player_R2
   - Bullet_1
   - Bullet_2
+  - Bullet_Agaki
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - effect
   - Water
   - UI
   - 

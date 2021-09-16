@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneChange : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
