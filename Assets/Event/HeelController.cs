@@ -38,7 +38,7 @@ public class HeelController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("“–‚½‚Á‚½‚æ");
         if (collision.gameObject == Player1 || collision.gameObject == Player2)
