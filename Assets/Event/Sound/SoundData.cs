@@ -33,6 +33,8 @@ public enum SE
     Explosion = 7,
     Cross = 8,
     Last_Agaki = 9,
-    HeelItem = 10,
-    OKButton =11
+    Burst = 10,
+    Normal = 11,
+    TitleButton = 12,
+    OKButton = 13
 }
