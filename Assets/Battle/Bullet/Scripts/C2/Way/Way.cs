@@ -64,7 +64,7 @@ public class Way : MonoBehaviour
         if (is_attack)
         {
             launch_time += Time.deltaTime;
-            if (launch_time > 0.5 && push_count != 0 && push_count >= bullet_number)    //ボタンを押した回数になるまで、0.5秒ごとに発射するよ
+            if (launch_time > 0.3 && push_count != 0 && push_count >= bullet_number)    //ボタンを押した回数になるまで、0.5秒ごとに発射するよ
             {
                 #region 敵との角度計算
                 if (s_Manager.target != null)
@@ -93,7 +93,7 @@ public class Way : MonoBehaviour
                 bullet_number++;
                 launch_time = 0;    //再計算を行うために時間は初期化するよ
 
-                SoundManager.Instance.PlaySE(SE.Knife);
+                SoundManager.Instance.PlaySE(SE.Way);
             }
             #region 初期化処理
             if (push_count < bullet_number)

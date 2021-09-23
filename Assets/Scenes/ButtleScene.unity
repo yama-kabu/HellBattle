@@ -3618,7 +3618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Player_MAXHP: 0
   m_Player_HP: 0
-  m_set_agaki_HP: 80
+  m_set_agaki_HP: 30
 --- !u!1 &2747024591241040750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3843,7 +3843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Player_MAXHP: 0
   m_Player_HP: 0
-  m_set_agaki_HP: 80
+  m_set_agaki_HP: 30
 --- !u!1 &3804806935710770436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,7 +4241,7 @@ Transform:
   m_GameObject: {fileID: 3332084494898416314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.013, y: -0.124, z: 0}
-  m_LocalScale: {x: 0.2303523, y: 0.2303523, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children:
   - {fileID: 1516819921}
   - {fileID: 768018999795905306}
@@ -5173,6 +5173,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7407579474809839978, guid: 18ea0d5458499df44b60378bb9ecb7cf, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7407579475538144200, guid: 18ea0d5458499df44b60378bb9ecb7cf, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5280,7 +5284,7 @@ Transform:
   m_GameObject: {fileID: 120661599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.011, y: -0.124, z: 0}
-  m_LocalScale: {x: 0.23035228, y: 0.2303523, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children:
   - {fileID: 596293212}
   - {fileID: 7208796199931154055}

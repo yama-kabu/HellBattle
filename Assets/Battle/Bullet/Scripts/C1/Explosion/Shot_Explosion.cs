@@ -100,7 +100,7 @@ public class Shot_Explosion : Shot_Common
                     default:
                         break;
                 }
-                SoundManager.Instance.PlaySE(SE.Knife);
+                SoundManager.Instance.PlaySE(SE.Explosion);
             }
             time_count++;
         }

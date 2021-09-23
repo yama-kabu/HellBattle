@@ -69,7 +69,7 @@ public class Barrage : MonoBehaviour
                 t.GetComponent<Rigidbody2D>().velocity = vec;
                 #endregion
 
-                SoundManager.Instance.PlaySE(SE.Knife);
+                SoundManager.Instance.PlaySE(SE.Barrage);
             }
         }
         #region クールタイムの処理
