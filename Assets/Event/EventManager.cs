@@ -140,7 +140,9 @@ public class EventManager : MonoBehaviour
         HeelItem2.transform.SetParent(Canvas.transform, false);
         HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -540);
 
+        //回復アイテム生成の音を慣らす
         SoundManager.Instance.PlaySE(SE.HeelItem);
+        
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
         EventSwitch = false;
     }
