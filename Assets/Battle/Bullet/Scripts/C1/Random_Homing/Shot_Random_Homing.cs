@@ -70,6 +70,9 @@ public class Shot_Random_Homing : Shot_Common
                 rb.velocity = Vector2.zero;     //ˆÚ“®‚ğˆê‰ñ~‚ß‚é‚æ
                 rb.AddForce(new Vector2(Random.Range(-force_pawer, force_pawer) * 100f,
                                         Random.Range(-force_pawer, force_pawer) * 100f));   //ƒ‰ƒ“ƒ_ƒ€‚È•ûŒü‚ÉˆÚ“®‚·‚é‚æ
+
+                SoundManager.Instance.PlaySE(SE.Knife);
+
                 random_change = 0.3f;   //ƒ‰ƒ“ƒ_ƒ€‚ÉˆÚ“®‚·‚é‚Ü‚Å‚ÌŠÔ‚ğ‰Šú‰»
             }
         }
@@ -151,6 +154,8 @@ public class Shot_Random_Homing : Shot_Common
                     rb.AddForce(vector3.normalized * bullet_Speed * 10);     //•ûŒü‚Ì’·‚³‚ğ1‚É³‹K‰»‚µ‚ÄA”CˆÓ‚Ì—Í‚ğAddForce‚Å‰Á‚¦‚é‚æ
                 }
                 #endregion
+
+                SoundManager.Instance.PlaySE(SE.Knife);
             }
         }
     }
