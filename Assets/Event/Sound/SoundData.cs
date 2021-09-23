@@ -36,5 +36,6 @@ public enum SE
     Burst = 10,
     Normal = 11,
     TitleButton = 12,
-    OKButton = 13
+    OKButton = 13,
+    EventSound = 14
 }

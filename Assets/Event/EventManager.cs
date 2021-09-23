@@ -111,7 +111,7 @@ public class EventManager : MonoBehaviour
             {
                 if(SoundOn == false)
                 {
-                    SoundManager.Instance.PlaySE(SE.Way);
+                    SoundManager.Instance.PlaySE(SE.EventSound);
                     SoundOn = true;
                 }
                 switch (Rand)
