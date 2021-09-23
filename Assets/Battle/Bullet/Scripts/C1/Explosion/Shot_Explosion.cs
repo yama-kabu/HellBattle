@@ -129,7 +129,7 @@ public class Shot_Explosion : Shot_Common
         t.GetComponent<Rigidbody2D>().velocity = vec;   //î≠éÀÇüÅI
     }
 
-//--------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
     void OnTriggerEnter2D(Collider2D BD)
     {
