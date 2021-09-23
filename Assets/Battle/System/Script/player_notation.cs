@@ -20,7 +20,7 @@ public class player_notation : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if(Start_Timer.GetComponent<Start_Timer>().count_down <= 0)
