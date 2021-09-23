@@ -24,13 +24,15 @@ public enum JNG
 
 public enum SE
 {
-    Knife = 1,
-    ShotGun = 2,
-    LaserGun = 3,
-    CollisionA = 4,
-    CollisionB = 5,
-    Special_attackA = 6,
-    Special_attackB = 7,
-    HeelItem = 8,
-    OKButton =9
+    Way = 1,
+    Spiral = 2,
+    Homing = 3,
+    Reflect = 4,
+    Barrage = 5,
+    Random_Homing = 6,
+    Explosion = 7,
+    Cross = 8,
+    Last_Agaki = 9,
+    HeelItem = 10,
+    OKButton =11
 }
