@@ -37,7 +37,6 @@ public class EventManager : MonoBehaviour
     public string Event2tex;
     public string Event3tex;
     public string Event4tex;
-    public string Event5tex;
 
     [Header("イベント処理用変数(触らないでね)")]
     float EventCount;//イベントまでのカウントダウン
@@ -52,6 +51,7 @@ public class EventManager : MonoBehaviour
     public int EventNumber;//イベントの数
     public GameObject LifeItem;//回復アイテムのprefab
     public GameObject Canvas;
+    private bool SoundOn = false;
     //ステータス保存用
     float HP1, Atc1, Speed1, BSpeed1;
     float HP2, Atc2, Speed2, BSpeed2;
@@ -98,6 +98,7 @@ public class EventManager : MonoBehaviour
                 //イベントの個数を把握し、その中からランダムな数を取り出す
                 Rand = UnityEngine.Random.Range(1, EventNumber + 1);
                 EventSwitch = true;
+                SoundOn = false;
             }
 
             EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
@@ -108,6 +109,11 @@ public class EventManager : MonoBehaviour
             //カウントが終っている間はイベントを行う
             if (EventCount <= 0)
             {
+                if(SoundOn == false)
+                {
+                    SoundManager.Instance.PlaySE(SE.Way);
+                    SoundOn = true;
+                }
                 switch (Rand)
                 {
                     case 1:
@@ -121,9 +127,6 @@ public class EventManager : MonoBehaviour
                         break;
                     case 4:
                         Event4();
-                        break;
-                    case 5:
-                        Event5();
                         break;
                 }
             }
@@ -139,9 +142,6 @@ public class EventManager : MonoBehaviour
         GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0,0), Quaternion.Euler(0, 0, 180f));
         HeelItem2.transform.SetParent(Canvas.transform, false);
         HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -540);
-
-        //回復アイテム生成の音を慣らす
-        SoundManager.Instance.PlaySE(SE.HeelItem);
         
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
         EventSwitch = false;
@@ -183,32 +183,6 @@ public class EventManager : MonoBehaviour
 
     void Event3()
     {
-        //デバフする処理
-        Move_L1.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
-        R1_Shoter.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
-        Move_L2.GetComponent<Player_Move2>().Character_Speed = S_Speed2;
-        R2_Shoter.GetComponent<Player_Move2>().Character_Speed =S_Speed2;
-        //BSpeed1 = PlayerL1.GetComponent<>
-        //BSpeed1 = BulletSpeed1;
-        //BSpeed2 = BulletSpeed2;
-
-        Time3 += Time.deltaTime;
-        if (Time3 >= Time_Speed)
-        {
-            Time3 = 0;
-            Move_L1.GetComponent<Player_Move1>().Character_Speed = Speed1;
-            R1_Shoter.GetComponent<Player_Move1>().Character_Speed = Speed1;
-            Move_L2.GetComponent<Player_Move2>().Character_Speed = Speed2;
-            R2_Shoter.GetComponent<Player_Move2>().Character_Speed = Speed2;
-            EventSwitch = false;
-        }
-
-        //再抽選
-        //Rand = UnityEngine.Random.Range(1, EventNumber + 1);
-    }
-
-    void Event4()
-    {
         L1_Rigid.GetComponent<Event_Manager>().HPSwitch = true;
         L2_Rigid.GetComponent<Event_Manager>().HPSwitch = true;
         Time5 += Time.deltaTime;
@@ -221,7 +195,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    void Event5()
+    void Event4()
     {
         HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
         HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
@@ -269,9 +243,6 @@ public class EventManager : MonoBehaviour
                 case 4:
                     Etext.text = Event4tex;
                     break;
-                case 5:
-                    Etext.text = Event5tex;
-                    break;
             }
         }
         else
@@ -302,9 +273,6 @@ public class EventManager : MonoBehaviour
                             break;
                         case KeyCode.Alpha4:
                             Rand = 4;
-                            break;
-                        case KeyCode.Alpha5:
-                            Rand = 5;
                             break;
                     }
                     //Debug.Log(Rand);
