@@ -45,7 +45,7 @@ public class Random_Homing : MonoBehaviour
                     Shot.transform.position = this.transform.position;
                 }
 
-                SoundManager.Instance.PlaySE(SE.Knife);
+                SoundManager.Instance.PlaySE(SE.Random_Homing);
             }
         }
     }
