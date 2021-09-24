@@ -52,7 +52,7 @@ public class Explosion : MonoBehaviour
                 GameObject Shot = Instantiate(s_Manager.BulletList[6]);
                 Shot.transform.SetParent(s_Manager.prefab.transform);    //プレハブをここを親にして出すよ
                 Shot.transform.position = this.transform.position;
-                SoundManager.Instance.PlaySE(SE.Explosion);
+                SoundManager.Instance.PlaySE(SE.Burst);
             }
         }
     }

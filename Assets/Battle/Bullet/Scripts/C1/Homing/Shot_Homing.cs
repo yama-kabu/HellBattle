@@ -67,7 +67,9 @@ public class Shot_Homing : Shot_Common
                 Bullet.transform.position = this.transform.position;    //î≠éÀÇüÅI
             }
             #endregion
+            SoundManager.Instance.PlaySE(SE.Normal);
         }
+
     }
 
 //--------------------------------------------------------------------------------------
