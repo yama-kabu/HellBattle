@@ -21,10 +21,6 @@ public class PlayerEffect : MonoBehaviour
     void Start()
     {
         E_Scale = transform.localScale;
-
-        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-
-        rectTransform.position += new Vector3(0f, 0f, -1f);
     }
 
     // Update is called once per frame
