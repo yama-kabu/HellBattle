@@ -31,7 +31,7 @@ RectTransform:
   m_GameObject: {fileID: 7040369304351146246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 500, y: 500, z: 500}
+  m_LocalScale: {x: 720.54, y: 720.54, z: 720.54}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   particle_damage: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7, type: 3}
   Ecanvas: {fileID: 0}
   damage: 10
-  bullet_Speed: 500
+  bullet_Speed: 1000
 --- !u!70 &-4727922394716234251
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,8 +144,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.02}
-  m_Size: {x: 0.05, y: 0.05}
+  m_Offset: {x: -0.00000000794133, y: -0.0046994463}
+  m_Size: {x: 0.036988266, y: 0.10804381}
   m_Direction: 0
 --- !u!222 &6714682297288328446
 CanvasRenderer:

@@ -76,7 +76,7 @@ public class Cross : MonoBehaviour
                     }
                     
                 }
-                SoundManager.Instance.PlaySE(SE.Cross);
+                SoundManager.Instance.PlaySE(SE.Knife);
             }
         }
         #region クールタイム処理
