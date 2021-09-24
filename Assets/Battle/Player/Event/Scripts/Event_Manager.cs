@@ -29,7 +29,11 @@ public class Event_Manager : MonoBehaviour
     void Update()
     {
         //バリアに関する処理をしているよ
-        if(defense == true)
+        if (Barrier == null)
+        {
+            return;
+        }
+        if (defense == true)
         {
             if(Protection <= 0)
             {
@@ -52,8 +56,13 @@ public class Event_Manager : MonoBehaviour
                 Barrier.SetActive(false);   //バリアをオフにするよ
             }
         }
+
         //吸収に関する処理をしているよ
-        if (HPSwitch)
+        if (Absorption == null)
+        {
+            return;
+        }
+        else if (HPSwitch)
         {
             if (Absorption.activeSelf == false)
             {
@@ -67,6 +76,7 @@ public class Event_Manager : MonoBehaviour
                 Absorption.SetActive(false);    //吸収をオフにするよ
             }
         }
+
     }
 
 //--------------------------------------------------------------------------------------

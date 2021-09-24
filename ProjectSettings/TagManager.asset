@@ -8,19 +8,33 @@ TagManager:
   - BackStage
   - Bullet
   - Target
+  - Panel1
+  - Panel3
+  - Panel2
+  - Hit_Body_P1
+  - Player_L1
+  - Absorption
+  - Player_R1
+  - Player_L2
+  - Barrier
+  - Hit_Body_P2
+  - Player_R2
+  - Bullet_1
+  - Bullet_2
+  - Bullet_Agaki
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - effect
   - Water
   - UI
-  - 
+  - PlayerEffect
   - 
   - Bullet
+  - Effect
   - 
-  - 
-  - 
+  - Text
   - 
   - 
   - 

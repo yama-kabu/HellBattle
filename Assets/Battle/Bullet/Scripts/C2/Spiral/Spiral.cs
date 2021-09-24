@@ -66,6 +66,7 @@ public class Spiral : MonoBehaviour
                         b.GetComponent<Rigidbody2D>().velocity = Vec;
                     }
                 }
+                SoundManager.Instance.PlaySE(SE.Spiral);
             }
         }
         if (is_attack == true && is_cooltime_check == false)

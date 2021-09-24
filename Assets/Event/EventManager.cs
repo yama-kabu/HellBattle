@@ -6,6 +6,7 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
+    private GameObject Game_Setting;
 
     [Header("最初の60秒間を飛ばすスイッチ")]
     public bool OnOff = false;
@@ -36,7 +37,6 @@ public class EventManager : MonoBehaviour
     public string Event2tex;
     public string Event3tex;
     public string Event4tex;
-    public string Event5tex;
 
     [Header("イベント処理用変数(触らないでね)")]
     float EventCount;//イベントまでのカウントダウン
@@ -51,6 +51,7 @@ public class EventManager : MonoBehaviour
     public int EventNumber;//イベントの数
     public GameObject LifeItem;//回復アイテムのprefab
     public GameObject Canvas;
+    private bool SoundOn = false;
     //ステータス保存用
     float HP1, Atc1, Speed1, BSpeed1;
     float HP2, Atc2, Speed2, BSpeed2;
@@ -62,6 +63,7 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
+
         Atc1 = R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
         Atc2 = R2_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent;
         E_Atc1 = Atc1 * AtcRatio;
@@ -73,51 +75,60 @@ public class EventManager : MonoBehaviour
         EventSwitch = false;
         x = 60;
         SoundManager.Instance.PlayBGM(BGM.BattleBGM);
+
+        Game_Setting = GameObject.Find("Game_Setting");
     }
 
     void Update()
     {
-        Textchange();
-        
-        //最初の60秒
-        x -= Time.deltaTime;
-        if (x <=0) { OnOff = true; }
-
-        //イベント発生までの時間の振れ幅を決める
-        //どのイベントを行うか決める
-        if (EventSwitch == false && OnOff == true)
+        if (Game_Setting.GetComponent<Setting>().WINER == false)
         {
-            EventCount = UnityEngine.Random.Range(TimeA, TimeB);
-            //イベントの個数を把握し、その中からランダムな数を取り出す
-            Rand = UnityEngine.Random.Range(1, EventNumber + 1);
-            EventSwitch = true;
-        }
+            
+            Textchange();
 
-        EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
+            //最初の60秒
+            x -= Time.deltaTime;
+            if (x <= 0) { OnOff = true; }
 
-        //【デバッグ用】押したキーの番号のイベントに変更
-        Eventchange();
-
-        //カウントが終っている間はイベントを行う
-        if (EventCount <= 0)
-        {
-            switch(Rand)
+            //イベント発生までの時間の振れ幅を決める
+            //どのイベントを行うか決める
+            if (EventSwitch == false && OnOff == true)
             {
-                case 1:
-                    Event1();
-                    break;
-                case 2:
-                    Event2();
-                    break;
-                case 3:
-                    Event3();
-                    break;
-                case 4:
-                    Event4();
-                    break;
-                case 5:
-                    Event5();
-                    break;
+                EventCount = UnityEngine.Random.Range(TimeA, TimeB);
+                //イベントの個数を把握し、その中からランダムな数を取り出す
+                Rand = UnityEngine.Random.Range(1, EventNumber + 1);
+                EventSwitch = true;
+                SoundOn = false;
+            }
+
+            EventCount -= Time.deltaTime;//イベント発生までのカウントダウン
+
+            //【デバッグ用】押したキーの番号のイベントに変更
+            Eventchange();
+
+            //カウントが終っている間はイベントを行う
+            if (EventCount <= 0)
+            {
+                if(SoundOn == false)
+                {
+                    SoundManager.Instance.PlaySE(SE.EventSound);
+                    SoundOn = true;
+                }
+                switch (Rand)
+                {
+                    case 1:
+                        Event1();
+                        break;
+                    case 2:
+                        Event2();
+                        break;
+                    case 3:
+                        Event3();
+                        break;
+                    case 4:
+                        Event4();
+                        break;
+                }
             }
         }
     }
@@ -125,25 +136,28 @@ public class EventManager : MonoBehaviour
     //各イベントの処理
     void Event1()//ライフ回復イベント
     {
-        /*GameObject HeelItem = (GameObject)Instantiate(LifeItem);
+        GameObject HeelItem = (GameObject)Instantiate(LifeItem);
         HeelItem.transform.SetParent(Canvas.transform, false);
-        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
-        GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0, 0), Quaternion.Euler(0, 0, 180f));
+        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(-500,540);
+        GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0,0), Quaternion.Euler(0, 0, 180f));
         HeelItem2.transform.SetParent(Canvas.transform, false);
-        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-
-        SoundManager.Instance.PlaySE(SE.HeelItem);
+        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -540);
+        
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
-        EventSwitch = false;*/
-
-        //再抽選
-        Rand = UnityEngine.Random.Range(1, EventNumber + 1);
+        EventSwitch = false;
     }
 
     void Event2()//不利プレイヤー攻撃力アップイベント
     {
-        HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
-        HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+        if (HP1 != null || HP2 == null)
+        {
+            return;
+        }
+        else
+        {
+            HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+            HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+        }
         /*ここにプレイヤーの攻撃力を参照する文を書く*/
         Time2 += Time.deltaTime;
         if (HP1 < HP2)
@@ -169,32 +183,6 @@ public class EventManager : MonoBehaviour
 
     void Event3()
     {
-        //デバフする処理
-        /*Move_L1.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
-        R1_Shoter.GetComponent<Player_Move1>().Character_Speed = S_Speed1;
-        Move_L2.GetComponent<Player_Move2>().Character_Speed = S_Speed2;
-        R2_Shoter.GetComponent<Player_Move2>().Character_Speed =S_Speed2;
-        //BSpeed1 = PlayerL1.GetComponent<>
-        //BSpeed1 = BulletSpeed1;
-        //BSpeed2 = BulletSpeed2;
-
-        Time3 += Time.deltaTime;
-        if (Time3 >= Time_Speed)
-        {
-            Time3 = 0;
-            Move_L1.GetComponent<Player_Move1>().Character_Speed = Speed1;
-            R1_Shoter.GetComponent<Player_Move1>().Character_Speed = Speed1;
-            Move_L2.GetComponent<Player_Move2>().Character_Speed = Speed2;
-            R2_Shoter.GetComponent<Player_Move2>().Character_Speed = Speed2;
-            EventSwitch = false;
-        }*/
-
-        //再抽選
-        Rand = UnityEngine.Random.Range(1, EventNumber + 1);
-    }
-
-    void Event4()
-    {
         L1_Rigid.GetComponent<Event_Manager>().HPSwitch = true;
         L2_Rigid.GetComponent<Event_Manager>().HPSwitch = true;
         Time5 += Time.deltaTime;
@@ -207,7 +195,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    void Event5()
+    void Event4()
     {
         HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
         HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
@@ -255,9 +243,6 @@ public class EventManager : MonoBehaviour
                 case 4:
                     Etext.text = Event4tex;
                     break;
-                case 5:
-                    Etext.text = Event5tex;
-                    break;
             }
         }
         else
@@ -288,9 +273,6 @@ public class EventManager : MonoBehaviour
                             break;
                         case KeyCode.Alpha4:
                             Rand = 4;
-                            break;
-                        case KeyCode.Alpha5:
-                            Rand = 5;
                             break;
                     }
                     //Debug.Log(Rand);

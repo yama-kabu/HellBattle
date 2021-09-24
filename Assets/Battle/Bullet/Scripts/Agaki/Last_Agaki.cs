@@ -117,6 +117,7 @@ public class Last_Agaki : MonoBehaviour
                         b.transform.SetParent(s_Manager.prefab.transform);    //プレハブをここを親にして出すよ
                         b.GetComponent<Rigidbody2D>().velocity = Vec;
                     }
+                    SoundManager.Instance.PlaySE(SE.Last_Agaki);
                 }
                 for (int i = 0; i < 8; i++)
                 {
@@ -147,6 +148,7 @@ public class Last_Agaki : MonoBehaviour
                         Shot.transform.position = this.transform.position;
                     }
                 }
+                SoundManager.Instance.PlaySE(SE.Last_Agaki);
             }
         }
         if (is_attack == true)    //ダメージ(残りの秒数をゲージに反映させるための体力減少処理)

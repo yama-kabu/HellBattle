@@ -188,14 +188,14 @@ MonoBehaviour:
   EventText: {fileID: 6442256310632061140}
   Event1tex: "\u30E9\u30A4\u30D5\u56DE\u5FA9\u30A2\u30A4\u30C6\u30E0\u51FA\u73FE\uFF01"
   Event2tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u653B\u6483\u529B\u30A2\u30C3\u30D7\uFF01"
-  Event3tex: "\u30B2\u30FC\u30E0\u30B9\u30D4\u30FC\u30C9\u4F4E\u4E0B\uFF01"
-  Event4tex: "\u5F3E\u5E55\u547D\u4E2D\u3067\u4F53\u529B\u5438\u53CE\uFF01"
-  Event5tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u30D0\u30EA\u30A2\u4ED8\u4E0E\uFF01"
+  Event3tex: "\u5F3E\u5E55\u547D\u4E2D\u3067\u4F53\u529B\u5438\u53CE\uFF01"
+  Event4tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u30D0\u30EA\u30A2\u4ED8\u4E0E\uFF01"
+  Event5tex: 
   B_Switch: 0
   EventSwitch: 0
   S_Speed1: 0
   S_Speed2: 0
-  EventNumber: 5
+  EventNumber: 4
   LifeItem: {fileID: 3720470844570412289, guid: b4074e7407ea72041b78b72f4518de35, type: 3}
   Canvas: {fileID: 6442256308971703340}
   L1_Rigid: {fileID: 0}

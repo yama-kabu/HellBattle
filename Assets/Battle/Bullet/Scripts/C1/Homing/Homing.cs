@@ -44,6 +44,8 @@ public class Homing : MonoBehaviour
                 //‰Šú‰»
                 cooltime_count = 0;
             }
+
+            SoundManager.Instance.PlaySE(SE.Homing);
         }
     }
 }
