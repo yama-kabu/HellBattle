@@ -75,7 +75,7 @@ public class Reflect : MonoBehaviour
                     t.GetComponent<Rigidbody2D>().velocity = vec;
                 }
 
-                SoundManager.Instance.PlaySE(SE.Reflect);
+                SoundManager.Instance.PlaySE(SE.Knife);
 
                 //‰Šú‰»‚·‚é‚æ
                 cooltime_count = 0;

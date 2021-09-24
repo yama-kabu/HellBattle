@@ -45,7 +45,7 @@ public class Homing : MonoBehaviour
                 cooltime_count = 0;
             }
 
-            SoundManager.Instance.PlaySE(SE.Homing);
+            SoundManager.Instance.PlaySE(SE.Knife);
         }
     }
 }
