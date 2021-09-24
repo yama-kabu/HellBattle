@@ -50,7 +50,6 @@ public class Shot_Reflect : Shot_Common
                 Destroy(this.GetComponent<CircleCollider2D>());
                 Destroy(this.gameObject);
             }
-            SoundManager.Instance.PlaySE(SE.Knife);
             cnt++;
         }
     }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Player_Move1 : MonoBehaviour
 {
-    //--------------------------------------------------------------------------------------
-    //参照系
+//--------------------------------------------------------------------------------------
+//参照系
 
     GameObject System;     //勝敗がついているかをチェックするための変数だよ
     GameObject player_l1;   //移動用キャラを格納する変数だよ
     Player_Manager_L pl;    //キャラクターの位置を代入する変数だよ
     private Rigidbody2D rd; //弾のRigidbody2Dを格納する変数だよ
 
-    //--------------------------------------------------------------------------------------
-    //変数系
+//--------------------------------------------------------------------------------------
+//変数系
 
     public float Character_Speed; //参照したキャラクタースピードの確認
     [SerializeField]
@@ -21,8 +21,8 @@ public class Player_Move1 : MonoBehaviour
     [SerializeField]
     public float maxY, maxX, minY, minX;    //キャラクターの移動できる幅に制限をつけるよ
 
-    //--------------------------------------------------------------------------------------
-    //最初の準備
+//--------------------------------------------------------------------------------------
+//最初の準備
 
     void Start()
     {
@@ -43,7 +43,7 @@ public class Player_Move1 : MonoBehaviour
             pl = GameObject.Find("Player_L1").GetComponent<Player_Manager_L>();    //キャラクターの速度を取得するよ
             Character_Speed = pl.Character;    //キャラクターの速度と一緒にするよ
         }
-        else if (this.gameObject.CompareTag("Player_R1"))
+        else if(this.gameObject.CompareTag("Player_R1"))
         {
             pl = GameObject.Find("Player_L1").GetComponent<Player_Manager_L>();    //キャラクターの速度を取得するよ
             Character_Speed = pl.Character;    //キャラクターの速度と一緒にするよ
@@ -52,13 +52,17 @@ public class Player_Move1 : MonoBehaviour
         #endregion
         #region キャラクターごとのスピード設定
         //キャラクタースピード設定
-        if (Character_Speed == 1 || Character_Speed == 3)
+        if (Character_Speed == 1)
         {
             player_speed = 500;
         }
-        else if (Character_Speed == 2 || Character_Speed == 4)
+        else if (Character_Speed == 2)
         {
             player_speed = 1500;
+        }
+        else if (Character_Speed == 3)
+        {
+            player_speed = 1000;
         }
         #endregion
     }

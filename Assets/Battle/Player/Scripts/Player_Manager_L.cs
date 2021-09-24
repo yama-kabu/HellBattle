@@ -69,7 +69,7 @@ public class Player_Manager_L : MonoBehaviour
             //プレイヤー１だった場合
             if (this.gameObject.CompareTag("Player_L1"))
             {
-                if (Character == 1 || Character == 3)
+                if (Character == 1)
                 {
                     //キャラクターが使える４つの弾
                     if (used_agaki == false)
@@ -81,7 +81,8 @@ public class Player_Manager_L : MonoBehaviour
                         //３つ目　操作キー：C　｜　操作ボタン：X
                         s_Explosion.Shot7();//Explosion
                         //４つ目　操作キー：V　｜　操作ボタン：Y
-                        s_Barrage.Shot5();//Barrage
+                        s_Random_Homing.Shot6();//Random_Homing
+
                     }
                     //必殺技
                     if (agaki == true)
@@ -89,7 +90,7 @@ public class Player_Manager_L : MonoBehaviour
                         s_Agaki.Shot_agaki();
                     }
                 }
-                else if (Character == 2 || Character == 4)
+                else if (Character == 2)
                 {
                     //キャラクターが使える４つの弾
                     if (used_agaki == false)
@@ -101,7 +102,8 @@ public class Player_Manager_L : MonoBehaviour
                         //３つ目　操作キー：C　｜　操作ボタン：X
                         s_Way.Shot1();//Way
                         //４つ目　操作キー：V　｜　操作ボタン：Y
-                        s_Random_Homing.Shot6();//Random_Homing
+                        s_Barrage.Shot5();//Barrage
+                        
                     }
                     //必殺技
                     if (agaki == true)
@@ -143,7 +145,7 @@ public class Player_Manager_L : MonoBehaviour
                         //３つ目　操作キー：C　｜　操作ボタン：X
                         s_Explosion.Shot7();//Explosion
                         //４つ目　操作キー：V　｜　操作ボタン：Y
-                        s_Barrage.Shot5();//Barrage
+                        s_Random_Homing.Shot6();//Random_Homing
                     }
                     //必殺技
                     if (agaki == true)
@@ -163,7 +165,7 @@ public class Player_Manager_L : MonoBehaviour
                         //３つ目　操作キー：C　｜　操作ボタン：X
                         s_Way.Shot1();//Way
                         //４つ目　操作キー：V　｜　操作ボタン：Y
-                        s_Random_Homing.Shot6();//Random_Homing
+                        s_Barrage.Shot5();//Barrage
                     }
                     //必殺技
                     if (agaki == true)
