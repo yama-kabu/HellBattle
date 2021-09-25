@@ -81,7 +81,7 @@ public class EventManager : MonoBehaviour
 
     void Update()
     {
-        if (Game_Setting.GetComponent<Setting>().WINER == false)
+        if (Game_Setting.GetComponent<Setting>().syouhai == false)
         {
             
             Textchange();
@@ -131,6 +131,10 @@ public class EventManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            EventText.SetActive(false);
+        }
     }
 
     //各イベントの処理
@@ -149,15 +153,8 @@ public class EventManager : MonoBehaviour
 
     void Event2()//不利プレイヤー攻撃力アップイベント
     {
-        if (HP1 != null || HP2 == null)
-        {
-            return;
-        }
-        else
-        {
-            HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
-            HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
-        }
+        HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
+        HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
         /*ここにプレイヤーの攻撃力を参照する文を書く*/
         Time2 += Time.deltaTime;
         if (HP1 < HP2)

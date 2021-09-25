@@ -624,12 +624,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6442256309646050827, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: OnOff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442256309646050827, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
       propertyPath: TimeA
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6442256309646050827, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
       propertyPath: TimeB
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6442256309646050827, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
       propertyPath: Canvas
@@ -1687,7 +1691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count_text_L1: {fileID: 1315697160}
   count_text_L2: {fileID: 88205781}
-  count_down: 0
+  count_down: 3
   is_start_chack: 0
 --- !u!1001 &1442492258
 PrefabInstance:
