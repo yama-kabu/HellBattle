@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class CharacterSelect : MonoBehaviour
+public class CharacterSelect2 : MonoBehaviour
 {
     [SerializeField] GameObject Panel1;
     [SerializeField] GameObject Panel2;
@@ -18,16 +18,16 @@ public class CharacterSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Button_A1"))
+        if (Input.GetButtonDown("Button_A2"))
         {
             if (Panel1.activeSelf)
             {
-                DataManager.Character = 1;
+                DataManager.Character = 3;
             }
 
             else if (Panel2.activeSelf)
             {
-                DataManager.Character = 2;
+                DataManager.Character = 4;
             }
         }
     }
