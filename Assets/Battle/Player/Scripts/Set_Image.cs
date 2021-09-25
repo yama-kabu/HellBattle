@@ -21,6 +21,15 @@ public class Set_Image : MonoBehaviour
             sprite = Resources.Load<Sprite>("Chara2");
             image.sprite = sprite;
         }
-
+        else if (search_character_number.GetComponent<Player_Manager_L>().Character == 3)
+        {
+            sprite = Resources.Load<Sprite>("Chara3");
+            image.sprite = sprite;
+        }
+        else if (search_character_number.GetComponent<Player_Manager_L>().Character == 4)
+        {
+            sprite = Resources.Load<Sprite>("Chara4");
+            image.sprite = sprite;
+        }
     }
 }
