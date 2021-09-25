@@ -52,6 +52,7 @@ public class Shot_Reflect : Shot_Common
             }
             cnt++;
         }
+        SoundManager.Instance.PlaySE(SE.Reflect);
     }
 
 //--------------------------------------------------------------------------------------
