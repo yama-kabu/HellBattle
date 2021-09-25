@@ -18,7 +18,7 @@ public class AppearEffect : MonoBehaviour
         }
         else if (chara.GetComponent<Player_Manager_L>().Character == 2 || chara.GetComponent<Player_Manager_L>().Character == 4)
         {
-            effectObject_chara2 = GameObject.Instantiate(effectObject_chara2, transform.position + new Vector3(0f, 0f, -1f), Quaternion.identity) as GameObject;
+            effectObject_chara2 = GameObject.Instantiate(effectObject_chara2, transform.position + new Vector3(-0.05f, 0f, -1f), Quaternion.identity) as GameObject;
             effectObject_chara2.transform.parent = transform;
         }
     }
