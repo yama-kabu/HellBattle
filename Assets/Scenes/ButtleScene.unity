@@ -683,6 +683,30 @@ PrefabInstance:
       propertyPath: PlayerSlow
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6442256310632056618, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: ShiftXPixels.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442256310632056618, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: ShiftYPixels.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442256310632056618, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: ShiftCharacters.Array.data[0]
+      value: 12483
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442256310632056619, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 931.8218
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442256310632056619, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 279.5466
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442256310632056619, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 6442256310632061140, guid: 59d22d4fd16f97542b0b32e8782617b0, type: 3}
       propertyPath: m_Layer
       value: 5
