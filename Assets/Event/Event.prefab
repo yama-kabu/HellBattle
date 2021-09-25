@@ -190,7 +190,6 @@ MonoBehaviour:
   Event2tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u653B\u6483\u529B\u30A2\u30C3\u30D7\uFF01"
   Event3tex: "\u5F3E\u5E55\u547D\u4E2D\u3067\u4F53\u529B\u5438\u53CE\uFF01"
   Event4tex: "\u4E0D\u5229\u30D7\u30EC\u30A4\u30E4\u30FC\u30D0\u30EA\u30A2\u4ED8\u4E0E\uFF01"
-  Event5tex: 
   B_Switch: 0
   EventSwitch: 0
   S_Speed1: 0
@@ -262,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: b839770e40bde514585d9a14fdfcaf89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +270,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_Font: {fileID: 12800000, guid: b839770e40bde514585d9a14fdfcaf89, type: 3}
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -297,6 +296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NonRotatableCharacters: fc30
-  ShiftCharacters: 
-  ShiftXPixels: []
-  ShiftYPixels: []
+  ShiftCharacters: c330
+  ShiftXPixels:
+  - 0
+  ShiftYPixels:
+  - 0
