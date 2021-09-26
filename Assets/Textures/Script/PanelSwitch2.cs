@@ -34,10 +34,9 @@ public class PanelSwitch2 : MonoBehaviour
                 SoundManager.Instance.PlaySE(SE.OKButton);
             }
 
-            if (Player_Number != 1)
+            if (Player_Number != 3)
             {
-                Player_Number = 1;
-
+                Player_Number = 3;
             }
         }
 
@@ -56,8 +55,8 @@ public class PanelSwitch2 : MonoBehaviour
             //    Panel3.SetActive(true);
             //}
 
-            if (Player_Number != 2)
-                Player_Number = 2;
+            if (Player_Number != 4)
+                Player_Number = 4;
         }
 
         //else if (Panel3.activeSelf)
