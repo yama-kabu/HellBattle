@@ -3,62 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
     private GameObject Game_Setting;
 
-    [Header("Å‰‚Ì60•bŠÔ‚ğ”ò‚Î‚·ƒXƒCƒbƒ`")]
+    [Header("æœ€åˆã®60ç§’é–“ã‚’é£›ã°ã™ã‚¹ã‚¤ãƒƒãƒ")]
     public bool OnOff = false;
 
-    [Header("A`B‚ÌŠÔ‚ÉƒCƒxƒ“ƒg‚ğ”­¶‚³‚¹‚é")]
+    [Header("Aï½Bã®é–“ã«ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºç”Ÿã•ã›ã‚‹")]
     public float TimeA;
     public float TimeB;
 
-    [Header("UŒ‚—ÍƒAƒbƒv”{—¦")]
+    [Header("æ”»æ’ƒåŠ›ã‚¢ãƒƒãƒ—å€ç‡")]
     public float AtcRatio;
 
-    [Header("ƒvƒŒƒCƒ„[‘¬“x‚Ì“İ‰»Š„‡")]
+    [Header("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼é€Ÿåº¦ã®éˆåŒ–å‰²åˆ")]
     public float PlayerSlow;
 
-    [Header("“İ‰»’†‚Ì’e‘¬")]
+    [Header("éˆåŒ–ä¸­ã®å¼¾é€Ÿ")]
     public float BulletSpeed1, BulletSpeed2;
 
-    [Header("•s—˜ƒvƒŒƒCƒ„[UŒ‚—ÍƒAƒbƒv‚ÌŠÔ")]
+    [Header("ä¸åˆ©ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ”»æ’ƒåŠ›ã‚¢ãƒƒãƒ—ã®æ™‚é–“")]
     public float Time_AtcUP;
-    [Header("“İ‰»‚ÌŠÔ")]
+    [Header("éˆåŒ–ã®æ™‚é–“")]
     public float Time_Speed;
-    [Header("‹zûUŒ‚‚ÌŠÔ")]
+    [Header("å¸åæ”»æ’ƒã®æ™‚é–“")]
     public float Time_HP;
 
-    [Header("ƒAƒiƒEƒ“ƒX•¶š")]
+    [Header("ã‚¢ãƒŠã‚¦ãƒ³ã‚¹æ–‡å­—")]
     public GameObject EventText;
     public string Event1tex;
     public string Event2tex;
     public string Event3tex;
     public string Event4tex;
 
-    [Header("ƒCƒxƒ“ƒgˆ——p•Ï”(G‚ç‚È‚¢‚Å‚Ë)")]
-    float EventCount;//ƒCƒxƒ“ƒg‚Ü‚Å‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“
-    public bool B_Switch = false;//ƒoƒŠƒA‚ÌƒXƒCƒbƒ`
-    public bool EventSwitch;//ŠÔ‚Ì—”¶¬‚ğ§Œä‚·‚éƒXƒCƒbƒ`
-    float Time2, Time3, Time5;//ŠeƒCƒxƒ“ƒg‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“—p
-    bool Barrier = false;//ƒoƒŠƒA‚ªˆê“xg‚Á‚½‚©”»’f‚·‚éƒXƒCƒbƒ`
-    private float x;//Å‰‚Ì60•b‚ÌƒJƒEƒ“ƒg
-    float E_Atc1, E_Atc2;//ƒGƒ“ƒnƒ“ƒXŒã‚ÌUŒ‚—Í‚ğ•ÛŠÇ‚µ‚Ä‚¨‚­•Ï”
-    public float S_Speed1, S_Speed2;//ƒfƒoƒtŒã‚ÌˆÚ“®—Í‚ğ•ÛŠÇ‚µ‚Ä‚¨‚­•Ï”
-    int Rand;//—”Ši”[
-    public int EventNumber;//ƒCƒxƒ“ƒg‚Ì”
-    public GameObject LifeItem;//‰ñ•œƒAƒCƒeƒ€‚Ìprefab
+    [Header("ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†ç”¨å¤‰æ•°(è§¦ã‚‰ãªã„ã§ã­)")]
+    float EventCount;//ã‚¤ãƒ™ãƒ³ãƒˆã¾ã§ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
+    public bool B_Switch = false;//ãƒãƒªã‚¢ã®ã‚¹ã‚¤ãƒƒãƒ
+    public bool EventSwitch;//æ™‚é–“ã®ä¹±æ•°ç”Ÿæˆã‚’åˆ¶å¾¡ã™ã‚‹ã‚¹ã‚¤ãƒƒãƒ
+    float Time2, Time3, Time5;//å„ã‚¤ãƒ™ãƒ³ãƒˆã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ç”¨
+    bool Barrier = false;//ãƒãƒªã‚¢ãŒä¸€åº¦ä½¿ã£ãŸã‹åˆ¤æ–­ã™ã‚‹ã‚¹ã‚¤ãƒƒãƒ
+    private float x;//æœ€åˆã®60ç§’ã®ã‚«ã‚¦ãƒ³ãƒˆ
+    float E_Atc1, E_Atc2;//ã‚¨ãƒ³ãƒãƒ³ã‚¹å¾Œã®æ”»æ’ƒåŠ›ã‚’ä¿ç®¡ã—ã¦ãŠãå¤‰æ•°
+    public float S_Speed1, S_Speed2;//ãƒ‡ãƒãƒ•å¾Œã®ç§»å‹•åŠ›ã‚’ä¿ç®¡ã—ã¦ãŠãå¤‰æ•°
+    int Rand;//ä¹±æ•°æ ¼ç´
+    public int EventNumber;//ã‚¤ãƒ™ãƒ³ãƒˆã®æ•°
+    public GameObject LifeItem;//å›å¾©ã‚¢ã‚¤ãƒ†ãƒ ã®prefab
     public GameObject Canvas;
     private bool SoundOn = false;
-    //ƒXƒe[ƒ^ƒX•Û‘¶—p
+    //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ä¿å­˜ç”¨
     float HP1, Atc1, Speed1, BSpeed1;
     float HP2, Atc2, Speed2, BSpeed2;
-    //ƒvƒŒƒCƒ„[ƒIƒuƒWƒFƒNƒgŠi”[
-    public GameObject L1_Rigid, L2_Rigid;//‰ñ”ğ‘¤‚Ì©‹@
-    public GameObject R1_Shoter, R2_Shoter;//UŒ‚‘¤‚Ì©‹@
-    public GameObject Move_L1, Move_L2;//‰ñ”ğ‘¤‚ÌƒXƒs[ƒhæ“¾
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ ¼ç´
+    public GameObject L1_Rigid, L2_Rigid;//å›é¿å´ã®è‡ªæ©Ÿ
+    public GameObject R1_Shoter, R2_Shoter;//æ”»æ’ƒå´ã®è‡ªæ©Ÿ
+    public GameObject Move_L1, Move_L2;//å›é¿å´ã®ã‚¹ãƒ”ãƒ¼ãƒ‰å–å¾—
 
 
     void Start()
@@ -86,27 +87,27 @@ public class EventManager : MonoBehaviour
             
             Textchange();
 
-            //Å‰‚Ì60•b
+            //æœ€åˆã®60ç§’
             x -= Time.deltaTime;
             if (x <= 0) { OnOff = true; }
 
-            //ƒCƒxƒ“ƒg”­¶‚Ü‚Å‚ÌŠÔ‚ÌU‚ê•‚ğŒˆ‚ß‚é
-            //‚Ç‚ÌƒCƒxƒ“ƒg‚ğs‚¤‚©Œˆ‚ß‚é
+            //ã‚¤ãƒ™ãƒ³ãƒˆç™ºç”Ÿã¾ã§ã®æ™‚é–“ã®æŒ¯ã‚Œå¹…ã‚’æ±ºã‚ã‚‹
+            //ã©ã®ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¡Œã†ã‹æ±ºã‚ã‚‹
             if (EventSwitch == false && OnOff == true)
             {
                 EventCount = UnityEngine.Random.Range(TimeA, TimeB);
-                //ƒCƒxƒ“ƒg‚ÌŒÂ”‚ğ”cˆ¬‚µA‚»‚Ì’†‚©‚çƒ‰ƒ“ƒ_ƒ€‚È”‚ğæ‚èo‚·
+                //ã‚¤ãƒ™ãƒ³ãƒˆã®å€‹æ•°ã‚’æŠŠæ¡ã—ã€ãã®ä¸­ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ãªæ•°ã‚’å–ã‚Šå‡ºã™
                 Rand = UnityEngine.Random.Range(1, EventNumber + 1);
                 EventSwitch = true;
                 SoundOn = false;
             }
 
-            EventCount -= Time.deltaTime;//ƒCƒxƒ“ƒg”­¶‚Ü‚Å‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“
+            EventCount -= Time.deltaTime;//ã‚¤ãƒ™ãƒ³ãƒˆç™ºç”Ÿã¾ã§ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
 
-            //yƒfƒoƒbƒO—pz‰Ÿ‚µ‚½ƒL[‚Ì”Ô†‚ÌƒCƒxƒ“ƒg‚É•ÏX
+            //ã€ãƒ‡ãƒãƒƒã‚°ç”¨ã€‘æŠ¼ã—ãŸã‚­ãƒ¼ã®ç•ªå·ã®ã‚¤ãƒ™ãƒ³ãƒˆã«å¤‰æ›´
             Eventchange();
 
-            //ƒJƒEƒ“ƒg‚ªI‚Á‚Ä‚¢‚éŠÔ‚ÍƒCƒxƒ“ƒg‚ğs‚¤
+            //ã‚«ã‚¦ãƒ³ãƒˆãŒçµ‚ã£ã¦ã„ã‚‹é–“ã¯ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¡Œã†
             if (EventCount <= 0)
             {
                 if(SoundOn == false)
@@ -137,8 +138,8 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    //ŠeƒCƒxƒ“ƒg‚Ìˆ—
-    void Event1()//ƒ‰ƒCƒt‰ñ•œƒCƒxƒ“ƒg
+    //å„ã‚¤ãƒ™ãƒ³ãƒˆã®å‡¦ç†
+    void Event1()//ãƒ©ã‚¤ãƒ•å›å¾©ã‚¤ãƒ™ãƒ³ãƒˆ
     {
         GameObject HeelItem = (GameObject)Instantiate(LifeItem);
         HeelItem.transform.SetParent(Canvas.transform, false);
@@ -147,15 +148,15 @@ public class EventManager : MonoBehaviour
         HeelItem2.transform.SetParent(Canvas.transform, false);
         HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -540);
         
-        //ÅŒã‚ÉƒXƒCƒbƒ`‚ğ–ß‚µ‚ÄƒJƒEƒ“ƒg‚Ì—”‚ğ¶¬‚Å‚«‚é‚æ‚¤‚É‚·‚é
+        //æœ€å¾Œã«ã‚¹ã‚¤ãƒƒãƒã‚’æˆ»ã—ã¦ã‚«ã‚¦ãƒ³ãƒˆã®ä¹±æ•°ã‚’ç”Ÿæˆã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
         EventSwitch = false;
     }
 
-    void Event2()//•s—˜ƒvƒŒƒCƒ„[UŒ‚—ÍƒAƒbƒvƒCƒxƒ“ƒg
+    void Event2()//ä¸åˆ©ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ”»æ’ƒåŠ›ã‚¢ãƒƒãƒ—ã‚¤ãƒ™ãƒ³ãƒˆ
     {
         HP1 = L1_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
         HP2 = L2_Rigid.GetComponent<Player_Manager_R>().m_Player_HP;
-        /*‚±‚±‚ÉƒvƒŒƒCƒ„[‚ÌUŒ‚—Í‚ğQÆ‚·‚é•¶‚ğ‘‚­*/
+        /*ã“ã“ã«ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ”»æ’ƒåŠ›ã‚’å‚ç…§ã™ã‚‹æ–‡ã‚’æ›¸ã*/
         Time2 += Time.deltaTime;
         if (HP1 < HP2)
         {
@@ -168,7 +169,7 @@ public class EventManager : MonoBehaviour
             R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent = Atc1;
         }
 
-        if (Time_AtcUP <= Time2)//UŒ‚—Í‚ğŒ³‚É–ß‚·
+        if (Time_AtcUP <= Time2)//æ”»æ’ƒåŠ›ã‚’å…ƒã«æˆ»ã™
         {
 
             R1_Shoter.GetComponent<Player_Manager_L>().AttackPower_percent = Atc1;
@@ -248,7 +249,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    //yƒfƒoƒbƒO—pz‰Ÿ‚µ‚½ƒL[‚Ì”Ô†‚ÌƒCƒxƒ“ƒg‚É•ÏX
+    //ã€ãƒ‡ãƒãƒƒã‚°ç”¨ã€‘æŠ¼ã—ãŸã‚­ãƒ¼ã®ç•ªå·ã®ã‚¤ãƒ™ãƒ³ãƒˆã«å¤‰æ›´
     void Eventchange()
     {
         if (Input.anyKeyDown)
