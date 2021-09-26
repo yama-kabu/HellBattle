@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class EventManager : MonoBehaviour
 
     void Update()
     {
-        if (Game_Setting.GetComponent<Setting>().WINER == false)
+        if (Game_Setting.GetComponent<Setting>().syouhai == false)
         {
             
             Textchange();
@@ -129,6 +130,15 @@ public class EventManager : MonoBehaviour
                         Event4();
                         break;
                 }
+            }
+        }
+        else
+        {
+            EventText.SetActive(false);
+
+            if(Input.GetButton("Button_A1") && Input.GetButton("Button_B1"))
+            {
+                SceneManager.LoadScene("TitleScene");
             }
         }
     }
