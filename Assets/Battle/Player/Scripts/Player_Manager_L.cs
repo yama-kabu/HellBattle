@@ -113,7 +113,7 @@ public class Player_Manager_L : MonoBehaviour
             //プレイヤー２だった場合
             else if (this.gameObject.CompareTag("Player_L2"))
             {
-                if (Character == 1)
+                if (Character == 1 || Character == 3)
                 {
                     //キャラクターが使える４つの弾
                     if (used_agaki == false)
@@ -133,7 +133,7 @@ public class Player_Manager_L : MonoBehaviour
                         s_Agaki.Shot_agaki();
                     }
                 }
-                else if (Character == 2)
+                else if (Character == 2 || Character == 4)
                 {
                     //キャラクターが使える４つの弾
                     if (used_agaki == false)

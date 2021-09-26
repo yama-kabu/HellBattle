@@ -62,26 +62,26 @@ public class Player_Manager_R : MonoBehaviour
                 Syouhai.GetComponent<Setting>().WINER = false;   //LÇQÇÃèüÇøÇ…Ç∑ÇÈ
                 GameObject PL = GameObject.Find("Player_L1");
                 GameObject PR = GameObject.Find("Player_R1_Ma");
-                GameObject P_L1 = GameObject.Find("P_L1");
-                GameObject P_R1 = GameObject.Find("P_R1");
+                //GameObject P_L1 = GameObject.Find("P_L1");
+                //GameObject P_R1 = GameObject.Find("P_R1");
                 //ñ{ëÃçÌèú
-                Destroy(PL);
-                Destroy(PR);
-                Destroy(P_L1);
-                Destroy(P_R1);
+                PL.SetActive(false);
+                PR.SetActive(false);
+                //P_L1.SetActive(false);
+                //P_R1.SetActive(false);
             }
             else if (this.gameObject.CompareTag("Hit_Body_P2"))
             {
                 Syouhai.GetComponent<Setting>().WINER = true; ;   //LÇPÇÃèüÇøÇ…Ç∑ÇÈ
                 GameObject PL = GameObject.Find("Player_L2");
                 GameObject PR = GameObject.Find("Player_R2_Ma");
-                GameObject P_L2 = GameObject.Find("P_L2");
-                GameObject P_R2 = GameObject.Find("P_R2");
+                //GameObject P_L2 = GameObject.Find("P_L2");
+                //GameObject P_R2 = GameObject.Find("P_R2");
                 //ñ{ëÃçÌèú
-                Destroy(PL);
-                Destroy(PR);
-                Destroy(P_L2);
-                Destroy(P_R2);
+                PL.SetActive(false);
+                PR.SetActive(false);
+                //P_L2.SetActive(false);
+                //P_R2.SetActive(false);
             }
             #endregion
             Debug.Log("ëÃóÕÇ™ [0] Ç…Ç»ÇËÇ‹ÇµÇΩÅB");

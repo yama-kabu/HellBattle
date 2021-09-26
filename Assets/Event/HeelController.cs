@@ -40,7 +40,6 @@ public class HeelController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("“–‚½‚Á‚½‚æ");
         if (collision.gameObject == Player1 || collision.gameObject == Player2)
         {
             GameObject Player = collision.gameObject;
@@ -56,6 +55,11 @@ public class HeelController : MonoBehaviour
                 PlayerManager.m_Player_HP = PlayerManager.m_Player_MAXHP;
             }
             Debug.Log("‘Ì—Í‚Í" + PlayerManager.m_Player_HP);
+            Destroy(this.gameObject);
+        }
+
+        if(collision.gameObject.tag == "BackStage")
+        {
             Destroy(this.gameObject);
         }
     }

@@ -143,10 +143,10 @@ public class EventManager : MonoBehaviour
     {
         GameObject HeelItem = (GameObject)Instantiate(LifeItem);
         HeelItem.transform.SetParent(Canvas.transform, false);
-        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(-500,540);
+        HeelItem.GetComponent<RectTransform>().anchoredPosition = new Vector2(-500,350);
         GameObject HeelItem2 = (GameObject) Instantiate(LifeItem, new Vector2(0,0), Quaternion.Euler(0, 0, 180f));
         HeelItem2.transform.SetParent(Canvas.transform, false);
-        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -540);
+        HeelItem2.GetComponent<RectTransform>().anchoredPosition = new Vector2(500, -350);
         
         //最後にスイッチを戻してカウントの乱数を生成できるようにする
         EventSwitch = false;

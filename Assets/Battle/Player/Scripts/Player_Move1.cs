@@ -60,9 +60,13 @@ public class Player_Move1 : MonoBehaviour
         {
             player_speed = 1500;
         }
-        else if (Character_Speed == 3)
+        if (Character_Speed == 3)
         {
-            player_speed = 1000;
+            player_speed = 500;
+        }
+        else if (Character_Speed == 4)
+        {
+            player_speed = 1500;
         }
         #endregion
     }
